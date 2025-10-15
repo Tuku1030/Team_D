@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 public class PlayerContller : MonoBehaviour
 {
     public float Speed = 0.005f;   //プレイヤーのスピード
-    public Rigidbody2D Rbody; //Rigidbody2Dの変数
+    Rigidbody2D Rbody; //Rigidbody2Dの変数
     
 
 

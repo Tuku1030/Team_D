@@ -1,15 +1,20 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
+
 public class PlayerContller : MonoBehaviour
 {
-    private float Speed = 0.01f;   //プレイヤーのスピード
+    public float Speed = 0.005f;   //プレイヤーのスピード
     public Rigidbody2D Rbody; //Rigidbody2Dの変数
+    
+
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Rbody = GetComponent<Rigidbody2D>(); //Rigidbody2Dを取得
+       
     }
 
     // Update is called once per frame
@@ -35,9 +40,13 @@ public class PlayerContller : MonoBehaviour
         {
             position.y -= Speed;
         }
-
         transform.position = position;
+
+       
     }
+
+       
+    
     private void FixedUpdate()
     {
         ////

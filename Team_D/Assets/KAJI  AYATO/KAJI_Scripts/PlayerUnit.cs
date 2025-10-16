@@ -3,43 +3,57 @@ using UnityEngine.UIElements;
 
 public class PlayerUnit : MonoBehaviour
 {
-    public GameObject Bullet; //弾の変数
-    public float Speed;       //弾の速度
+    public GameObject BigBullet; //巨大網（弾）の変数
+    public GameObject Bullet;    //小網（弾）の変数
+    public float Speed;          //弾の速度
 
-    private GameObject bulletIns;
+    private GameObject BulletIns;
+    private GameObject BigBulletIns;
     private Vector2 mousePos;
     private Vector2 angle;
 
-    Vector3 BulletPoint; //弾の発射位置
-    float timer;//タイマー
+    Vector3 BigBulletPoint; //巨大網の（弾）発射位置
+    Vector3 BulletPoint;    //小網（弾）の発射位置
+    float Timer;//小網タイマー
+    float BigTimer;//巨大網タイマー
    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         BulletPoint = transform.Find("Bullet_Point").localPosition;
+        BigBulletPoint = transform.Find("BigBullet_Point").localPosition;
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;//経過時間加算
+        Timer += Time.deltaTime;//経過時間加算
+        BigTimer += Time.deltaTime;
 
         mousePos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
        
-            if (Input.GetMouseButtonDown(0) && timer > 1.0f)//左クリックで弾を発射
-            {
+        if (Input.GetMouseButtonDown(0) && Timer > 1.0f)//左クリックで弾を発射
+        {
             
 
                 //弾の生成
-                bulletIns = Instantiate(Bullet, transform.position + BulletPoint, Quaternion.identity);
+                BulletIns = Instantiate(Bullet, transform.position + BulletPoint, Quaternion.identity);
                 Vector2 angle = (mousePos - (Vector2)transform.position).normalized;
-                bulletIns.GetComponent<Rigidbody2D>().linearVelocity = angle * Speed;
+                BulletIns.GetComponent<Rigidbody2D>().linearVelocity = angle * Speed;
 
-                Destroy(bulletIns, 1.5f);    //一定時間経過で弾削除
-                timer = 0;                   //タイマーリセット
-            }
+                Destroy(BulletIns, 1.5f);    //一定時間経過で弾削除
+                Timer = 0; ;              //タイマーリセット
+        }
         
+        if(Input.GetKeyDown(KeyCode.Space) && BigTimer > 5.0f)
+        {
+           
+
+            BigBulletIns = Instantiate(BigBullet,transform.position + BigBulletPoint, Quaternion.identity);
+            Destroy(BigBulletIns, 1.0f);
+            BigTimer = 0;
+        }
     }
 }

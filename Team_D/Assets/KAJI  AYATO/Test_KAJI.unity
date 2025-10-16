@@ -256,6 +256,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &522351082
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 522351083}
+  m_Layer: 0
+  m_Name: BigBullet_Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &522351083
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522351082}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.8, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1783866262}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &703138229
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,6 +494,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 703138230}
+  - {fileID: 522351083}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1783866263
@@ -477,6 +509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2136bfb5be3911c4d94731c387fbbf57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BigBullet: {fileID: 3460930845515614494, guid: b121d6dd6847ecd449dd1c2e61766a8f, type: 3}
   Bullet: {fileID: 4399096843779939642, guid: 6c7fb68b2eed04c4497ca00f5d0af2cb, type: 3}
   Speed: 8
 --- !u!1660057539 &9223372036854775807

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7d2eb6bb2520e024abe2efb9be602e65
+guid: 06dca90b7b16a4244b31fd59e86fc5d6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8062708480011262309
-    second: Sardine_0
+      213: 8181430328200939059
+    second: "\u7121\u984C127_20251009000053_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sardine_0
+      name: "\u7121\u984C127_20251009000053_0"
       rect:
         serializedVersion: 2
-        x: 25
-        y: 9
-        width: 85
-        height: 37
+        x: 216
+        y: 231
+        width: 684
+        height: 1650
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b9626610b518b1090800000000000000
-      internalID: -8062708480011262309
+      spriteID: 336460359874a8170800000000000000
+      internalID: 8181430328200939059
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Sardine_0: -8062708480011262309
+      "\u7121\u984C127_20251009000053_0": 8181430328200939059
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

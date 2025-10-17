@@ -41,7 +41,13 @@ public class PlayerContller : MonoBehaviour
         }
         transform.position = position;
 
-       
+        //画面外に出ないようにする
+        transform.position = new Vector2(
+          //エリア指定して移動する
+          Mathf.Clamp(transform.position.x,  -17.6f, 3.0f),
+          Mathf.Clamp(transform.position.y,  -3.8f, 4.5f)
+          );
+
     }
 
        

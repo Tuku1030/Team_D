@@ -7,10 +7,11 @@ public class PlayerUnit : MonoBehaviour
     public GameObject Bullet;    //小網（弾）の変数
     public float Speed;          //弾の速度
 
+    
     private GameObject BulletIns;
     private GameObject BigBulletIns;
-    private Vector2 mousePos;
-    private Vector2 angle;
+    private Vector2 MousePos;
+    private Vector2 Angle;
 
     Vector3 BigBulletPoint; //巨大網の（弾）発射位置
     Vector3 BulletPoint;    //小網（弾）の発射位置
@@ -23,15 +24,17 @@ public class PlayerUnit : MonoBehaviour
     {
         BulletPoint = transform.Find("Bullet_Point").localPosition;
         BigBulletPoint = transform.Find("BigBullet_Point").localPosition;
+
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        Timer += Time.deltaTime;//経過時間加算
-        BigTimer += Time.deltaTime;
+        Timer += Time.deltaTime;    //経過時間加算
+        BigTimer += Time.deltaTime; //経過時間加算
 
-        mousePos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        MousePos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
        
         if (Input.GetMouseButtonDown(0) && Timer > 1.0f)//左クリックで弾を発射
@@ -40,10 +43,12 @@ public class PlayerUnit : MonoBehaviour
 
                 //弾の生成
                 BulletIns = Instantiate(Bullet, transform.position + BulletPoint, Quaternion.identity);
-                Vector2 angle = (mousePos - (Vector2)transform.position).normalized;
-                BulletIns.GetComponent<Rigidbody2D>().linearVelocity = angle * Speed;
+                Vector2 Angle = (MousePos - (Vector2)transform.position).normalized;
+                BulletIns.GetComponent<Rigidbody2D>().linearVelocity = Angle * Speed;
 
-                Destroy(BulletIns, 1.5f);    //一定時間経過で弾削除
+            
+
+            Destroy(BulletIns, 1.5f);    //一定時間経過で弾削除
                 Timer = 0; ;              //タイマーリセット
         }
         
@@ -52,8 +57,8 @@ public class PlayerUnit : MonoBehaviour
            
 
             BigBulletIns = Instantiate(BigBullet,transform.position + BigBulletPoint, Quaternion.identity);
-            Destroy(BigBulletIns, 1.0f);
-            BigTimer = 0;
+            Destroy(BigBulletIns, 1.0f); //一定時間経過で弾削除
+            BigTimer = 0;                //タイマーリセット
         }
     }
 }

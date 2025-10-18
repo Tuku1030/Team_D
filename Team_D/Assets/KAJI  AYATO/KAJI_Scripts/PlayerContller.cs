@@ -6,9 +6,8 @@ public class PlayerContller : MonoBehaviour
 {
     public float Speed = 0.005f;   //プレイヤーのスピード
     Rigidbody2D Rbody; //Rigidbody2Dの変数
-    
 
-
+    public int HP = 3; //プレイヤーのHP
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,6 +40,11 @@ public class PlayerContller : MonoBehaviour
         }
         transform.position = position;
 
+        if(Input.GetKeyDown(KeyCode.Z))
+        {
+            --HP;
+        }
+
         //画面外に出ないようにする
         transform.position = new Vector2(
           //エリア指定して移動する
@@ -50,7 +54,10 @@ public class PlayerContller : MonoBehaviour
 
     }
 
-       
+       public int GetHP()
+    {
+        return HP;
+    }
     
     private void FixedUpdate()
     {

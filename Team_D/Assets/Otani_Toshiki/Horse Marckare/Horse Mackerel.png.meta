@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 06dca90b7b16a4244b31fd59e86fc5d6
+guid: 2a49f1b6ba1ed954fab7ce987007ac76
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8181430328200939059
-    second: "\u7121\u984C127_20251009000053_0"
+      213: -6492936566488874493
+    second: Horse Mackerel_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u7121\u984C127_20251009000053_0"
+      name: Horse Mackerel_0
       rect:
         serializedVersion: 2
-        x: 216
-        y: 231
-        width: 684
-        height: 1650
+        x: 0
+        y: 0
+        width: 169
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 336460359874a8170800000000000000
-      internalID: 8181430328200939059
+      spriteID: 3024945089474e5a0800000000000000
+      internalID: -6492936566488874493
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\u7121\u984C127_20251009000053_0": 8181430328200939059
+      Horse Mackerel_0: -6492936566488874493
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

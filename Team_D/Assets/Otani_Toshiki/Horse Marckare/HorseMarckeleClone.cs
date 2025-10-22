@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SardineClone : MonoBehaviour
+public class HorseMarckeleClone : MonoBehaviour
 {
     public GameObject player;   // 元のオブジェクトを参照する変数
     public Transform Parent;    // 指定する親オブジェクトを参照する変数
@@ -9,21 +9,21 @@ public class SardineClone : MonoBehaviour
 
     void Start()
     {
-        
+
     }
     void Update()
     {
         timeCount += Time.deltaTime;
 
-        if (timeCount > 3f)
+        if (timeCount > 7f)
         {
-           
 
-            if (count < 10)
+
+            if (count < 7)
             {
                 timeCount = 0;
                 // Prefab の生成
-                Instantiate(Parent, new Vector3(Random.Range(-7, 7), Random.Range(-4, 4)), Quaternion.identity);
+                Instantiate(Parent, new Vector3(0f, 0f, 0f), Quaternion.identity);
                 player.SetActive(true); //オブジェクトを表示する
                 count++;
             }

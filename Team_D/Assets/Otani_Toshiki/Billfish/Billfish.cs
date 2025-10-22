@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class Billfish: MonoBehaviour
+public class BillFish : MonoBehaviour
 {
     public GameObject player;  //①動かしたいオブジェクトをインスペクターから入れる。
     public int speed = 5;  //オブジェクトが自動で動くスピード調整
     Vector3 movePosition;  //②オブジェクトの目的地を保存
+    private Action _onDisable;  // 非アクティブ化するためのコールバック
+    private float _elapsedTime;  // 初期化されてからの経過時間
 
 
     void Start()
@@ -15,7 +19,6 @@ public class Billfish: MonoBehaviour
     }
     void Update()
     {
-
         if (movePosition == player.transform.position)  //②playerオブジェクトが目的地に到達すると、
         {
             movePosition = moveRandomPosition();  //②目的地を再設定
@@ -41,6 +44,11 @@ public class Billfish: MonoBehaviour
                 spriteRenderer.flipX = false;
             }
         }
+    }
+
+    void DelayMethod()
+    {
+
     }
 
     private Vector3 moveRandomPosition()  // 目的地を生成、xとyのポジションをランダムに値を取得 

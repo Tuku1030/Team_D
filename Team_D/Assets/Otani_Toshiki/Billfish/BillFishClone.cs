@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SardineClone : MonoBehaviour
+public class BillFishClone : MonoBehaviour
 {
     public GameObject player;   // 元のオブジェクトを参照する変数
     public Transform Parent;    // 指定する親オブジェクトを参照する変数
@@ -9,17 +9,15 @@ public class SardineClone : MonoBehaviour
 
     void Start()
     {
-        
+
     }
     void Update()
     {
         timeCount += Time.deltaTime;
 
-        if (timeCount > 3f)
+        if (timeCount > 30f)
         {
-           
-
-            if (count < 10)
+            if (count < 3)
             {
                 timeCount = 0;
                 // Prefab の生成

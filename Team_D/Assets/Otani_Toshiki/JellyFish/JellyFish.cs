@@ -5,10 +5,10 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class HorseMarckele : MonoBehaviour
+public class JellyFish : MonoBehaviour
 {
     public GameObject player;  //①動かしたいオブジェクトをインスペクターから入れる。
-    public int speed = 3;  //オブジェクトが自動で動くスピード調整
+    public float speed = 0.5f;  //オブジェクトが自動で動くスピード調整
     Vector3 movePosition;  //②オブジェクトの目的地を保存
     private Action _onDisable;  // 非アクティブ化するためのコールバック
     private float _elapsedTime;  // 初期化されてからの経過時間
@@ -54,7 +54,7 @@ public class HorseMarckele : MonoBehaviour
 
     private Vector3 moveRandomPosition()  // 目的地を生成、xとyのポジションをランダムに値を取得 
     {
-        Vector3 randomPosi = new Vector3(Random.Range(-7, 7), Random.Range(-4, 4), 3);
+        Vector3 randomPosi = new Vector3(Random.Range(-7, 7), Random.Range(-4, 4), 1);
         return randomPosi;
     }
 }

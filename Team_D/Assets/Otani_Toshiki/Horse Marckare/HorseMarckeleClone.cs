@@ -23,7 +23,7 @@ public class HorseMarckeleClone : MonoBehaviour
             {
                 timeCount = 0;
                 // Prefab の生成
-                Instantiate(Parent, new Vector3(0f, 0f, 0f), Quaternion.identity);
+                Instantiate(Parent, new Vector3(Random.Range(-7, 7), Random.Range(-4, 4)), Quaternion.identity);
                 player.SetActive(true); //オブジェクトを表示する
                 count++;
             }

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sardine : MonoBehaviour
+public class Billfish: MonoBehaviour
 {
     public GameObject player;  //①動かしたいオブジェクトをインスペクターから入れる。
-    public int speed = 2;  //オブジェクトが自動で動くスピード調整
+    public int speed = 5;  //オブジェクトが自動で動くスピード調整
     Vector3 movePosition;  //②オブジェクトの目的地を保存
 
 
@@ -45,7 +45,7 @@ public class Sardine : MonoBehaviour
 
     private Vector3 moveRandomPosition()  // 目的地を生成、xとyのポジションをランダムに値を取得 
     {
-        Vector3 randomPosi = new Vector3(Random.Range(-7, 7), Random.Range(-4, 4), 2);
+        Vector3 randomPosi = new Vector3(Random.Range(-7, 7), Random.Range(-4, 4), 5);
         return randomPosi;
     }
 }

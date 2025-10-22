@@ -12,6 +12,15 @@ EditorBuildSettings:
     path: Assets/nakaiharuki/StageSelect.unity
     guid: 6a8c583cd35501741b67309737f10bf2
   - enabled: 1
+    path: Assets/nakaiharuki/Achivement.unity
+    guid: 020f5656ebde3974391c955db120614a
+  - enabled: 1
+    path: Assets/nakaiharuki/Option.unity
+    guid: be929614b217379449d4d7087d557f01
+  - enabled: 1
+    path: Assets/nakaiharuki/Operation.unity
+    guid: 12fe4c2b71031ee41bb24e6efb66acfd
+  - enabled: 1
     path: Assets/nakaiharuki/test_nakai.unity
     guid: 0c2ff75fcf06ea4458c944b9050d67e7
   - enabled: 1

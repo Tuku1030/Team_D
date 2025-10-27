@@ -11,6 +11,8 @@ public class BillFish : MonoBehaviour
     Vector3 movePosition;  //②オブジェクトの目的地を保存
     private Action _onDisable;  // 非アクティブ化するためのコールバック
     private float _elapsedTime;  // 初期化されてからの経過時間
+    public string Billfish;
+    public float addRate; // 魚ごとの倍率加算値（例：0.1）
 
 
     void Start()

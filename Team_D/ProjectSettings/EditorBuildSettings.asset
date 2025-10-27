@@ -20,9 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/nakaiharuki/Operation.unity
     guid: 12fe4c2b71031ee41bb24e6efb66acfd
-  - enabled: 1
+  - enabled: 0
     path: Assets/nakaiharuki/test_nakai.unity
     guid: 0c2ff75fcf06ea4458c944b9050d67e7
+  - enabled: 1
+    path: Assets/nakaiharuki/Stage1.unity
+    guid: 7cdb980e34ebb404ea2e7d3a97aae693
   - enabled: 1
     path: Assets/nakaiharuki/result.unity
     guid: 0a98ac2498ff8f144aeaa7142231ac14

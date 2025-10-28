@@ -3,7 +3,7 @@ using UnityEngine.Assertions;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Image))]
-public class BackGroundMover : MonoBehaviour
+public class o_BackGroundMover : MonoBehaviour
 {
     private const float k_maxLength = 1f;
     private const string k_propName = "_MainTex";
@@ -18,7 +18,7 @@ public class BackGroundMover : MonoBehaviour
         var image = GetComponent<Image>();
         m_copiedMaterial = image.material;
 
-        // マテリアルがnullだったら例外が出ます。
+         //マテリアルがnullだったら例外が出ます。
         Assert.IsNotNull(m_copiedMaterial);
     }
 

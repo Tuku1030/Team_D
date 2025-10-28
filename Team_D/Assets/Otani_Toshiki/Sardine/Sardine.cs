@@ -1,5 +1,4 @@
-
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
@@ -7,54 +6,70 @@ using Random = UnityEngine.Random;
 
 public class Sardine : MonoBehaviour
 {
-    public GameObject player;  //‡@“®‚©‚µ‚½‚¢ƒIƒuƒWƒFƒNƒg‚ğƒCƒ“ƒXƒyƒNƒ^[‚©‚ç“ü‚ê‚éB
-    public int speed = 1;  //ƒIƒuƒWƒFƒNƒg‚ª©“®‚Å“®‚­ƒXƒs[ƒh’²®
-    Vector3 movePosition;  //‡AƒIƒuƒWƒFƒNƒg‚Ì–Ú“I’n‚ğ•Û‘¶
-    private Action _onDisable;  // ”ñƒAƒNƒeƒBƒu‰»‚·‚é‚½‚ß‚ÌƒR[ƒ‹ƒoƒbƒN
-    private float _elapsedTime;  // ‰Šú‰»‚³‚ê‚Ä‚©‚ç‚ÌŒo‰ßŠÔ
+    public GameObject player;  // ç§»å‹•å¯¾è±¡
+    public int speed = 3;      // ç§»å‹•ã‚¹ãƒ”ãƒ¼ãƒ‰
+    Vector3 movePosition;      // ç§»å‹•ç›®æ¨™ä½ç½®
 
+    [Header("é­šãƒ‡ãƒ¼ã‚¿è¨­å®š")]
+    public string fishName = "Sardine";  // é­šã®ç¨®é¡åï¼ˆä¾‹ï¼šã‚¢ã‚¸ï¼‰
+    public float addRate = 0.2f;               // ã“ã®é­š1åŒ¹ã‚ãŸã‚Šã®å€ç‡åŠ ç®—å€¤
+    public int baseScore = 10;                 // ğŸ”¹åŸºç¤ã‚¹ã‚³ã‚¢ã‚’è¿½åŠ 
 
-        void Start()
+    private bool isCaptured = false; // æ•ç²æ¸ˆã¿åˆ¤å®š
+
+    void Start()
     {
-        movePosition = moveRandomPosition();  //‡AÀsAƒIƒuƒWƒFƒNƒg‚Ì–Ú“I’n‚ğİ’è
+        movePosition = moveRandomPosition();
     }
+
     void Update()
     {
-        if (movePosition == player.transform.position)  //‡AplayerƒIƒuƒWƒFƒNƒg‚ª–Ú“I’n‚É“’B‚·‚é‚ÆA
+        if (isCaptured) return; // æ•ç²æ¸ˆã¿ãªã‚‰å‹•ã‹ã•ãªã„
+
+        // ãƒ©ãƒ³ãƒ€ãƒ ç§»å‹•
+        if (movePosition == player.transform.position)
         {
-            movePosition = moveRandomPosition();  //‡A–Ú“I’n‚ğÄİ’è
+            movePosition = moveRandomPosition();
         }
-        this.player.transform.position = Vector3.MoveTowards(player.transform.position, movePosition, speed * Time.deltaTime);  //‡@‡AplayerƒIƒuƒWƒFƒNƒg‚ª, –Ú“I’n‚ÉˆÚ“®, ˆÚ“®‘¬“x
-        // SpriteRendererƒRƒ“ƒ|[ƒlƒ“ƒg‚ğæ“¾
+
+        player.transform.position = Vector3.MoveTowards(player.transform.position, movePosition, speed * Time.deltaTime);
+
+        // å‘ãåè»¢
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         if (player.transform.position.x < movePosition.x)
         {
-            if (spriteRenderer.flipX == false)
-            {
-                // X²‚É”½“]‚ğ“K—p
-                spriteRenderer.flipX = true;
-            }
+            spriteRenderer.flipX = true;
         }
-
-
-        if (player.transform.position.x > movePosition.x)
+        else if (player.transform.position.x > movePosition.x)
         {
-            if (spriteRenderer.flipX == true)
-            {
-                // X²‚É”½“]‚ğ“K—p
-                spriteRenderer.flipX = false;
-            }
+            spriteRenderer.flipX = false;
         }
     }
 
-    void DelayMethod()
+    // ç¶²ã«å½“ãŸã£ãŸã¨ãã®å‡¦ç†
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (isCaptured) return;
+
+        if (other.CompareTag("Net")) // ç¶²ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã‚¿ã‚°ã‚’"Net"ã«è¨­å®šã—ã¦ãŠã
+        {
+            isCaptured = true;
+
+            // æ•ç²ã•ã‚ŒãŸã“ã¨ã‚’ã‚¹ã‚³ã‚¢ç®¡ç†ã¸é€šçŸ¥
+            NetScoreCalculator scoreCalculator = FindObjectOfType<NetScoreCalculator>();
+            if (scoreCalculator != null)
+            {
+                // ğŸ”¹åŸºç¤ã‚¹ã‚³ã‚¢ã‚‚ä¸€ç·’ã«æ¸¡ã™ã‚ˆã†ã«å¤‰æ›´
+                scoreCalculator.AddCapturedFish(fishName, addRate, baseScore);
+            }
+
+            // æ•ç²æ¼”å‡ºãªã©ã‚’å…¥ã‚ŒãŸã„å ´åˆã¯ã“ã“ã«ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ç­‰ã‚’è¿½åŠ 
+            Destroy(gameObject); // é­šã‚’å‰Šé™¤
+        }
     }
 
-    private Vector3 moveRandomPosition()  // –Ú“I’n‚ğ¶¬Ax‚Æy‚Ìƒ|ƒWƒVƒ‡ƒ“‚ğƒ‰ƒ“ƒ_ƒ€‚É’l‚ğæ“¾ 
+    private Vector3 moveRandomPosition()
     {
-        Vector3 randomPosi = new Vector3(Random.Range(-7, 7), Random.Range(-4, 4), 1);
-        return randomPosi;
+        return new Vector3(Random.Range(-7, 7), Random.Range(-4, 4), 1);
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1648283140616851722}
   - component: {fileID: 1338618927167212268}
   m_Layer: 0
-  m_Name: Player_Bullet
+  m_Name: o_Player_Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.7, y: 0.72, z: 0}
-  m_LocalScale: {x: 0.39267892, y: 0.2359396, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

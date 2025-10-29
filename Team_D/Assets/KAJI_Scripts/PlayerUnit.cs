@@ -57,7 +57,7 @@ public class PlayerUnit : MonoBehaviour
            
 
             BigBulletIns = Instantiate(BigBullet,transform.position + BigBulletPoint, Quaternion.identity);
-            Destroy(BigBulletIns, 1.0f); //一定時間経過で弾削除
+            Destroy(BigBulletIns, 0.2f); //一定時間経過で弾削除
             BigTimer = 0;                //タイマーリセット
         }
     }

@@ -7,8 +7,11 @@ TagManager:
   - Parent
   - Trash
   - Fish
+<<<<<<< HEAD
   - Net
   - BigNet
+=======
+>>>>>>> e0f6bda141792b03770fdbc970bceb57de7621ae
   layers:
   - Default
   - TransparentFX

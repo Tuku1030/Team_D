@@ -5,7 +5,7 @@ public class NetScoreCalculator : MonoBehaviour
 {
     private Dictionary<string, (int count, float rate, int baseScore)> fishData = new();
 
-    private float totalScore = 0f; // 🟢 累計スコア
+    private float _Score; // 🟢 累計スコア
 
     public void AddCapturedFish(string fishName, float addRate, int baseScore)
     {
@@ -24,10 +24,10 @@ public class NetScoreCalculator : MonoBehaviour
         float addedScore = CalculateAddedScore(fishName);
 
         // 🟢 トータルスコアに加算
-        totalScore += addedScore;
+        _Score += addedScore;
 
         // 🟢 ログ表示
-        Debug.Log($"🐟 捕獲: {fishName}, 今回のスコア: +{addedScore:F2}, 累計: {totalScore:F2}");
+        Debug.Log($"🐟 捕獲: {fishName}, 今回のスコア: +{addedScore:F2}, 累計: {_Score:F2}");
     }
 
     // 魚1匹ごとの追加スコアを計算
@@ -44,6 +44,6 @@ public class NetScoreCalculator : MonoBehaviour
     // 🟢 外部（UIなど）から参照できるようにプロパティを追加
     public float GetTotalScore()
     {
-        return totalScore;
+        return _Score;
     }
 }

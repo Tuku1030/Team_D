@@ -4,7 +4,7 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class HorseMarckele : MonoBehaviour
+public class HorseMackerel : MonoBehaviour
 {
     public GameObject player;  // 移動対象
     public int speed = 3;      // 移動スピード
@@ -13,7 +13,7 @@ public class HorseMarckele : MonoBehaviour
     [Header("魚データ設定")]
     public string fishName = "HorseMackerel";  // 魚の種類名（例：アジ）
     public float addRate = 0.2f;               // この魚1匹あたりの倍率加算値
-    public int baseScore = 10;                 // 🔹基礎スコアを追加
+    public int baseScore = 20;                 // 🔹基礎スコアを追加
 
     private bool isCaptured = false; // 捕獲済み判定
 
@@ -70,6 +70,6 @@ public class HorseMarckele : MonoBehaviour
 
     private Vector3 moveRandomPosition()
     {
-        return new Vector3(Random.Range(-7, 7), Random.Range(-4, 4), 3);
+        return new Vector3(Random.Range(-7, 7), Random.Range(-4, 4), 1);
     }
 }

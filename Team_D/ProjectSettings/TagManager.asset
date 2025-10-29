@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Parent
   - Trash
+  - Fish
+  - Net
+  - BigNet
   layers:
   - Default
   - TransparentFX

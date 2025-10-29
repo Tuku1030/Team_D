@@ -51,7 +51,7 @@ public class Sardine : MonoBehaviour
     {
         if (isCaptured) return;
 
-        if (other.CompareTag("Net")) // 網オブジェクトのタグを"Net"に設定しておく
+        if (other.CompareTag("BigNet")) // 網オブジェクトのタグを"Net"に設定しておく
         {
             isCaptured = true;
 

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
@@ -6,33 +6,35 @@ using Random = UnityEngine.Random;
 
 public class BillFish : MonoBehaviour
 {
-    public GameObject player;  //‡@“®‚©‚µ‚½‚¢ƒIƒuƒWƒFƒNƒg‚ğƒCƒ“ƒXƒyƒNƒ^[‚©‚ç“ü‚ê‚éB
-    public int speed = 5;  //ƒIƒuƒWƒFƒNƒg‚ª©“®‚Å“®‚­ƒXƒs[ƒh’²®
-    Vector3 movePosition;  //‡AƒIƒuƒWƒFƒNƒg‚Ì–Ú“I’n‚ğ•Û‘¶
-    private Action _onDisable;  // ”ñƒAƒNƒeƒBƒu‰»‚·‚é‚½‚ß‚ÌƒR[ƒ‹ƒoƒbƒN
-    private float _elapsedTime;  // ‰Šú‰»‚³‚ê‚Ä‚©‚ç‚ÌŒo‰ßŠÔ
-    public string Billfish;
-    public float addRate; // ‹›‚²‚Æ‚Ì”{—¦‰ÁZ’li—áF0.1j
+    public GameObject player;  // ç§»å‹•å¯¾è±¡
+    public int speed = 5;      // ç§»å‹•ã‚¹ãƒ”ãƒ¼ãƒ‰
+    Vector3 movePosition;      // ç§»å‹•ç›®æ¨™ä½ç½®
 
+    [Header("é­šãƒ‡ãƒ¼ã‚¿è¨­å®š")]
+    public string fishName = "BillFish";  // é­šã®ç¨®é¡åï¼ˆä¾‹ï¼šã‚¢ã‚¸ï¼‰
+    public float addRate = 0.8f;               // ã“ã®é­š1åŒ¹ã‚ãŸã‚Šã®å€ç‡åŠ ç®—å€¤
+    public int baseScore = 100;                 // ğŸ”¹åŸºç¤ã‚¹ã‚³ã‚¢ã‚’è¿½åŠ 
+
+    private bool isCaptured = false; // æ•ç²æ¸ˆã¿åˆ¤å®š
 
     void Start()
     {
-        movePosition = moveRandomPosition();  //‡AÀsAƒIƒuƒWƒFƒNƒg‚Ì–Ú“I’n‚ğİ’è
+        movePosition = moveRandomPosition();  //â‘¡å®Ÿè¡Œæ™‚ã€ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ç›®çš„åœ°ã‚’è¨­å®š
     }
     void Update()
     {
-        if (movePosition == player.transform.position)  //‡AplayerƒIƒuƒWƒFƒNƒg‚ª–Ú“I’n‚É“’B‚·‚é‚ÆA
+        if (movePosition == player.transform.position)  //â‘¡playerã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒç›®çš„åœ°ã«åˆ°é”ã™ã‚‹ã¨ã€
         {
-            movePosition = moveRandomPosition();  //‡A–Ú“I’n‚ğÄİ’è
+            movePosition = moveRandomPosition();  //â‘¡ç›®çš„åœ°ã‚’å†è¨­å®š
         }
-        this.player.transform.position = Vector3.MoveTowards(player.transform.position, movePosition, speed * Time.deltaTime);  //‡@‡AplayerƒIƒuƒWƒFƒNƒg‚ª, –Ú“I’n‚ÉˆÚ“®, ˆÚ“®‘¬“x
-        // SpriteRendererƒRƒ“ƒ|[ƒlƒ“ƒg‚ğæ“¾
+        this.player.transform.position = Vector3.MoveTowards(player.transform.position, movePosition, speed * Time.deltaTime);  //â‘ â‘¡playerã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒ, ç›®çš„åœ°ã«ç§»å‹•, ç§»å‹•é€Ÿåº¦
+        // SpriteRendererã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’å–å¾—
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         if (player.transform.position.x < movePosition.x)
         {
             if (spriteRenderer.flipX == false)
             {
-                // X²‚É”½“]‚ğ“K—p
+                // Xè»¸ã«åè»¢ã‚’é©ç”¨
                 spriteRenderer.flipX = true;
             }
         }
@@ -42,20 +44,35 @@ public class BillFish : MonoBehaviour
         {
             if (spriteRenderer.flipX == true)
             {
-                // X²‚É”½“]‚ğ“K—p
+                // Xè»¸ã«åè»¢ã‚’é©ç”¨
                 spriteRenderer.flipX = false;
             }
         }
     }
-
-    void DelayMethod()
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        if (isCaptured) return;
 
+        if (other.CompareTag("BigNet")) // ç¶²ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã‚¿ã‚°ã‚’"Net"ã«è¨­å®šã—ã¦ãŠã
+        {
+            isCaptured = true;
+
+            // æ•ç²ã•ã‚ŒãŸã“ã¨ã‚’ã‚¹ã‚³ã‚¢ç®¡ç†ã¸é€šçŸ¥
+            NetScoreCalculator scoreCalculator = FindObjectOfType<NetScoreCalculator>();
+            if (scoreCalculator != null)
+            {
+                // ğŸ”¹åŸºç¤ã‚¹ã‚³ã‚¢ã‚‚ä¸€ç·’ã«æ¸¡ã™ã‚ˆã†ã«å¤‰æ›´
+                scoreCalculator.AddCapturedFish(fishName, addRate, baseScore);
+            }
+
+            // æ•ç²æ¼”å‡ºãªã©ã‚’å…¥ã‚ŒãŸã„å ´åˆã¯ã“ã“ã«ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ç­‰ã‚’è¿½åŠ 
+            Destroy(gameObject); // é­šã‚’å‰Šé™¤
+        }
     }
 
-    private Vector3 moveRandomPosition()  // –Ú“I’n‚ğ¶¬Ax‚Æy‚Ìƒ|ƒWƒVƒ‡ƒ“‚ğƒ‰ƒ“ƒ_ƒ€‚É’l‚ğæ“¾ 
+    private Vector3 moveRandomPosition()  // ç›®çš„åœ°ã‚’ç”Ÿæˆã€xã¨yã®ãƒã‚¸ã‚·ãƒ§ãƒ³ã‚’ãƒ©ãƒ³ãƒ€ãƒ ã«å€¤ã‚’å–å¾— 
     {
-        Vector3 randomPosi = new Vector3(Random.Range(-7, 7), Random.Range(-4, 4), 5);
+        Vector3 randomPosi = new Vector3(Random.Range(-4, 10), Random.Range(-5, 5), 5);
         return randomPosi;
     }
 }

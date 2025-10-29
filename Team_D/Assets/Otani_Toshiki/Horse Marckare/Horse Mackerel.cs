@@ -51,7 +51,7 @@ public class HorseMackerel : MonoBehaviour
     {
         if (isCaptured) return;
 
-        if (other.CompareTag("Net")) // 網オブジェクトのタグを"Net"に設定しておく
+        if (other.CompareTag("BigNet")) // 網オブジェクトのタグを"Net"に設定しておく
         {
             isCaptured = true;
 
@@ -70,6 +70,6 @@ public class HorseMackerel : MonoBehaviour
 
     private Vector3 moveRandomPosition()
     {
-        return new Vector3(Random.Range(-7, 7), Random.Range(-4, 4), 1);
+        return new Vector3(Random.Range(-4, 10), Random.Range(-5, 5), 1);
     }
 }

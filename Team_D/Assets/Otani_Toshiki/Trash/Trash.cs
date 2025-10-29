@@ -12,7 +12,7 @@ public class Trash : MonoBehaviour
     Vector3 movePosition;      // 移動目標位置
 
     [Header("魚データ設定")]
-    public string fishName = "Trash";  // 魚の種類名（例：アジ）
+    public string fishName = "Trash";  // 魚の種類名
     public float addRate = -0.2f;               // この魚1匹あたりの倍率加算値
     public int baseScore = 0;                 // 🔹基礎スコアを追加
     private bool isCaptured = false; // 捕獲済み判定
@@ -78,7 +78,7 @@ public class Trash : MonoBehaviour
     }
         private Vector3 moveRandomPosition()  // 目的地を生成、xとyのポジションをランダムに値を取得 
     {
-        Vector3 randomPosi = new Vector3(Random.Range(-7, 7), Random.Range(-4, 4), 1);
+        Vector3 randomPosi = new Vector3(Random.Range(-4, 10), Random.Range(-5, 5), 1);
         return randomPosi;
     }
 }

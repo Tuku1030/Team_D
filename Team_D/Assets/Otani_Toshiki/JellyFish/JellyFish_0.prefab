@@ -101,8 +101,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cbc4a439f32d00428060e16e325299b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  speed: 0.5
+  player: {fileID: 878788418936294998}
+  speed: 2
+  fishName: JellyFish
+  addRate: -0.2
+  baseScore: 0
 --- !u!114 &5843958226226264627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,4 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  speed: 0.5
+  speed: 0
+  fishName: JellyFish
+  addRate: -0.2
+  baseScore: 0

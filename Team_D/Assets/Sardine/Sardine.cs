@@ -17,6 +17,8 @@ public class Sardine : MonoBehaviour
 
     private bool isCaptured = false; // 捕獲済み判定
 
+    public NetScoreCalculator scoreCalculator; // Inspectorでセット
+
     void Start()
     {
         movePosition = moveRandomPosition();
@@ -49,6 +51,7 @@ public class Sardine : MonoBehaviour
     // 網に当たったときの処理
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Hit: " + other.name); // ←ここで反応するか確認
         if (isCaptured) return;
 
         if (other.CompareTag("BigNet")) // 網オブジェクトのタグを"Net"に設定しておく
@@ -57,11 +60,10 @@ public class Sardine : MonoBehaviour
 
             // 捕獲されたことをスコア管理へ通知
             NetScoreCalculator scoreCalculator = FindObjectOfType<NetScoreCalculator>();
-            if (scoreCalculator != null)
-            {
-                // 🔹基礎スコアも一緒に渡すように変更
+            if (scoreCalculator == null)
+                Debug.Log("ScoreCalculator not found!");
+            else
                 scoreCalculator.AddCapturedFish(fishName, addRate, baseScore);
-            }
 
             // 捕獲演出などを入れたい場合はここにアニメーション等を追加
             Destroy(gameObject); // 魚を削除

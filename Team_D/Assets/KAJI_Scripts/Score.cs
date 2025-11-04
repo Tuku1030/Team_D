@@ -1,26 +1,33 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 
+// ğŸ¯ ã“ã¡ã‚‰ã¯ã‚¹ã‚³ã‚¢è¡¨ç¤ºç”¨
 public class Score : MonoBehaviour
 {
+    private int _Score = 0;              // å¾—ç‚¹ã®å¤‰æ•°
+    [SerializeField] private Text scoreText; // Inspectorã§ãƒ‰ãƒ©ãƒƒã‚°å¯èƒ½
 
-    private int _Score; @  //“¾“_‚Ì•Ï”
-    public Text ScoreText;  //“¾“_‚Ì•¶š‚Ì•Ï”
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _Score = 0; //“¾“_‚ğ‚O‚É‚·‚é
+        _Score = 0;
+        UpdateScoreText();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        ScoreText.text = "Score:" + _Score.ToString();
+        // æ¯ãƒ•ãƒ¬ãƒ¼ãƒ ã‚¹ã‚³ã‚¢ã‚’æ›´æ–°
+        UpdateScoreText();
+    }
 
-        if (Input.GetKey(KeyCode.P)) //‚à‚µAƒXƒy[ƒXƒL[‚ª‚¨‚³‚ê‚½‚çA
-        {
-            _Score += 1000; //Score‚ğ1000‚¸‚Â•Ï‚¦‚é
-        }
+    public void AddScore(int amount)
+    {
+        _Score += amount;
+        UpdateScoreText();
+    }
+
+    private void UpdateScoreText()
+    {
+        if (scoreText != null)
+            scoreText.text = $"Score: {_Score:0000}";
     }
 }

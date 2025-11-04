@@ -3,15 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags:
-  - Parent
-  - Trash
-  - Fish
-<<<<<<< HEAD
-  - Net
-  - BigNet
-=======
->>>>>>> e0f6bda141792b03770fdbc970bceb57de7621ae
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -48,12 +40,6 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: back
-    uniqueID: 3536856245
-    locked: 0
-  - name: Object
-    uniqueID: 2813163077
     locked: 0
   m_RenderingLayers:
   - Default

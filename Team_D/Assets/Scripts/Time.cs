@@ -11,7 +11,7 @@ public class CountDownTimer : MonoBehaviour
 
     void Start()
     {
-        totalTime = minute * 180 + seconds; // ‡Œv•b”‚ğŒvZ
+        totalTime = minute * 30 + seconds; // ‡Œv•b”‚ğŒvZ
         oldSeconds = totalTime;
         timerText = GetComponentInChildren<Text>();
     }

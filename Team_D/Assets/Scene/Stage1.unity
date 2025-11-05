@@ -141,9 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e485684a590ddd44b127f0ad0d79852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashPrefab: {fileID: 5738067815538834993, guid: acdbf9f6e295dad499623c549580a00e, type: 3}
-  spawnInterval: 7
-  maxFishCount: 5
 --- !u!1001 &172307857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -305,9 +302,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e485684a590ddd44b127f0ad0d79852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashPrefab: {fileID: 878788418936294998, guid: 44b649a343db7b344984bb2aec83a094, type: 3}
-  spawnInterval: 7
-  maxFishCount: 5
 --- !u!1001 &444950946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -457,7 +451,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: c79259c32ec860d4fb7bebc288291140, type: 3}
+  m_Resource: {fileID: 8300000, guid: f16177c36ca8e1240a37d0a17f158146, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -809,7 +803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13440cfa7ad561242ba965030a04844e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreText: {fileID: 1027569105}
+  scoreText: {fileID: 0}
 --- !u!114 &1027569105
 MonoBehaviour:
   m_ObjectHideFlags: 0

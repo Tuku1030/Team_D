@@ -4,6 +4,12 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using FishGame;
+
+public interface IFish
+{
+    NetScoreCalculator scoreCalculator { get; set; }
+}
 
 public class JellyFish : MonoBehaviour
 {

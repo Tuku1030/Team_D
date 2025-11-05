@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using FishGame;
 
-public class Trash : MonoBehaviour
+public class Trash : MonoBehaviour,IFish
 {
+    public NetScoreCalculator scoreCalculator { get; set; }
     public GameObject player;  // 移動対象
     public int speed = 3;      // 移動スピード
     Vector3 movePosition;      // 移動目標位置

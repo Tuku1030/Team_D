@@ -4,7 +4,7 @@ using UnityEngine.UI;
 // 🎯 こちらはスコア表示用
 public class Score : MonoBehaviour
 {
-    private int _Score = 0;              // 得点の変数
+    private int _Score = 0; // 得点の変数
     [SerializeField] private Text scoreText; // Inspectorでドラッグ可能
 
     void Start()
@@ -22,7 +22,7 @@ public class Score : MonoBehaviour
     public void AddScore(int amount)
     {
         _Score += amount;
-        UpdateScoreText();
+        UpdateScoreText(); // 追加したらすぐUIを更新
     }
 
     private void UpdateScoreText()

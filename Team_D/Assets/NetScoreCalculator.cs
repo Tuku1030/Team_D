@@ -1,22 +1,28 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
-using TMPro; // ← TextMeshPro用
+﻿using UnityEngine;
+using FishGame; // IFish 名前空間
+using System.Collections.Generic;
 
 public class NetScoreCalculator : MonoBehaviour
 {
     private Dictionary<string, (int count, float rate, int baseScore)> fishData = new();
-    private float _Score = 0;
+    private float _Score = 0; // 網ごとの内部スコア（UIには表示しない）
 
-    [SerializeField] private TextMeshProUGUI ScoreText; // TMP用
-
-    void Start()
+    void OnTriggerEnter(Collider other)
     {
-        if (ScoreText != null)
-            ScoreText.text = "Score: 0000";
+        // 魚に触れたら
+        IFish fish = other.GetComponent<IFish>();
+        if (fish != null)
+        {
+            AddCapturedFish(other.gameObject.name, 0.1f, 10);
+
+            // 魚を消す処理
+            Destroy(other.gameObject);
+        }
     }
 
     public void AddCapturedFish(string fishName, float addRate, int baseScore)
     {
+        // 網ごとの累計
         if (!fishData.ContainsKey(fishName))
             fishData[fishName] = (1, addRate, baseScore);
         else
@@ -26,22 +32,19 @@ public class NetScoreCalculator : MonoBehaviour
         }
 
         float addedScore = CalculateAddedScore(fishName);
-        _Score += addedScore;
+        _Score += addedScore; // 網専用（内部計算だけ）
 
-        Debug.Log("Score total: " + _Score);
+        // ゲーム全体スコアに加算
+        if (GameScoreManager.Instance != null)
+            GameScoreManager.Instance.AddScore(addedScore);
 
-        UpdateScoreText();
+        // デバッグ用
+        Debug.Log($"魚: {fishName}, 網スコア: {_Score}, 加算スコア: {addedScore}");
     }
 
     private float CalculateAddedScore(string fishName)
     {
         var (count, rate, baseScore) = fishData[fishName];
         return baseScore * (1 + rate * (count - 1));
-    }
-
-    private void UpdateScoreText()
-    {
-        if (ScoreText != null)
-            ScoreText.text = $"Score: {_Score:0000}";
     }
 }

@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using FishGame;
 
-public class Sardine : MonoBehaviour
+public class Sardine : MonoBehaviour, IFish
 {
+    public NetScoreCalculator scoreCalculator { get; set; }
     public GameObject player;  // 移動対象
     public int speed = 3;      // 移動スピード
     Vector3 movePosition;      // 移動目標位置
@@ -16,8 +18,6 @@ public class Sardine : MonoBehaviour
     public int baseScore = 10;                 // 🔹基礎スコアを追加
 
     private bool isCaptured = false; // 捕獲済み判定
-
-    public NetScoreCalculator scoreCalculator; // Inspectorでセット
 
     void Start()
     {
@@ -69,6 +69,7 @@ public class Sardine : MonoBehaviour
             Destroy(gameObject); // 魚を削除
         }
     }
+
 
     private Vector3 moveRandomPosition()
     {

@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using Random = UnityEngine.Random;
+using FishGame;
 
 public class FishSpawner : MonoBehaviour
 {
-    public GameObject fishPrefab;                   // 生成する魚のPrefab
-    public NetScoreCalculator scoreCalculator;     // Scene上のScoreManagerをセット
+    public GameObject[] fishPrefabs;              // 複数の魚Prefabに対応
+    public NetScoreCalculator scoreCalculator;    // Scene上のScoreManagerをセット
 
     [Header("生成設定")]
     public float spawnInterval = 7.0f;
@@ -25,7 +26,7 @@ public class FishSpawner : MonoBehaviour
 
     private void SpawnSingleFish()
     {
-        if (fishPrefab == null)
+        if (fishPrefabs == null || fishPrefabs.Length == 0)
         {
             Debug.LogError("Fish Prefabが設定されていません！");
             return;
@@ -36,14 +37,19 @@ public class FishSpawner : MonoBehaviour
 
         Vector3 spawnPosition = GetRandomSpawnPositionInRightThreeFifths();
 
-        GameObject fishObj = Instantiate(fishPrefab, spawnPosition, Quaternion.identity);
+        // ランダムに魚を選ぶ
+        int index = Random.Range(0, fishPrefabs.Length);
+        GameObject fishObj = Instantiate(fishPrefabs[index], spawnPosition, Quaternion.identity);
 
-        // ⚡ 生成した魚に ScoreManager をセット
-        Sardine sardine = fishObj.GetComponent<Sardine>();
-        if (sardine != null)
-            sardine.scoreCalculator = scoreCalculator;
+        IFish fish = fishObj.GetComponent<IFish>();
+        if (fish != null)
+        {
+            fish.scoreCalculator = scoreCalculator;
+        }
         else
-            Debug.LogWarning("生成した魚にSardineスクリプトがアタッチされていません！");
+        {
+            Debug.LogWarning("生成した魚にIFishがアタッチされていません！");
+        }
     }
 
     private Vector3 GetRandomSpawnPositionInRightThreeFifths()

@@ -60,5 +60,6 @@ public class PlayerUnit : MonoBehaviour
             Destroy(BigBulletIns, 0.2f); //一定時間経過で弾削除
             BigTimer = 0;                //タイマーリセット
         }
+
     }
 }

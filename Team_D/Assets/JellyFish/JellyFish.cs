@@ -1,7 +1,5 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using FishGame;
@@ -16,76 +14,102 @@ public class JellyFish : MonoBehaviour
     public GameObject player;  // 移動対象
     public int speed = 3;      // 移動スピード
     Vector3 movePosition;      // 移動目標位置
+
     [Header("魚データ設定")]
-    public string fishName = "JellyFish";  // 魚の種類名（例：アジ）
-    public float addRate = -0.2f;               // この魚1匹あたりの倍率加算値
-    public int baseScore = 0;                 // 🔹基礎スコアを追加
+    public string fishName = "JellyFish";
+    public float addRate = -0.2f;
+    public int baseScore = 0;
 
-    private bool isCaptured = false; // 捕獲済み判定
+    private bool isCaptured = false;
 
+    [Header("HP設定")]
+    public int maxHP = 3;        // 最大体力
+    public int currentHP;        // 現在体力
+
+    [Header("ハートUI")]
+    public HeartUI heartUI;      // ハートUIスクリプトをアタッチ
 
     void Start()
     {
-        movePosition = moveRandomPosition();  //②実行時、オブジェクトの目的地を設定
+        movePosition = moveRandomPosition();
+        currentHP = maxHP;
+        if (heartUI != null)
+        {
+            heartUI.currentHealth = currentHP;
+            heartUI.UpdateHearts();
+        }
     }
+
     void Update()
     {
-        if (movePosition == player.transform.position)  //②playerオブジェクトが目的地に到達すると、
+        if (movePosition == player.transform.position)
         {
-            movePosition = moveRandomPosition();  //②目的地を再設定
+            movePosition = moveRandomPosition();
         }
-        this.player.transform.position = Vector3.MoveTowards(player.transform.position, movePosition, speed * Time.deltaTime);  //①②playerオブジェクトが, 目的地に移動, 移動速度
-        // SpriteRendererコンポーネントを取得
+
+        this.player.transform.position = Vector3.MoveTowards(player.transform.position, movePosition, speed * Time.deltaTime);
+
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         if (player.transform.position.x < movePosition.x)
+            spriteRenderer.flipX = true;
+        else if (player.transform.position.x > movePosition.x)
+            spriteRenderer.flipX = false;
+    }
+
+    // HPを減らす関数
+    public void TakeDamage(int damage)
+    {
+        if (isCaptured) return;
+
+        currentHP -= damage;
+        if (currentHP < 0) currentHP = 0;
+
+        if (heartUI != null)
         {
-            if (spriteRenderer.flipX == false)
-            {
-                // X軸に反転を適用
-                spriteRenderer.flipX = true;
-            }
+            heartUI.currentHealth = currentHP;
+            heartUI.UpdateHearts();
         }
 
-
-        if (player.transform.position.x > movePosition.x)
+        if (currentHP == 0)
         {
-            if (spriteRenderer.flipX == true)
-            {
-                // X軸に反転を適用
-                spriteRenderer.flipX = false;
-            }
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        isCaptured = true;
+
+        // スコア計算
+        NetScoreCalculator scoreCalculator = FindObjectOfType<NetScoreCalculator>();
+        if (scoreCalculator != null)
+        {
+            scoreCalculator.AddCapturedFish(fishName, addRate, baseScore);
+        }
+
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (isCaptured) return;
 
-        if (other.CompareTag("BigNet")) // 網オブジェクトのタグを"Net"に設定しておく
+        if (other.CompareTag("BigNet"))
         {
+            TakeDamage(1); // HPを1減らす
             isCaptured = true;
-
-            // 捕獲されたことをスコア管理へ通知
-            NetScoreCalculator scoreCalculator = FindObjectOfType<NetScoreCalculator>();
-            if (scoreCalculator != null)
-            {
-                // 🔹基礎スコアも一緒に渡すように変更
-                scoreCalculator.AddCapturedFish(fishName, addRate, baseScore);
-            }
-
-            // 捕獲演出などを入れたい場合はここにアニメーション等を追加
-            Destroy(gameObject); // 魚を削除
+            Destroy(gameObject); // 即削除
         }
+
         if (other.CompareTag("Net"))
         {
             isCaptured = true;
-            Destroy(gameObject);
+            Destroy(gameObject); // 即削除
         }
     }
 
-    private Vector3 moveRandomPosition()  // 目的地を生成、xとyのポジションをランダムに値を取得 
+    private Vector3 moveRandomPosition()
     {
-        Vector3 randomPosi = new Vector3(Random.Range(-4, 10), Random.Range(-5, 5), 1);
-        return randomPosi;
+        return new Vector3(Random.Range(-4, 10), Random.Range(-5, 5), 1);
     }
 }

@@ -41,6 +41,7 @@ public class FishSpawner : MonoBehaviour
         int index = Random.Range(0, fishPrefabs.Length);
         GameObject fishObj = Instantiate(fishPrefabs[index], spawnPosition, Quaternion.identity);
 
+        // IFish スコア設定
         IFish fish = fishObj.GetComponent<IFish>();
         if (fish != null)
         {
@@ -50,7 +51,16 @@ public class FishSpawner : MonoBehaviour
         {
             Debug.LogWarning("生成した魚にIFishがアタッチされていません！");
         }
+
+        // ↓ ここから追加 HeartUI セット
+        JellyFish jellyScript = fishObj.GetComponent<JellyFish>();
+        if (jellyScript != null)
+        {
+            // Scene 上にある HeartUI を自動でセット
+            jellyScript.heartUI = FindObjectOfType<HeartUI>();
+        }
     }
+
 
     private Vector3 GetRandomSpawnPositionInRightThreeFifths()
     {

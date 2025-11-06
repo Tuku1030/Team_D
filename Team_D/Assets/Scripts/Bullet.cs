@@ -8,7 +8,11 @@ public class Bullet : MonoBehaviour
         if (other.CompareTag("Trash"))
         {
             Destroy(gameObject);       // 弾を消す
-            Destroy(other.gameObject); // 敵も消す（不要ならこの行を消す）
+            Destroy(other.gameObject); // 敵も消す
         }
+    }
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject); // 画面外に出たら弾を消す
     }
 }

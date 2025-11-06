@@ -48,8 +48,8 @@ public class PlayerUnit : MonoBehaviour
 
             
 
-            Destroy(BulletIns, 1.5f);    //一定時間経過で弾削除
-                Timer = 0; ;              //タイマーリセット
+            //Destroy(BulletIns, 1.5f);    //一定時間経過で弾削除
+                //Timer = 0; ;              //タイマーリセット
         }
         
         if(Input.GetKeyDown(KeyCode.Space) && BigTimer > 5.0f)

@@ -1,54 +1,55 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class PlayerHP : MonoBehaviour
 {
-   
-    public GameObject HPIcon; //HPアイコンのプレハブ
+    public GameObject HPIcon;       // HPアイコンのプレハブ
+    public int maxHP = 3;            // 最大HP
+    public int currentHP;            // 現在のHP
 
-    private PlayerContller Player; //プレイヤーコントローラーのスクリプトを取得
-    private int BeforeHP;          //前回のHPを記録
+    private Image[] icons;           // 生成したアイコンを保持
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Player = FindObjectOfType<PlayerContller>();
-        BeforeHP = Player.GetHP();
+        currentHP = maxHP;
         CreateHPIcon();
+        UpdateHPIcons();
     }
 
     private void CreateHPIcon()
     {
-        //プレイヤーのHPの数だけアイコンを生成
-        for(int i = 0; i<Player.GetHP(); i++)
+        icons = new Image[maxHP];
+        for (int i = 0; i < maxHP; i++)
         {
-            GameObject PlayerHPObj = Instantiate(HPIcon);
-            PlayerHPObj.transform.SetParent(transform);  //親（HP）オブジェクトに設定
+            GameObject obj = Instantiate(HPIcon);
+            obj.transform.SetParent(transform, false);
+            icons[i] = obj.GetComponent<Image>();
+        }
+    }
+    private void UpdateHPIcons()
+    {
+        for (int i = 0; i < icons.Length; i++)
+        {
+            if (icons[i] != null)
+                icons[i].gameObject.SetActive(i < currentHP);
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    // ダメージを受ける
+    public void TakeDamage(int amount)
     {
-        ShowHPIcon(); //HPの変化をチェック
+        currentHP -= amount;
+        if (currentHP < 0) currentHP = 0;
+
+        UpdateHPIcons();
     }
 
-    private void ShowHPIcon()
+    // 回復する
+    public void Heal(int amount)
     {
-        //HPが変わっていなければ何もしない
-        if (BeforeHP == Player.GetHP()) return;
+        currentHP += amount;
+        if (currentHP > maxHP) currentHP = maxHP;
 
-        //すべてのHPアイコンを取得
-        Image[] Icons = transform.GetComponentsInChildren<Image>();
-
-        //現在のHP以下のアイコンのみ表示、それ以外は非表示
-        for(int i = 0; i<Icons.Length; i++)
-        {
-            Icons[i].gameObject.SetActive(i < Player.GetHP());
-        }
-
-        BeforeHP = Player.GetHP();
+        UpdateHPIcons();
     }
 }

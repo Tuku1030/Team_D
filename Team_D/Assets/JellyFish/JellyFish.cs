@@ -8,7 +8,6 @@ public class JellyFish : MonoBehaviour
     private Vector3 movePosition;
 
     [Header("移動範囲")]
-    public float minX = -4f, maxX = 10f, minY = -5f, maxY = 5f;
     public HeartUI heartUI; // JellyFish スクリプト内
     private bool isCaptured = false;
 
@@ -37,7 +36,7 @@ public class JellyFish : MonoBehaviour
 
     private Vector3 GetRandomPosition()
     {
-        return new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), 0);
+        return new Vector3(Random.Range(-4, 10), Random.Range(-5, 5), 1);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

@@ -22,22 +22,12 @@ public class JellyFish : MonoBehaviour
 
     private bool isCaptured = false;
 
-    [Header("HP設定")]
-    public int maxHP = 3;        // 最大体力
-    public int currentHP;        // 現在体力
-
     [Header("ハートUI")]
     public HeartUI heartUI;      // ハートUIスクリプトをアタッチ
 
     void Start()
     {
         movePosition = moveRandomPosition();
-        currentHP = maxHP;
-        if (heartUI != null)
-        {
-            heartUI.currentHealth = currentHP;
-            heartUI.UpdateHearts();
-        }
     }
 
     void Update()
@@ -57,24 +47,7 @@ public class JellyFish : MonoBehaviour
     }
 
     // HPを減らす関数
-    public void TakeDamage(int damage)
-    {
-        if (isCaptured) return;
-
-        currentHP -= damage;
-        if (currentHP < 0) currentHP = 0;
-
-        if (heartUI != null)
-        {
-            heartUI.currentHealth = currentHP;
-            heartUI.UpdateHearts();
-        }
-
-        if (currentHP == 0)
-        {
-            Die();
-        }
-    }
+   
 
     private void Die()
     {
@@ -92,15 +65,17 @@ public class JellyFish : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (isCaptured) return;
-
         if (other.CompareTag("BigNet"))
         {
-            TakeDamage(1); // HPを1減らす
-            isCaptured = true;
-            Destroy(gameObject); // 即削除
+            // プレイヤーのHPを1減らす
+            PlayerHP playerHP = FindObjectOfType<PlayerHP>();
+            if (playerHP != null)
+            {
+                playerHP.TakeDamage(1);
+            }
+            // クラゲは消える
+            Destroy(gameObject);
         }
-
         if (other.CompareTag("Net"))
         {
             isCaptured = true;

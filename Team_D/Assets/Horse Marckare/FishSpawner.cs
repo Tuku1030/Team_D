@@ -47,10 +47,6 @@ public class FishSpawner : MonoBehaviour
         {
             fish.scoreCalculator = scoreCalculator;
         }
-        else
-        {
-            Debug.LogWarning("生成した魚にIFishがアタッチされていません！");
-        }
 
         // ↓ ここから追加 HeartUI セット
         JellyFish jellyScript = fishObj.GetComponent<JellyFish>();

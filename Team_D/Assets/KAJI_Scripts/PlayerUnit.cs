@@ -22,10 +22,7 @@ public class PlayerUnit : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        BulletPoint = transform.Find("Bullet_Point").localPosition;
-        BigBulletPoint = transform.Find("BigBullet_Point").localPosition;
-
-       
+        
     }
 
     // Update is called once per frame

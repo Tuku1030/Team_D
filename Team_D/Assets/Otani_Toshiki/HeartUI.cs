@@ -10,25 +10,27 @@ public class HeartUI : MonoBehaviour
     public Sprite fullHeart;      // 赤ハート
     public Sprite emptyHeart;     // 空ハート
 
-    [Header("現在の体力")]
-    public int currentHealth = 3; // 体力（0～3）
-
     /// <summary>
     /// 体力に応じてハートを更新
     /// </summary>
-    public void UpdateHearts()
+    public void UpdateHearts(int currentHealth)
     {
+        if (hearts == null || hearts.Length == 0)
+        {
+            Debug.LogWarning("ハートが設定されていません！");
+            return;
+        }
+
         for (int i = 0; i < hearts.Length; i++)
         {
-            if (i < currentHealth)
-                hearts[i].sprite = fullHeart;
-            else
-                hearts[i].sprite = emptyHeart;
+            if (hearts[i] != null)
+                hearts[i].sprite = (i < currentHealth) ? fullHeart : emptyHeart;
         }
     }
 
     void Start()
     {
-        UpdateHearts(); // 最初にハートを更新
+        // 初期表示は全回復状態
+        UpdateHearts(hearts.Length);
     }
 }

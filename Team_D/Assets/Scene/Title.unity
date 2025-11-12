@@ -566,8 +566,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51d47113dd5af5449446e2227d223f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Out: 0
-  In: 1
 --- !u!114 &1151424119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,6 +801,7 @@ GameObject:
   - component: {fileID: 1503232996}
   - component: {fileID: 1503232995}
   - component: {fileID: 1503232997}
+  - component: {fileID: 1503232998}
   m_Layer: 5
   m_Name: STAGE SELECT
   m_TagString: Untagged
@@ -979,6 +978,20 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1503232998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503232990}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a46fbc8abca843b3a095e3f7b6ea63f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DebugMode: 0
+  fadeColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &2034065264
 GameObject:
   m_ObjectHideFlags: 0

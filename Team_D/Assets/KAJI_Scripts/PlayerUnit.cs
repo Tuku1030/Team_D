@@ -1,62 +1,89 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class PlayerUnit : MonoBehaviour
 {
-    public GameObject BigBullet; //巨大網（弾）の変数
-    public GameObject Bullet;    //小網（弾）の変数
-    public float Speed;          //弾の速度
+    [Header("弾の設定")]
+    public GameObject Bullet;      // 小網の弾プレハブ
+    public GameObject BigBullet;   // 巨大網の弾プレハブ
+    public float Speed = 10f;      // 弾の速度
 
-    
-    private GameObject BulletIns;
-    private GameObject BigBulletIns;
-    private Vector2 MousePos;
-    private Vector2 Angle;
 
-    Vector3 BigBulletPoint; //巨大網の（弾）発射位置
-    Vector3 BulletPoint;    //小網（弾）の発射位置
-    float Timer;//小網タイマー
-    float BigTimer;//巨大網タイマー
-   
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [Header("効果音")]
+    public AudioClip bulletSound;     // 小網の発射音
+    public AudioClip bigBulletSound;  // 巨大網の発射音
+                                      // 内部変数
+    private AudioSource audioSource;  // 効果音再生用
+    private float bulletTimer;        // 小網用タイマー
+    private float bigBulletTimer;     // 巨大網用タイマー
+                                      // 発射位置オフセット（必要ならInspectorで調整可能）
+    public Vector3 BulletPoint = Vector3.zero;
+    public Vector3 BigBulletPoint = Vector3.zero;
     void Start()
     {
-        
+        // AudioSourceがなければ自動で追加
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
-
-    // Update is called once per frame
     void Update()
     {
-        Timer += Time.deltaTime;    //経過時間加算
-        BigTimer += Time.deltaTime; //経過時間加算
-
-        MousePos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-       
-        if (Input.GetMouseButtonDown(0) && Timer > 1.0f)//左クリックで弾を発射
+        bulletTimer += Time.deltaTime;
+        bigBulletTimer += Time.deltaTime;
+        // マウス位置を取得（2D座標）
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        // --- 小網発射（左クリック） ---
+        if (Input.GetMouseButtonDown(0) && bulletTimer > 1.0f)
         {
-            
-
-                //弾の生成
-                BulletIns = Instantiate(Bullet, transform.position + BulletPoint, Quaternion.identity);
-                Vector2 Angle = (MousePos - (Vector2)transform.position).normalized;
-                BulletIns.GetComponent<Rigidbody2D>().linearVelocity = Angle * Speed;
-
-            
-
-            //Destroy(BulletIns, 1.5f);    //一定時間経過で弾削除
-                //Timer = 0; ;              //タイマーリセット
+            FireBullet(Bullet, mousePos, bulletSound);
+            bulletTimer = 0f;
         }
-        
-        if(Input.GetKeyDown(KeyCode.Space) && BigTimer > 5.0f)
+        // --- 巨大網発射（スペースキー） ---
+        if (Input.GetKeyDown(KeyCode.Space) && bigBulletTimer > 5.0f)
         {
-           
-
-            BigBulletIns = Instantiate(BigBullet,transform.position + BigBulletPoint, Quaternion.identity);
-            Destroy(BigBulletIns, 0.1f); //一定時間経過で弾削除
-            BigTimer = 0;                //タイマーリセット
+            FireBigBullet(BigBullet, mousePos, bigBulletSound);
+            bigBulletTimer = 0f;
         }
+    }
+    /// <summary>
+    /// 小網を発射する処理
+    /// </summary>
+    private void FireBullet(GameObject bulletPrefab, Vector2 targetPos, AudioClip sound)
+    {
+        // 弾生成
+        GameObject bullet = Instantiate(bulletPrefab, transform.position + BulletPoint, Quaternion.identity);
 
+
+
+        // 発射方向計算
+        Vector2 angle = (targetPos - (Vector2)transform.position).normalized;
+        bullet.GetComponent<Rigidbody2D>().linearVelocity = angle * Speed;
+        // 効果音再生
+        PlaySound(sound);
+        // 時間で自動削除（2.5秒後）
+        Destroy(bullet, 2.5f);
+    }
+  
+    /// <summary>
+    /// 巨大網を発射する処理
+    /// </summary>
+    private void FireBigBullet(GameObject bigBulletPrefab, Vector2 targetPos, AudioClip sound)
+    {
+        GameObject bigBullet = Instantiate(bigBulletPrefab, transform.position + BigBulletPoint, Quaternion.identity);
+        PlaySound(sound);
+        // すぐ消す設定（必要なら残してOK）
+         Destroy(bigBullet, 0.1f);
+    }
+    /// <summary>
+    /// 効果音を再生する
+    /// </summary>
+    private void PlaySound(AudioClip clip)
+    {
+        if (clip != null)
+        {
+            audioSource.PlayOneShot(clip);
+        }
     }
 }

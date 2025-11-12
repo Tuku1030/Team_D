@@ -40,7 +40,7 @@ public class PlayerHP : MonoBehaviour
     private void UpdateUI()
     {
         if (heartUI != null)
-        {;
+        {
             // OK‚È‘‚«•û
             heartUI.UpdateHearts(currentHP);
         }

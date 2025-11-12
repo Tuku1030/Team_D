@@ -4,6 +4,9 @@ using FishGame;
 
 public class FishSpawner : MonoBehaviour
 {
+    int fishtimer;
+    int trashtimer;
+
     [Header("生成する魚たち")]
     public GameObject[] fishPrefabs;              // 複数の魚Prefabに対応
     public NetScoreCalculator scoreCalculator;    // Scene上のScoreManagerをセット
@@ -14,7 +17,6 @@ public class FishSpawner : MonoBehaviour
 
     [Tooltip("このSpawnerで同時に生成できる魚の上限")]
     public int maxFishCount = 10;
-
     private float timeElapsed = 0f;
 
     void Update()
@@ -38,12 +40,10 @@ public class FishSpawner : MonoBehaviour
 
         GameObject[] currentFish = GameObject.FindGameObjectsWithTag("Fish");
         if (currentFish.Length >= maxFishCount) return;
-
         Vector3 spawnPosition = GetRandomSpawnPositionInRightThreeFifths();
 
         int index = Random.Range(0, fishPrefabs.Length);
         GameObject fishObj = Instantiate(fishPrefabs[index], spawnPosition, Quaternion.identity);
-
         // スコア設定
         IFish fish = fishObj.GetComponent<IFish>();
         if (fish != null)

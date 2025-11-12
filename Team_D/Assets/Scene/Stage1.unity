@@ -290,6 +290,26 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65261aff73708a94f95b47cab301712c, type: 3}
+--- !u!1 &594192354 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2723953174116219674, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
+  m_PrefabInstance: {fileID: 1588721846}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &594192357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594192354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fae9855da2d05b54e9ee968e08b65d96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trashPrefabs:
+  - {fileID: 2945283598808273586, guid: 84b375c8cbc9faf42b0d12bf9b2c28d0, type: 3}
+  spawnInterval: 5
 --- !u!4 &725447381 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3007508790902275349, guid: 31de77b46d0d55d4c95b04051ff738da, type: 3}
@@ -630,6 +650,26 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &1085083710 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7588478701606850813, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
+  m_PrefabInstance: {fileID: 1792615433}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1085083713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085083710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fae9855da2d05b54e9ee968e08b65d96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trashPrefabs:
+  - {fileID: 1278609912743974112, guid: 44b649a343db7b344984bb2aec83a094, type: 3}
+  spawnInterval: 7
 --- !u!224 &1096241208 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4222860354298172498, guid: 3fbe3bd106928504899aa2e9de7dfef4, type: 3}
@@ -1108,13 +1148,20 @@ PrefabInstance:
       value: FishSpawner Trash
       objectReference: {fileID: 0}
     - target: {fileID: 8696051986483828561, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696051986483828561, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: scoreCalculator
       value: 
       objectReference: {fileID: 130012847}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2723953174116219674, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 594192357}
   m_SourcePrefab: {fileID: 100100000, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
 --- !u!1001 &1610524845
 PrefabInstance:
@@ -1530,6 +1577,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1729985284482104502, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729985284482104502, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
+      propertyPath: spawnInterval
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729985284482104502, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
       propertyPath: scoreCalculator
       value: 
       objectReference: {fileID: 130012847}
@@ -1585,10 +1640,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: FishSpowner Jelly Fish
       objectReference: {fileID: 0}
+    - target: {fileID: 7588478701606850813, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
+      propertyPath: m_TagString
+      value: Trash
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7588478701606850813, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1085083713}
   m_SourcePrefab: {fileID: 100100000, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
 --- !u!1001 &1826213674
 PrefabInstance:

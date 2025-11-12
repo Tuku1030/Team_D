@@ -1059,6 +1059,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 850321092731765795, guid: 31de77b46d0d55d4c95b04051ff738da, type: 3}
+      propertyPath: bulletSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5510fa9a77be68d4394c372b107ef1a8, type: 3}
+    - target: {fileID: 850321092731765795, guid: 31de77b46d0d55d4c95b04051ff738da, type: 3}
+      propertyPath: bigBulletSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 90651d1fd792b9b4c84b155e9d9c6c03, type: 3}
     - target: {fileID: 3007508790902275349, guid: 31de77b46d0d55d4c95b04051ff738da, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.18289073

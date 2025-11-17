@@ -1,10 +1,27 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class RestartButton : MonoBehaviour
+public class GameOverManager : MonoBehaviour
 {
-    public void OnRestart()
+    public static string lastStage;  // 死んだステージ名
+
+
+
+    void Awake()
     {
-        SceneManager.LoadScene(GameOverManager.lastStage);
+        DontDestroyOnLoad(gameObject);  // シーンをまたいでも残す
+    }
+    public static void GameOver()
+    {
+        // 今のステージ名を保存
+        lastStage = SceneManager.GetActiveScene().name;
+        // ゲームオーバーシーンへ移動
+        SceneManager.LoadScene("GameOver");
+    }
+    // ゲームオーバーシーンのボタンから呼ぶ用
+    public void RestartGame()
+    {
+        // 保存していたステージへ戻る
+        SceneManager.LoadScene(lastStage);
     }
 }

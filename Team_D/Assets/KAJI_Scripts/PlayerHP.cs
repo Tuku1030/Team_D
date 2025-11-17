@@ -51,7 +51,9 @@ public class PlayerHP : MonoBehaviour
     }
     private void GameOver()
     {
+        GameOverManager.GameOver();
         // "GameOverScene" はあなたのゲームオーバーシーンの名前に置き換えてください
-        SceneManager.LoadScene("GameOver");
+        //SceneManager.LoadScene("GameOver");
     }
 }
+

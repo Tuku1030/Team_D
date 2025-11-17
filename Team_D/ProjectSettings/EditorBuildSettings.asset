@@ -36,7 +36,7 @@ EditorBuildSettings:
     path: Assets/Scene/result.unity
     guid: 0a98ac2498ff8f144aeaa7142231ac14
   - enabled: 1
-    path: Assets/Scene/GameOver.unity
+    path: Assets/Scene/GameOver1.unity
     guid: 0261ff5a034be254a89312718737a24f
   - enabled: 1
     path: Assets/Horse Marckare/SampleScene.unity

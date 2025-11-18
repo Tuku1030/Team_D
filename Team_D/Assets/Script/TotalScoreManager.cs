@@ -12,9 +12,14 @@ public class GameScoreManager : MonoBehaviour
     void Awake()
     {
         if (Instance == null)
+        {
             Instance = this;
+            DontDestroyOnLoad(gameObject);  // ← これが絶対必要！！
+        }
         else
+        {
             Destroy(gameObject);
+        }
     }
 
     // スコア加算用

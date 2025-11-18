@@ -302,14 +302,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594192354}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fae9855da2d05b54e9ee968e08b65d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashPrefabs:
-  - {fileID: 2945283598808273586, guid: 84b375c8cbc9faf42b0d12bf9b2c28d0, type: 3}
+  trash1: {fileID: 0}
+  trash2: {fileID: 0}
+  trash3: {fileID: 0}
   spawnInterval: 5
+  maxTrashCount: 10
 --- !u!4 &725447381 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3007508790902275349, guid: 31de77b46d0d55d4c95b04051ff738da, type: 3}
@@ -667,9 +669,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fae9855da2d05b54e9ee968e08b65d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashPrefabs:
-  - {fileID: 1278609912743974112, guid: 44b649a343db7b344984bb2aec83a094, type: 3}
+  trash1: {fileID: 0}
+  trash2: {fileID: 0}
+  trash3: {fileID: 0}
   spawnInterval: 7
+  maxTrashCount: 10
 --- !u!224 &1096241208 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4222860354298172498, guid: 3fbe3bd106928504899aa2e9de7dfef4, type: 3}
@@ -688,6 +692,14 @@ PrefabInstance:
       value: HeartContainer
       objectReference: {fileID: 0}
     - target: {fileID: 6510686152045709677, guid: 7f4e049a13607474c86ec2d3531f10b2, type: 3}
+      propertyPath: fullHeart
+      value: 
+      objectReference: {fileID: 2350297403280568894, guid: 8e74ce8fc7a25564993effe59e21f753, type: 3}
+    - target: {fileID: 6510686152045709677, guid: 7f4e049a13607474c86ec2d3531f10b2, type: 3}
+      propertyPath: emptyHeart
+      value: 
+      objectReference: {fileID: -705465144167411356, guid: 7225580f6088dbb49827d2151bcdce84, type: 3}
+    - target: {fileID: 6510686152045709677, guid: 7f4e049a13607474c86ec2d3531f10b2, type: 3}
       propertyPath: 'hearts.Array.data[0]'
       value: 
       objectReference: {fileID: 1610524848}
@@ -699,6 +711,10 @@ PrefabInstance:
       propertyPath: 'hearts.Array.data[2]'
       value: 
       objectReference: {fileID: 1610524846}
+    - target: {fileID: 7977852499039894836, guid: 7f4e049a13607474c86ec2d3531f10b2, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7992503065690349798, guid: 7f4e049a13607474c86ec2d3531f10b2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -976,14 +992,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51d47113dd5af5449446e2227d223f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0.02
-  red: 0
-  green: 0
-  blue: 0
-  alfa: 0
-  Out: 0
-  In: 1
-  fadeImage: {fileID: 0}
 --- !u!114 &1466731250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1109,6 +1117,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4817877618188080646, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
+      propertyPath: trash2
+      value: 
+      objectReference: {fileID: 337184145366031127, guid: ff1f230df03f29a4b8c9dd426ff9facd, type: 3}
+    - target: {fileID: -4817877618188080646, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
+      propertyPath: trash3
+      value: 
+      objectReference: {fileID: 337184145366031127, guid: ff1f230df03f29a4b8c9dd426ff9facd, type: 3}
     - target: {fileID: 1093287570395796906, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.24409
@@ -1332,6 +1348,10 @@ PrefabInstance:
     - target: {fileID: 5302199996572584566, guid: 3fbe3bd106928504899aa2e9de7dfef4, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622076815952993221, guid: 3fbe3bd106928504899aa2e9de7dfef4, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6328979193552534101, guid: 3fbe3bd106928504899aa2e9de7dfef4, type: 3}
       propertyPath: m_Name

@@ -86,7 +86,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &2789811212560374275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +208,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3992763136021697685, guid: 0b55d8713bff50d4b95107c3ebe20017, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2350297403280568894, guid: 8e74ce8fc7a25564993effe59e21f753, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -322,6 +326,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3992763136021697685, guid: 0b55d8713bff50d4b95107c3ebe20017, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2350297403280568894, guid: 8e74ce8fc7a25564993effe59e21f753, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -436,6 +444,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3992763136021697685, guid: 0b55d8713bff50d4b95107c3ebe20017, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2350297403280568894, guid: 8e74ce8fc7a25564993effe59e21f753, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

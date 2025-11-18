@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5b101196e200b034fadb0e24cb630154
+guid: 7225580f6088dbb49827d2151bcdce84
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -103,10 +103,10 @@ TextureImporter:
       name: EmptyHeart_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 15
-        width: 164
-        height: 150
+        x: 152
+        y: 359
+        width: 1113
+        height: 906
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

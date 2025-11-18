@@ -5,17 +5,17 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 using FishGame;
 
-public class Snapper : MonoBehaviour, IFish
+public class Tuna : MonoBehaviour, IFish
 {
     public NetScoreCalculator scoreCalculator { get; set; }
     public GameObject player;  // 移動対象
-    public int speed = 2;      // 移動スピード
+    public int speed = 5;      // 移動スピード
     Vector3 movePosition;      // 移動目標位置
 
     [Header("魚データ設定")]
-    public string fishName = "HorseMackerel";  // 魚の種類名（例：アジ）
-    public float addRate = 0.2f;               // この魚1匹あたりの倍率加算値
-    public int baseScore = 20;                 // 🔹基礎スコアを追加
+    public string fishName = "Tuna";  // 魚の種類名（例：アジ）
+    public float addRate = 0.5f;               // この魚1匹あたりの倍率加算値
+    public int baseScore = 50;                 // 🔹基礎スコアを追加
 
     private bool isCaptured = false; // 捕獲済み判定
 
@@ -72,6 +72,6 @@ public class Snapper : MonoBehaviour, IFish
 
     private Vector3 moveRandomPosition()
     {
-        return new Vector3(Random.Range(-4, 10), Random.Range(-5, 5), 1);
+        return new Vector3(Random.Range(-4, 10), Random.Range(-5, 5), speed);
     }
 }

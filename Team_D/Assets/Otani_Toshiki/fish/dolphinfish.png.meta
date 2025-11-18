@@ -109,12 +109,12 @@ TextureImporter:
       name: dolphinfish_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 39
-        width: 901
-        height: 1965
+        x: 402
+        y: 0
+        width: 1969
+        height: 898
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -131,12 +131,12 @@ TextureImporter:
       name: dolphinfish_1
       rect:
         serializedVersion: 2
-        x: 263
-        y: 1999
-        width: 37
-        height: 38
+        x: 396
+        y: 0
+        width: 1965
+        height: 901
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: dolphinfish_2
       rect:
         serializedVersion: 2
-        x: 29
-        y: 441
-        width: 8
-        height: 9
+        x: 1950
+        y: 29
+        width: 9
+        height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8f3312e1ecebd0749be0fdd642f97302
     internalID: 0
     vertices: []
     indices: 

@@ -103,12 +103,12 @@ TextureImporter:
       name: BigBullet3_0
       rect:
         serializedVersion: 2
-        x: 211
+        x: 84
         y: 451
-        width: 1221
+        width: 1348
         height: 747
       alignment: 9
-      pivot: {x: 0.03760843, y: 0.50000024}
+      pivot: {x: 0.13243741, y: 0.50000024}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

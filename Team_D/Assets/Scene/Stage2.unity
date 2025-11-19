@@ -2205,6 +2205,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hero
       objectReference: {fileID: 0}
+    - target: {fileID: 7645668874528676724, guid: 31de77b46d0d55d4c95b04051ff738da, type: 3}
+      propertyPath: Speed
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 7804205612897375033, guid: 31de77b46d0d55d4c95b04051ff738da, type: 3}
       propertyPath: heartUI
       value: 

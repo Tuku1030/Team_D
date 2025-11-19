@@ -74,7 +74,7 @@ public class PlayerUnit : MonoBehaviour
         GameObject bigBullet = Instantiate(bigBulletPrefab, transform.position + BigBulletPoint, Quaternion.identity);
         PlaySound(sound);
         // すぐ消す設定（必要なら残してOK）
-         Destroy(bigBullet, 0.1f);
+         Destroy(bigBullet, 0.2f);
     }
     /// <summary>
     /// 効果音を再生する

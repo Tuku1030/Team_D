@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 92ec4e99e33cae642b8992f4aa4cb7b2
+guid: b02c2e084d6550940a6a61a92d75ac92
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 949713535125071347
-    second: BigBullet2_0
+      213: -1300464181056879619
+    second: BigBullett1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BigBullet2_0
+      name: BigBullett1_0
       rect:
         serializedVersion: 2
         x: 43
@@ -108,15 +108,15 @@ TextureImporter:
         width: 1500
         height: 1200
       alignment: 9
-      pivot: {x: 0.12, y: 0.2436157}
+      pivot: {x: 0.12, y: 0.24361566}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3f5a28bad6f0e2d00800000000000000
-      internalID: 949713535125071347
+      spriteID: df34cfca7b2d3fde0800000000000000
+      internalID: -1300464181056879619
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c9ddde621d0a2f246a1a655d4388fd9e
+    spriteID: a1eb6dab9685b5e4fb42b65c32050809
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BigBullet2_0: 949713535125071347
+      BigBullett1_0: -1300464181056879619
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

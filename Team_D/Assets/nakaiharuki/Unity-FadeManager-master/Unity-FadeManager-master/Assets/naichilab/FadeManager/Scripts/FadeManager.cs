@@ -18,7 +18,7 @@ public class FadeManager : MonoBehaviour
 	public static FadeManager Instance {
 		get {
 			if (instance == null) {
-				instance = (FadeManager)FindObjectOfType (typeof(FadeManager));
+				instance = (FadeManager)FindFirstObjectByType (typeof(FadeManager));
 				
 				if (instance == null) {
 					Debug.LogError (typeof(FadeManager) + "is nothing");

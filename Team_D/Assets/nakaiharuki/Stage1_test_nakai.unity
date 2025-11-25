@@ -1115,7 +1115,7 @@ PrefabInstance:
     - target: {fileID: -4817877618188080646, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: trash2
       value: 
-      objectReference: {fileID: 337184145366031127, guid: ff1f230df03f29a4b8c9dd426ff9facd, type: 3}
+      objectReference: {fileID: 8009428433405988639, guid: c2530d7e5a93bc14aa718a8c268bee78, type: 3}
     - target: {fileID: -4817877618188080646, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: trash3
       value: 
@@ -1166,12 +1166,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8696051986483828561, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8696051986483828561, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: scoreCalculator
       value: 
       objectReference: {fileID: 130012847}
+    - target: {fileID: 8696051986483828561, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
+      propertyPath: fishPrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696051986483828561, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
+      propertyPath: 'fishPrefabs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8009428433405988639, guid: c2530d7e5a93bc14aa718a8c268bee78, type: 3}
+    - target: {fileID: 8696051986483828561, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
+      propertyPath: 'fishPrefabs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 337184145366031127, guid: ff1f230df03f29a4b8c9dd426ff9facd, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1763,7 +1775,7 @@ PrefabInstance:
     - target: {fileID: 5619216163436251164, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: BigBullet
       value: 
-      objectReference: {fileID: 451330964761615982, guid: 8f691c5b692d0844e9ca803de56107d2, type: 3}
+      objectReference: {fileID: 451330964761615982, guid: 85eb4252ab2d7fc429f58cf632e5ab27, type: 3}
     - target: {fileID: 7335481038751045291, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: Speed
       value: 0.03

@@ -14,7 +14,7 @@ public class Tray : MonoBehaviour, IFish
     Vector3 movePosition;      // 移動目標位置
 
     [Header("魚データ設定")]
-    public string fishName = "Tray";  // 魚の種類名
+    public string fishName = "Bottle";  // 魚の種類名
     public float addRate = -0.3f;               // この魚1匹あたりの倍率加算値
     public int baseScore = 0;                 // 🔹基礎スコアを追加
     private bool isCaptured = false; // 捕獲済み判定

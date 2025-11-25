@@ -1224,11 +1224,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &451330965422410046 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 859370452643356950, guid: 459ca911de678c14285f0a4f78b07762, type: 3}
-  m_PrefabInstance: {fileID: 3055320448598973931}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3055320448598973931
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1301,7 +1296,7 @@ PrefabInstance:
     - target: {fileID: 5619216163436251164, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: BigBullet
       value: 
-      objectReference: {fileID: 451330965422410046}
+      objectReference: {fileID: 859370452643356950, guid: 459ca911de678c14285f0a4f78b07762, type: 3}
     - target: {fileID: 7621561756415070793, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.1574

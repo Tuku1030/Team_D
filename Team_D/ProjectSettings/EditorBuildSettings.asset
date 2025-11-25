@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/StageSelect.unity
     guid: 6a8c583cd35501741b67309737f10bf2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/Achivement.unity
     guid: 020f5656ebde3974391c955db120614a
   - enabled: 1
@@ -38,7 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/GameOver.unity
     guid: 0261ff5a034be254a89312718737a24f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Horse Marckare/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects:

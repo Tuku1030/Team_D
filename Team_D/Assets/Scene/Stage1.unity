@@ -324,6 +324,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FishSpowner Sardine
       objectReference: {fileID: 0}
+    - target: {fileID: 621495819229303722, guid: a964d7d89e3b13f468c4aa0b64d602c4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4067635794965291347, guid: a964d7d89e3b13f468c4aa0b64d602c4, type: 3}
       propertyPath: scoreCalculator
       value: 
@@ -659,7 +663,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085083710}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fae9855da2d05b54e9ee968e08b65d96, type: 3}
   m_Name: 
@@ -669,6 +673,21 @@ MonoBehaviour:
   trash3: {fileID: 0}
   spawnInterval: 7
   maxTrashCount: 10
+--- !u!114 &1085083716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085083710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7888a3e5f099338438eefa250f40750f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jellyPrefab: {fileID: 1278609912743974112, guid: 44b649a343db7b344984bb2aec83a094, type: 3}
+  spawnInterval: 5
+  maxJellyCount: 3
 --- !u!224 &1096241208 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4222860354298172498, guid: 3fbe3bd106928504899aa2e9de7dfef4, type: 3}
@@ -1115,7 +1134,7 @@ PrefabInstance:
     - target: {fileID: -4817877618188080646, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: trash2
       value: 
-      objectReference: {fileID: 337184145366031127, guid: ff1f230df03f29a4b8c9dd426ff9facd, type: 3}
+      objectReference: {fileID: 6429062049959870143, guid: c0d896e4d3fde08468eb0b088fcc38b1, type: 3}
     - target: {fileID: -4817877618188080646, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: trash3
       value: 
@@ -1163,6 +1182,10 @@ PrefabInstance:
     - target: {fileID: 2723953174116219674, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: m_Name
       value: FishSpawner Trash
+      objectReference: {fileID: 0}
+    - target: {fileID: 2723953174116219674, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8696051986483828561, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: m_Enabled
@@ -1673,6 +1696,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7588478701606850813, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1085083713}
+    - targetCorrespondingSourceObject: {fileID: 7588478701606850813, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1085083716}
   m_SourcePrefab: {fileID: 100100000, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
 --- !u!1001 &1826213674
 PrefabInstance:
@@ -1737,6 +1763,10 @@ PrefabInstance:
     - target: {fileID: 7038927703259034716, guid: 44ab0a682515afa4d99dd7d6b1aae9a4, type: 3}
       propertyPath: m_Name
       value: FishSpowner HorseMackerel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7038927703259034716, guid: 44ab0a682515afa4d99dd7d6b1aae9a4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1848,6 +1878,10 @@ PrefabInstance:
     - target: {fileID: 4482806741425767702, guid: 4801a9e70bd58ac4ea1b0b66e1e9c052, type: 3}
       propertyPath: m_Name
       value: FishSpowner Billfish
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482806741425767702, guid: 4801a9e70bd58ac4ea1b0b66e1e9c052, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6253889293942659514, guid: 4801a9e70bd58ac4ea1b0b66e1e9c052, type: 3}
       propertyPath: m_LocalPosition.x

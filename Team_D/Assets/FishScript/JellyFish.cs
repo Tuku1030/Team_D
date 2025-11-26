@@ -47,10 +47,10 @@ public class JellyFish : MonoBehaviour
 
         if (other.CompareTag("BigNet"))
         {
-            damaged = true; // まずフラグを立てる
+            damaged = true;
             isCaptured = true;
 
-            PlayerHP playerHP = FindObjectOfType<PlayerHP>();
+            PlayerController playerHP = FindObjectOfType<PlayerController>();
             if (playerHP != null)
             {
                 playerHP.TakeDamage(1);
@@ -63,11 +63,6 @@ public class JellyFish : MonoBehaviour
             isCaptured = true;
             Destroy(gameObject);
         }
-        // Net に当たったらクラゲ消すだけ
-        else if (other.CompareTag("Net"))
-        {
-            isCaptured = true;
-            Destroy(gameObject);
-        }
     }
+
 }

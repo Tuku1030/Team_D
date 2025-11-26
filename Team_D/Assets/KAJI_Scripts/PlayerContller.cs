@@ -1,74 +1,85 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 
-
-public class PlayerContller : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    public float Speed = 0.005f;   //プレイヤーのスピード
-    Rigidbody2D Rbody; //Rigidbody2Dの変数
+    [Header("移動設定")]
+    public float Speed = 5f;  // スピード（小さすぎたので5くらいが一般的）
+    private Rigidbody2D Rbody;
 
-    public int HP = 3; //プレイヤーのHP
+    [Header("HP設定")]
+    public int maxHP = 3;
+    public int currentHP;
+    public HeartUI heartUI;  // InspectorでHeartUIをアタッチ
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Rbody = GetComponent<Rigidbody2D>(); //Rigidbody2Dを取得
+        Rbody = GetComponent<Rigidbody2D>();
+        currentHP = maxHP;
+        UpdateUI();
     }
 
-    // Update is called once per frame
     void Update()
     {
-      //プレイヤーの座標
-      Vector2 position = transform.position;
+        MovePlayer();
+        ClampPosition();
+    }
 
-        //移動処理
-        if(Input.GetKey(KeyCode.A))   //左
-        {
-            position.x -= Speed;
-        }
-        if (Input.GetKey(KeyCode.D)) //右
-        {
-            position.x += Speed;
-        }
-        if (Input.GetKey(KeyCode.W))    //上
-        {
-            position.y += Speed;
-        }
-        if (Input.GetKey(KeyCode.S))  //下
-        {
-            position.y -= Speed;
-        }
+    private void MovePlayer()
+    {
+        Vector2 position = transform.position;
+
+        if (Input.GetKey(KeyCode.A)) position.x -= Speed * Time.deltaTime;
+        if (Input.GetKey(KeyCode.D)) position.x += Speed * Time.deltaTime;
+        if (Input.GetKey(KeyCode.W)) position.y += Speed * Time.deltaTime;
+        if (Input.GetKey(KeyCode.S)) position.y -= Speed * Time.deltaTime;
+
         transform.position = position;
+    }
 
-        if(Input.GetKeyDown(KeyCode.Z))
-        {
-            --HP;
-        }
-
-        //画面外に出ないようにする
+    private void ClampPosition()
+    {
         transform.position = new Vector2(
-          //エリア指定して移動する
-          Mathf.Clamp(transform.position.x,  -17.6f, 3.0f),
-          Mathf.Clamp(transform.position.y,  -3.8f, 4.5f)
-          );
-
+            Mathf.Clamp(transform.position.x, -17.6f, 3.0f),
+            Mathf.Clamp(transform.position.y, -3.8f, 4.5f)
+        );
     }
 
-       public int GetHP()
+    // HP操作
+    public void TakeDamage(int amount)
     {
-        return HP;
+        currentHP -= amount;
+        if (currentHP < 0) currentHP = 0;
+
+        UpdateUI();
+
+        if (currentHP == 0)
+            GameOver();
     }
-    
-    private void FixedUpdate()
+
+    public void Heal(int amount)
     {
-        ////
-        //float HorizontalInput = Input.GetAxis("Horizontal");
-        //float VerticalInput = Input.GetAxis("Vertical");
+        currentHP += amount;
+        if (currentHP > maxHP) currentHP = maxHP;
 
-        ////
-        //Vector2 Movement = new Vector2(HorizontalInput, VerticalInput) * Speed;
+        UpdateUI();
+    }
 
+    private void UpdateUI()
+    {
+        if (heartUI != null)
+            heartUI.UpdateHearts(currentHP);
+        else
+            Debug.LogWarning("HeartUI がセットされていません！");
+    }
 
-        //Rbody.linearVelocity = Movement;
+    private void GameOver()
+    {
+        GameOverManager.GameOver();
+        // SceneManager.LoadScene("GameOverScene");
+    }
+
+    public int GetPlayerHP()
+    {
+        return currentHP;
     }
 }

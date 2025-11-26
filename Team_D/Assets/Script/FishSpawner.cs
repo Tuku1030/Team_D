@@ -39,6 +39,7 @@ public class FishSpawner : MonoBehaviour
 
         GameObject[] currentFish = GameObject.FindGameObjectsWithTag("Fish");
 
+
         if (currentFish.Length >= maxFishCount) return;
 
         Vector3 spawnPosition = GetRandomSpawnPositionInRightThreeFifths();
@@ -51,6 +52,7 @@ public class FishSpawner : MonoBehaviour
         {
             fish.scoreCalculator = scoreCalculator;
         }
+
     }
 
     private Vector3 GetRandomSpawnPositionInRightThreeFifths()

@@ -39,21 +39,18 @@ public class JellyFish : MonoBehaviour
         return new Vector3(Random.Range(-4, 10), Random.Range(-5, 5), 1);
     }
 
+    private bool damaged = false; // 一度だけダメージを入れるフラグ
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (isCaptured) return;
+        if (isCaptured || damaged) return;
 
-        // BigNet に当たったら HP 減らしてクラゲ消す
         if (other.CompareTag("BigNet"))
         {
-            PlayerHP playerHP = other.GetComponent<PlayerHP>();
-            if (playerHP == null)
-            {
-                // BigNet が PlayerHP を持っていない場合はシーン内から探す
-                playerHP = FindObjectOfType<PlayerHP>();
-            }
+            damaged = true; // まずフラグを立てる
             isCaptured = true;
 
+            PlayerHP playerHP = FindObjectOfType<PlayerHP>();
             if (playerHP != null)
             {
                 playerHP.TakeDamage(1);
@@ -61,7 +58,11 @@ public class JellyFish : MonoBehaviour
 
             Destroy(gameObject);
         }
-
+        else if (other.CompareTag("Net"))
+        {
+            isCaptured = true;
+            Destroy(gameObject);
+        }
         // Net に当たったらクラゲ消すだけ
         else if (other.CompareTag("Net"))
         {

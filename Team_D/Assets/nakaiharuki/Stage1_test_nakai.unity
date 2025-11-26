@@ -1115,7 +1115,7 @@ PrefabInstance:
     - target: {fileID: -4817877618188080646, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: trash2
       value: 
-      objectReference: {fileID: 8009428433405988639, guid: c2530d7e5a93bc14aa718a8c268bee78, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: -4817877618188080646, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: trash3
       value: 
@@ -1179,7 +1179,7 @@ PrefabInstance:
     - target: {fileID: 8696051986483828561, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: 'fishPrefabs.Array.data[1]'
       value: 
-      objectReference: {fileID: 8009428433405988639, guid: c2530d7e5a93bc14aa718a8c268bee78, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 8696051986483828561, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: 'fishPrefabs.Array.data[2]'
       value: 
@@ -1772,6 +1772,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hero 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5619216163436251164, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
+      propertyPath: Bullet
+      value: 
+      objectReference: {fileID: 4399096843779939642, guid: 5302285c23b9ea14086ed00df6b9bccc, type: 3}
     - target: {fileID: 5619216163436251164, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: BigBullet
       value: 

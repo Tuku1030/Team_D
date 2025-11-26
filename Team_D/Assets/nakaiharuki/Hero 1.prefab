@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 4399096843779939642, guid: e4159d3b7ab293a469853fe91e28d522, type: 3}
-  BigBullet: {fileID: 859370452643356950, guid: 459ca911de678c14285f0a4f78b07762, type: 3}
+  BigBullet: {fileID: 451330964761615982, guid: 85eb4252ab2d7fc429f58cf632e5ab27, type: 3}
   Speed: 9
   bulletSound: {fileID: 8300000, guid: 5510fa9a77be68d4394c372b107ef1a8, type: 3}
   bigBulletSound: {fileID: 8300000, guid: 90651d1fd792b9b4c84b155e9d9c6c03, type: 3}

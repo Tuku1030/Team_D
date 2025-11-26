@@ -835,8 +835,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7588478701606850813, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 469041361}
   m_SourcePrefab: {fileID: 100100000, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
+--- !u!1 &469041360 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7588478701606850813, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
+  m_PrefabInstance: {fileID: 469041359}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &469041361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469041360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7888a3e5f099338438eefa250f40750f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jellyPrefab: {fileID: 1278609912743974112, guid: 44b649a343db7b344984bb2aec83a094, type: 3}
+  spawnInterval: 5
+  maxJellyCount: 3
 --- !u!1001 &755701041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1276,7 +1299,7 @@ PrefabInstance:
     - target: {fileID: -4817877618188080646, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: trash2
       value: 
-      objectReference: {fileID: 337184145366031127, guid: ff1f230df03f29a4b8c9dd426ff9facd, type: 3}
+      objectReference: {fileID: 6429062049959870143, guid: c0d896e4d3fde08468eb0b088fcc38b1, type: 3}
     - target: {fileID: -4817877618188080646, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: trash3
       value: 

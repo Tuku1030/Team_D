@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3784488778935097064}
   - component: {fileID: -4973649782740268405}
   m_Layer: 0
-  m_Name: BigBullet_0 1test
+  m_Name: New_BigBullet
   m_TagString: BigNet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

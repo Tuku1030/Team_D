@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8439711147082219331}
   m_Layer: 0
   m_Name: Bukket_0
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

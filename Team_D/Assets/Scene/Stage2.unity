@@ -192,6 +192,14 @@ PrefabInstance:
       propertyPath: Bullet
       value: 
       objectReference: {fileID: 4399096843779939642, guid: 5302285c23b9ea14086ed00df6b9bccc, type: 3}
+    - target: {fileID: 7335481038751045291, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
+      propertyPath: Speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335481038751045291, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
+      propertyPath: heartUI
+      value: 
+      objectReference: {fileID: 1943652480}
     - target: {fileID: 7621561756415070793, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: m_LocalScale.x
       value: 17.180761
@@ -262,6 +270,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fishspawner Dolfinfish
       objectReference: {fileID: 0}
+    - target: {fileID: 2240143629865303996, guid: 18f3a38ce1c45284cabbcf2f768285ad, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2346883579317813727, guid: 18f3a38ce1c45284cabbcf2f768285ad, type: 3}
+      propertyPath: spawnInterval
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2346883579317813727, guid: 18f3a38ce1c45284cabbcf2f768285ad, type: 3}
       propertyPath: scoreCalculator
       value: 
@@ -327,6 +343,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FishSpawner Tuna
       objectReference: {fileID: 0}
+    - target: {fileID: 768916791898726892, guid: 349c5f6143da79f4eb0d72a126000172, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1095451694649943544, guid: 349c5f6143da79f4eb0d72a126000172, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.66155
@@ -366,6 +386,10 @@ PrefabInstance:
     - target: {fileID: 1095451694649943544, guid: 349c5f6143da79f4eb0d72a126000172, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197655579968587421, guid: 349c5f6143da79f4eb0d72a126000172, type: 3}
+      propertyPath: spawnInterval
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9197655579968587421, guid: 349c5f6143da79f4eb0d72a126000172, type: 3}
       propertyPath: scoreCalculator
@@ -585,6 +609,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FishSpowner Sardine
       objectReference: {fileID: 0}
+    - target: {fileID: 621495819229303722, guid: a964d7d89e3b13f468c4aa0b64d602c4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067635794965291347, guid: a964d7d89e3b13f468c4aa0b64d602c4, type: 3}
+      propertyPath: spawnInterval
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4067635794965291347, guid: a964d7d89e3b13f468c4aa0b64d602c4, type: 3}
       propertyPath: scoreCalculator
       value: 
@@ -748,6 +780,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5566809535706513895, guid: 44ab0a682515afa4d99dd7d6b1aae9a4, type: 3}
+      propertyPath: spawnInterval
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566809535706513895, guid: 44ab0a682515afa4d99dd7d6b1aae9a4, type: 3}
       propertyPath: scoreCalculator
       value: 
       objectReference: {fileID: 888953175}
@@ -762,6 +798,10 @@ PrefabInstance:
     - target: {fileID: 7038927703259034716, guid: 44ab0a682515afa4d99dd7d6b1aae9a4, type: 3}
       propertyPath: m_Name
       value: FishSpowner HorseMackerel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7038927703259034716, guid: 44ab0a682515afa4d99dd7d6b1aae9a4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -858,7 +898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jellyPrefab: {fileID: 1278609912743974112, guid: 44b649a343db7b344984bb2aec83a094, type: 3}
-  spawnInterval: 5
+  spawnInterval: 4
   maxJellyCount: 3
 --- !u!1001 &755701041
 PrefabInstance:
@@ -1304,6 +1344,10 @@ PrefabInstance:
       propertyPath: trash3
       value: 
       objectReference: {fileID: 337184145366031127, guid: ff1f230df03f29a4b8c9dd426ff9facd, type: 3}
+    - target: {fileID: -4817877618188080646, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
+      propertyPath: spawnInterval
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1093287570395796906, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.66155
@@ -1348,6 +1392,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FishSpawner Trash
       objectReference: {fileID: 0}
+    - target: {fileID: 2723953174116219674, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8696051986483828561, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: scoreCalculator
       value: 
@@ -1385,15 +1433,15 @@ PrefabInstance:
     - target: {fileID: 6510686152045709677, guid: 7f4e049a13607474c86ec2d3531f10b2, type: 3}
       propertyPath: 'hearts.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1493604110629770294}
     - target: {fileID: 6510686152045709677, guid: 7f4e049a13607474c86ec2d3531f10b2, type: 3}
       propertyPath: 'hearts.Array.data[1]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 277385763}
     - target: {fileID: 6510686152045709677, guid: 7f4e049a13607474c86ec2d3531f10b2, type: 3}
       propertyPath: 'hearts.Array.data[2]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 755701044}
     - target: {fileID: 7992503065690349798, guid: 7f4e049a13607474c86ec2d3531f10b2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1468,7 +1516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7992503065690349798, guid: 7f4e049a13607474c86ec2d3531f10b2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 799.99994
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 7992503065690349798, guid: 7f4e049a13607474c86ec2d3531f10b2, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2238,6 +2286,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7992503065690349798, guid: 7f4e049a13607474c86ec2d3531f10b2, type: 3}
   m_PrefabInstance: {fileID: 1382655383}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1943652480 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6510686152045709677, guid: 7f4e049a13607474c86ec2d3531f10b2, type: 3}
+  m_PrefabInstance: {fileID: 1382655383}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2af4dea0d11aa0143b333d2db18884f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2069515085
 GameObject:
   m_ObjectHideFlags: 0

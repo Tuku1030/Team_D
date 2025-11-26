@@ -530,6 +530,7 @@ GameObject:
   - component: {fileID: 1289364590}
   - component: {fileID: 1289364589}
   - component: {fileID: 1289364594}
+  - component: {fileID: 1289364595}
   m_Layer: 5
   m_Name: StageSelect
   m_TagString: Untagged
@@ -569,7 +570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2717bd81dc6eb5045a6678b0f8bfebf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadScene: StageSelect
+  _loadScene: 
 --- !u!114 &1289364590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -643,9 +644,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1289364589}
-        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: SceneChange
+      - m_Target: {fileID: 1289364595}
+        m_TargetAssemblyTypeName: StageSelectChenge, Assembly-CSharp
+        m_MethodName: SwitchScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -802,6 +803,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1289364595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289364587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4728e4c1018d8b54eb1da19c5a5602b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1292826591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,7 +1017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2717bd81dc6eb5045a6678b0f8bfebf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadScene: Option
+  _loadScene: 
 --- !u!114 &1292826598
 MonoBehaviour:
   m_ObjectHideFlags: 0

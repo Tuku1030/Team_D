@@ -5,7 +5,6 @@ using FishGame;
 public class FishSpawner : MonoBehaviour
 {
     int fishtimer;
-    int trashtimer;
 
     [Header("生成する魚たち")]
     public GameObject[] fishPrefabs;              // 複数の魚Prefabに対応
@@ -39,7 +38,9 @@ public class FishSpawner : MonoBehaviour
         }
 
         GameObject[] currentFish = GameObject.FindGameObjectsWithTag("Fish");
+
         if (currentFish.Length >= maxFishCount) return;
+
         Vector3 spawnPosition = GetRandomSpawnPositionInRightThreeFifths();
 
         int index = Random.Range(0, fishPrefabs.Length);
@@ -49,13 +50,6 @@ public class FishSpawner : MonoBehaviour
         if (fish != null)
         {
             fish.scoreCalculator = scoreCalculator;
-        }
-
-        // HeartUI設定（クラゲ用）
-        JellyFish jellyScript = fishObj.GetComponent<JellyFish>();
-        if (jellyScript != null)
-        {
-            jellyScript.heartUI = FindObjectOfType<HeartUI>();
         }
     }
 

@@ -52,13 +52,13 @@ public class JellyFish : MonoBehaviour
                 // BigNet が PlayerHP を持っていない場合はシーン内から探す
                 playerHP = FindObjectOfType<PlayerHP>();
             }
+            isCaptured = true;
 
             if (playerHP != null)
             {
                 playerHP.TakeDamage(1);
             }
 
-            isCaptured = true;
             Destroy(gameObject);
         }
 

@@ -47,4 +47,18 @@ public class NetScoreCalculator : MonoBehaviour
         var (count, rate, baseScore) = fishData[fishName];
         return baseScore * (1 + rate * (count - 1));
     }
+    void Awake()
+    {
+        // 同じオブジェクトがあるなら消す
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("ScoreManager");
+        if (objs.Length > 1)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+
+
+        DontDestroyOnLoad(gameObject);
+    }
 }

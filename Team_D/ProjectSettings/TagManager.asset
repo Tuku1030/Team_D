@@ -9,6 +9,7 @@ TagManager:
   - Fish
   - Trash
   - JellyFish
+  - ScoreManager
   layers:
   - Default
   - TransparentFX

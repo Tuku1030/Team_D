@@ -825,6 +825,10 @@ PrefabInstance:
       propertyPath: Bullet
       value: 
       objectReference: {fileID: 4399096843779939642, guid: 86756094503d8a44a92b49e773c98245, type: 3}
+    - target: {fileID: 7335481038751045291, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
+      propertyPath: Speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7621561756415070793, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: m_LocalScale.x
       value: 16.864712

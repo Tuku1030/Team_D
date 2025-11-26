@@ -29,12 +29,12 @@ public class Audio : MonoBehaviour
     //スライダーで使う部分です。
     public void SetBGM(float volume)
     {
-        audioMixer.SetFloat("BGMPARA", volume);
+        audioMixer.SetFloat("BGM", volume);
     }
 
     public void SetSE(float volume)
     {
-        audioMixer.SetFloat("SEPARA", volume);
+        audioMixer.SetFloat("SE", volume);
         //ここで確認用の音を鳴らしても良さそう。
     }
 }

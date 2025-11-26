@@ -1791,13 +1791,9 @@ PrefabInstance:
       value: Hero 1
       objectReference: {fileID: 0}
     - target: {fileID: 5619216163436251164, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
-      propertyPath: Bullet
-      value: 
-      objectReference: {fileID: 4399096843779939642, guid: 5302285c23b9ea14086ed00df6b9bccc, type: 3}
-    - target: {fileID: 5619216163436251164, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: BigBullet
       value: 
-      objectReference: {fileID: 451330964761615982, guid: 85eb4252ab2d7fc429f58cf632e5ab27, type: 3}
+      objectReference: {fileID: 451330964761615982, guid: 8f691c5b692d0844e9ca803de56107d2, type: 3}
     - target: {fileID: 7335481038751045291, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: Speed
       value: 0.03

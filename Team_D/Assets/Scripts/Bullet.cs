@@ -10,6 +10,12 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);       // ’e‚ğÁ‚·
             Destroy(other.gameObject); // “G‚àÁ‚·
         }
+        if (other.CompareTag("JellyFish"))
+        {
+            Destroy(gameObject);       // ’e‚ğÁ‚·
+            Destroy(other.gameObject); // “G‚àÁ‚·
+        }
+        
     }
     private void OnBecameInvisible()
     {

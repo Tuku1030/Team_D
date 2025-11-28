@@ -1,54 +1,39 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using TMPro;
+using TMPro; // TextMeshPro を使うとき
 
-public class ScoreManager : MonoBehaviour
+public class GameScoreManager : MonoBehaviour
 {
-    public static ScoreManager Instance;
+    public static GameScoreManager Instance; // シングルトン
 
 
 
-    private TextMeshProUGUI scoreText;
-    public int totalScore = 0;
+    private float totalScore = 0;
+    [SerializeField] private TextMeshProUGUI ScoreText; // Inspector でドラッグ
     void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-            SceneManager.sceneLoaded += OnSceneLoaded;
+            DontDestroyOnLoad(gameObject);  // ← これが絶対必要！！
         }
         else
         {
             Destroy(gameObject);
         }
     }
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    // スコア加算用
+    public void AddScore(float score)
     {
-        // シーンのどこにあっても"ScoreText"という名前のオブジェクトを探す
-        var scoreObj = GameObject.Find("ScoreText");
-        if (scoreObj != null)
-        {
-            scoreText = scoreObj.GetComponent<TextMeshProUGUI>();
-            UpdateText();
-        }
-        else
-        {
-            Debug.Log("ScoreText が見つからない");
-        }
+        totalScore += score;
+        // デバッグ
+        Debug.Log("ゲーム全体スコア: " + totalScore);
+        // TMP に表示
+        if (ScoreText != null)
+            ScoreText.text = $"Total: {totalScore:0000}";
     }
-    public void AddScore(int value)
+    // 現在の合計スコアを返す
+    public float GetTotalScore()
     {
-        totalScore += value;
-        UpdateText();
-    }
-    void UpdateText()
-    {
-        if (scoreText != null)
-        {
-            scoreText.text = "Score : " + totalScore;
-        }
+        return totalScore;
     }
 }
-
-

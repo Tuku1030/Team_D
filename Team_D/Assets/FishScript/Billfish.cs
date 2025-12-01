@@ -56,6 +56,8 @@ public class BillFish : MonoBehaviour, IFish
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+            Debug.Log("魚に触れたよ〜: " + other.gameObject.name);
+
         if (isCaptured) return;
 
         if (other.CompareTag("BigNet"))

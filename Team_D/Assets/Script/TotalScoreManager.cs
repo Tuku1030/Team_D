@@ -1,9 +1,9 @@
 using UnityEngine;
 using TMPro; // TextMeshPro を使うとき
 
-public class GameScoreManager : MonoBehaviour
+public class TotalScoreManager : MonoBehaviour
 {
-    public static GameScoreManager Instance; // シングルトン
+    public static TotalScoreManager Instance; // シングルトン
 
 
 

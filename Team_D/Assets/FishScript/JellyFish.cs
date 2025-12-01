@@ -10,6 +10,7 @@ public class JellyFish : MonoBehaviour
     [Header("移動範囲")]
     public HeartUI heartUI; // JellyFish スクリプト内
     private bool isCaptured = false;
+    private bool damaged = false; // 一度だけダメージを入れるフラグ
 
     void Start()
     {
@@ -18,6 +19,8 @@ public class JellyFish : MonoBehaviour
 
     void Update()
     {
+        if (isCaptured) return; // 捕獲済みなら動かさない
+
         // ランダム移動
         if (Vector3.Distance(transform.position, movePosition) < 0.1f)
         {
@@ -28,18 +31,16 @@ public class JellyFish : MonoBehaviour
 
         // 向き反転
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        if (transform.position.x < movePosition.x)
+        if (transform.position.x < movePosition.x && !spriteRenderer.flipX)
             spriteRenderer.flipX = true;
-        else
+        else if (transform.position.x > movePosition.x && spriteRenderer.flipX)
             spriteRenderer.flipX = false;
     }
 
     private Vector3 GetRandomPosition()
     {
-        return new Vector3(Random.Range(-4, 10), Random.Range(-5, 5), 1);
+        return new Vector3(Random.Range(-4f, 10f), Random.Range(-5f, 5f), 1f);
     }
-
-    private bool damaged = false; // 一度だけダメージを入れるフラグ
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -50,7 +51,8 @@ public class JellyFish : MonoBehaviour
             damaged = true;
             isCaptured = true;
 
-            PlayerController playerHP = FindObjectOfType<PlayerController>();
+            // PlayerController を取得してダメージ
+            PlayerController playerHP = Object.FindFirstObjectByType<PlayerController>();
             if (playerHP != null)
             {
                 playerHP.TakeDamage(1);
@@ -64,5 +66,4 @@ public class JellyFish : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
 }

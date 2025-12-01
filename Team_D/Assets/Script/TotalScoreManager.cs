@@ -1,39 +1,30 @@
 using UnityEngine;
-using TMPro; // TextMeshPro を使うとき
+using TMPro;
 
 public class TotalScoreManager : MonoBehaviour
 {
-    public static TotalScoreManager Instance; // シングルトン
+    public static TotalScoreManager Instance;
 
+    [SerializeField] private TextMeshProUGUI totalScoreText;
 
-
-    private float totalScore = 0;
-    [SerializeField] private TextMeshProUGUI ScoreText; // Inspector でドラッグ
     void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);  // ← これが絶対必要！！
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
     }
-    // スコア加算用
-    public void AddScore(float score)
+
+    public void UpdateTotalScore()
     {
-        totalScore += score;
-        // デバッグ
-        Debug.Log("ゲーム全体スコア: " + totalScore);
-        // TMP に表示
-        if (ScoreText != null)
-            ScoreText.text = $"Total: {totalScore:0000}";
-    }
-    // 現在の合計スコアを返す
-    public float GetTotalScore()
-    {
-        return totalScore;
+        if (totalScoreText != null && GameScoreManager.Instance != null)
+        {
+            totalScoreText.text = $"Total Score: {GameScoreManager.Instance.GetTotalScore():0000}";
+        }
     }
 }

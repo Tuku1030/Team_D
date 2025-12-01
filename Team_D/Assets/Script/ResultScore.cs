@@ -3,14 +3,17 @@ using TMPro;
 
 public class ResultScoreUI : MonoBehaviour
 {
-    public TextMeshProUGUI resultScore;
+    [SerializeField] private TextMeshProUGUI resultScoreText;
 
     void Start()
     {
-        // GameScoreManager からスコアを取得
-        float score = GameScoreManager.Instance.GetTotalScore();
-
-        // 表示
-        resultScore.text = "Score : " + score.ToString("0");
+        if (resultScoreText != null && GameScoreManager.Instance != null)
+        {
+            resultScoreText.text = $"Score: {GameScoreManager.Instance.GetTotalScore():0000}";
+        }
+        else
+        {
+            Debug.LogWarning("ResultScoreUI: TMP または GameScoreManager が null です！");
+        }
     }
 }

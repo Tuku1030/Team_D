@@ -2408,6 +2408,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameScoreText
       objectReference: {fileID: 0}
+    - target: {fileID: 594437245751725005, guid: c174c797c78f90c4e8014a02409ef0b0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5997000978056987582, guid: c174c797c78f90c4e8014a02409ef0b0, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2

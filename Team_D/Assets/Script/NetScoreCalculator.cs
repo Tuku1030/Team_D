@@ -1,25 +1,24 @@
 ﻿using UnityEngine;
-using FishGame; // IFish 名前空間
+using FishGame;
 using System.Collections.Generic;
 
 public class NetScoreCalculator : MonoBehaviour
 {
-    private Dictionary<string, (int count, float rate, int baseScore)> fishData = new();
-    private float _Score = 0; // 網ごとの内部スコア（UIには表示しない）
+    private Dictionary<string, (int count, float rate, int baseScore)> fishData
+    = new Dictionary<string, (int, float, int)>();
 
-    void OnTriggerEnter(Collider other)
+
+
+    private float _Score = 0; // 網専用（内部計算）
+    private void OnTriggerEnter(Collider other)
     {
-        // 魚に触れたら
         IFish fish = other.GetComponent<IFish>();
         if (fish != null)
         {
             AddCapturedFish(other.gameObject.name, 0.1f, 10);
-
-            // 魚を消す処理
             Destroy(other.gameObject);
         }
     }
-
     public void AddCapturedFish(string fishName, float addRate, int baseScore)
     {
         // 網ごとの累計
@@ -30,35 +29,22 @@ public class NetScoreCalculator : MonoBehaviour
             var current = fishData[fishName];
             fishData[fishName] = (current.count + 1, current.rate, current.baseScore);
         }
-
         float addedScore = CalculateAddedScore(fishName);
-        _Score += addedScore; // 網専用（内部計算だけ）
-
-        // ゲーム全体スコアに加算
-        if (GameScoreManager.Instance != null)
-            GameScoreManager.Instance.AddScore(addedScore);
-
-        // デバッグ用
+        _Score += addedScore;
+        // ★ TotalScoreManager に加算
+        if (TotalScoreManager.Instance != null)
+        {
+            TotalScoreManager.Instance.AddScore((int)addedScore);
+        }
+        else
+        {
+            Debug.LogWarning(" TotalScoreManager.Instance が NULL です！");
+        }
         Debug.Log($"魚: {fishName}, 網スコア: {_Score}, 加算スコア: {addedScore}");
     }
-
     private float CalculateAddedScore(string fishName)
     {
         var (count, rate, baseScore) = fishData[fishName];
         return baseScore * (1 + rate * (count - 1));
-    }
-    void Awake()
-    {
-        // 同じオブジェクトがあるなら消す
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("ScoreManager");
-        if (objs.Length > 1)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-
-
-        DontDestroyOnLoad(gameObject);
     }
 }

@@ -829,6 +829,10 @@ PrefabInstance:
       propertyPath: Speed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7335481038751045291, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
+      propertyPath: heartUI
+      value: 
+      objectReference: {fileID: 1943652480}
     - target: {fileID: 7621561756415070793, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: m_LocalScale.x
       value: 16.864712
@@ -1783,6 +1787,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7992503065690349798, guid: 7f4e049a13607474c86ec2d3531f10b2, type: 3}
   m_PrefabInstance: {fileID: 1382655383}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1943652480 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6510686152045709677, guid: 7f4e049a13607474c86ec2d3531f10b2, type: 3}
+  m_PrefabInstance: {fileID: 1382655383}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2af4dea0d11aa0143b333d2db18884f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2054621579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2128,6 +2143,10 @@ PrefabInstance:
     - target: {fileID: 594437245751725005, guid: c174c797c78f90c4e8014a02409ef0b0, type: 3}
       propertyPath: m_Name
       value: GameScoreText
+      objectReference: {fileID: 0}
+    - target: {fileID: 594437245751725005, guid: c174c797c78f90c4e8014a02409ef0b0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 594437245751725005, guid: c174c797c78f90c4e8014a02409ef0b0, type: 3}
       propertyPath: m_TagString

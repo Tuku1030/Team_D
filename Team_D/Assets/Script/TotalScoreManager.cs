@@ -1,30 +1,35 @@
 using UnityEngine;
-using TMPro;
 
 public class TotalScoreManager : MonoBehaviour
 {
     public static TotalScoreManager Instance;
 
-    [SerializeField] private TextMeshProUGUI totalScoreText;
 
+
+    private int totalScore = 0;
     void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);  // ‚±‚ê‚¾‚¯‚ÅOK
         }
         else
         {
             Destroy(gameObject);
         }
     }
-
-    public void UpdateTotalScore()
+    public void AddScore(int score)
     {
-        if (totalScoreText != null && GameScoreManager.Instance != null)
-        {
-            totalScoreText.text = $"Total Score: {GameScoreManager.Instance.GetTotalScore():0000}";
-        }
+        totalScore += score;
+        Debug.Log("TOTAL SCORE = " + totalScore);
+    }
+    public int GetTotalScore()
+    {
+        return totalScore;
+    }
+    public void ResetScore()
+    {
+        totalScore = 0;
     }
 }

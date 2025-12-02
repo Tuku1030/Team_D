@@ -1,19 +1,17 @@
 using UnityEngine;
 using TMPro;
 
-public class ResultScoreUI : MonoBehaviour
+public class ResultScore : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI resultScoreText;
+    public TextMeshProUGUI resultScoreText;
+
+
 
     void Start()
     {
-        if (resultScoreText != null && GameScoreManager.Instance != null)
-        {
-            resultScoreText.text = $"Score: {GameScoreManager.Instance.GetTotalScore():0000}";
-        }
-        else
-        {
-            Debug.LogWarning("ResultScoreUI: TMP または GameScoreManager が null です！");
-        }
+        resultScoreText.text =
+            "Result: " + TotalScoreManager.Instance.GetTotalScore();
+        // 次プレイのためにリセット
+        TotalScoreManager.Instance.ResetScore();
     }
 }

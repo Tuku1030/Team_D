@@ -394,7 +394,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f16177c36ca8e1240a37d0a17f158146, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: f16177c36ca8e1240a37d0a17f158146, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -915,10 +915,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8206736710691356938, guid: a61b4ec3eebcceb49ad03057577b7918, type: 3}
       propertyPath: ScoreText
-      value: 
-      objectReference: {fileID: 2145426797}
-    - target: {fileID: 8206736710691356938, guid: a61b4ec3eebcceb49ad03057577b7918, type: 3}
-      propertyPath: totalScoreText
       value: 
       objectReference: {fileID: 2145426797}
     m_RemovedComponents: []

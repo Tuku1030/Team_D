@@ -236,6 +236,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5707205752933350880, guid: 2bee3813e213fb545921868df101868c, type: 3}
+      propertyPath: spawnInterval
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5707205752933350880, guid: 2bee3813e213fb545921868df101868c, type: 3}
       propertyPath: scoreCalculator
       value: 
       objectReference: {fileID: 130012847}
@@ -568,7 +572,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: c79259c32ec860d4fb7bebc288291140, type: 3}
   m_Resource: {fileID: 8300000, guid: c79259c32ec860d4fb7bebc288291140, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1705,6 +1709,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9197655579968587421, guid: 349c5f6143da79f4eb0d72a126000172, type: 3}
+      propertyPath: spawnInterval
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197655579968587421, guid: 349c5f6143da79f4eb0d72a126000172, type: 3}
       propertyPath: scoreCalculator
       value: 
       objectReference: {fileID: 130012847}
@@ -2130,7 +2138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jellyPrefab: {fileID: 1278609912743974112, guid: 44b649a343db7b344984bb2aec83a094, type: 3}
-  spawnInterval: 5
+  spawnInterval: 4.5
   maxJellyCount: 3
 --- !u!1001 &2145426795
 PrefabInstance:

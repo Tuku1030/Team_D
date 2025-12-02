@@ -15,7 +15,7 @@ public class FishSpawner : MonoBehaviour
     public float spawnInterval = 7.0f;
 
     [Tooltip("このSpawnerで同時に生成できる魚の上限")]
-    public int maxFishCount = 10;
+    public int maxFishCount = 20;
     private float timeElapsed = 0f;
 
     void Update()

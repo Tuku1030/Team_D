@@ -36,12 +36,18 @@ public class TrashSpawner : MonoBehaviour
 
         // ランダム選択
         int r = Random.Range(1, 4);
-
         GameObject prefabToSpawn = null;
         if (r == 1) prefabToSpawn = trash1;
         if (r == 2) prefabToSpawn = trash2;
         if (r == 3) prefabToSpawn = trash3;
 
-        Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
+        // カメラの右側3分の2のランダム位置
+        Camera cam = Camera.main;
+        float randomX = Random.Range(0.33f, 1f); // 右側3分の2
+        float randomY = Random.Range(0f, 1f);    // 上下全体
+        Vector3 viewportPos = new Vector3(randomX, randomY, cam.nearClipPlane + 1f); // zはカメラから少し前
+        Vector3 worldPos = cam.ViewportToWorldPoint(viewportPos);
+
+        Instantiate(prefabToSpawn, worldPos, Quaternion.identity);
     }
 }

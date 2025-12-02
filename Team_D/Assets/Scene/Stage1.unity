@@ -171,10 +171,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScoreManager
       objectReference: {fileID: 0}
-    - target: {fileID: 9041940747417810068, guid: 33fc0d1ef9627b34e90f9fbaed80448c, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2016,10 +2012,6 @@ PrefabInstance:
     - target: {fileID: 594437245751725005, guid: c174c797c78f90c4e8014a02409ef0b0, type: 3}
       propertyPath: m_Name
       value: GameScoreText
-      objectReference: {fileID: 0}
-    - target: {fileID: 594437245751725005, guid: c174c797c78f90c4e8014a02409ef0b0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8750929976552649776, guid: c174c797c78f90c4e8014a02409ef0b0, type: 3}
       propertyPath: m_Pivot.x

@@ -1681,6 +1681,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1216829590769328809, guid: ff3ddf42021306f45940d2722ec186f9, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6706024344497633154, guid: ff3ddf42021306f45940d2722ec186f9, type: 3}
       propertyPath: m_Name
       value: BGM

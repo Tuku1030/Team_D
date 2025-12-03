@@ -5,6 +5,7 @@ public class TrashSpawner : MonoBehaviour
     public GameObject trash1;
     public GameObject trash2;
     public GameObject trash3;
+    public GameObject trash4;
 
     [Header("設定")]
     public float spawnInterval = 5f;  // 5秒に1回
@@ -35,11 +36,12 @@ public class TrashSpawner : MonoBehaviour
         }
 
         // ランダム選択
-        int r = Random.Range(1, 4);
+        int r = Random.Range(1, 5);
         GameObject prefabToSpawn = null;
         if (r == 1) prefabToSpawn = trash1;
         if (r == 2) prefabToSpawn = trash2;
         if (r == 3) prefabToSpawn = trash3;
+        if (r == 4) prefabToSpawn = trash4;
 
         // カメラの右側3分の2のランダム位置
         Camera cam = Camera.main;

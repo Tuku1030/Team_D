@@ -714,26 +714,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!1 &1085083710 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7588478701606850813, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
-  m_PrefabInstance: {fileID: 1792615433}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1085083716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085083710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7888a3e5f099338438eefa250f40750f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jellyPrefab: {fileID: 1278609912743974112, guid: 44b649a343db7b344984bb2aec83a094, type: 3}
-  spawnInterval: 8
-  maxJellyCount: 3
 --- !u!1001 &1435640786
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1224,90 +1204,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746987661}
   m_CullTransparentMesh: 1
---- !u!1001 &1792615433
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1729985284482104502, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1729985284482104502, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
-      propertyPath: spawnInterval
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1729985284482104502, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
-      propertyPath: scoreCalculator
-      value: 
-      objectReference: {fileID: 130012847}
-    - target: {fileID: 1729985284482104502, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
-      propertyPath: fishPrefabs.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1729985284482104502, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
-      propertyPath: 'fishPrefabs.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1278609912743974112, guid: 44b649a343db7b344984bb2aec83a094, type: 3}
-    - target: {fileID: 6014064029869290004, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.2041
-      objectReference: {fileID: 0}
-    - target: {fileID: 6014064029869290004, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.29982
-      objectReference: {fileID: 0}
-    - target: {fileID: 6014064029869290004, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6014064029869290004, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6014064029869290004, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6014064029869290004, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6014064029869290004, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6014064029869290004, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6014064029869290004, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6014064029869290004, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7588478701606850813, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
-      propertyPath: m_Name
-      value: FishSpowner Jelly Fish
-      objectReference: {fileID: 0}
-    - target: {fileID: 7588478701606850813, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
-      propertyPath: m_TagString
-      value: Trash
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7588478701606850813, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1085083716}
-  m_SourcePrefab: {fileID: 100100000, guid: 58b684fc970bf5e4899aa00f0d318db9, type: 3}
 --- !u!1001 &1826213674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2025,7 +1921,6 @@ SceneRoots:
   - {fileID: 1826213674}
   - {fileID: 814931297}
   - {fileID: 1588721846}
-  - {fileID: 1792615433}
   - {fileID: 841871135}
   - {fileID: 130012846}
   - {fileID: 1435640786}

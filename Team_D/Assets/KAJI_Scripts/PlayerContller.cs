@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [Header("HP設定")]
     public int maxHP = 3;
     public int currentHP;
-    public HeartUI heartUI;  // InspectorでHeartUIをアタッチ
+    public HeartUIController heartUI;  // InspectorでHeartUIをアタッチ
 
     void Start()
     {

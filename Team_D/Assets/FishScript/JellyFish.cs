@@ -8,7 +8,7 @@ public class JellyFish : MonoBehaviour
     private Vector3 movePosition;
 
     [Header("移動範囲")]
-    public HeartUI heartUI; // JellyFish スクリプト内
+    public HeartUIController heartUI; // JellyFish スクリプト内
     private bool isCaptured = false;
     private bool damaged = false; // 一度だけダメージを入れるフラグ
 

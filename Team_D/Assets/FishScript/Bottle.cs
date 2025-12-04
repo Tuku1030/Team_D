@@ -4,7 +4,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 using FishGame;
 
-public class Tray : MonoBehaviour, IFish
+public class Bottole : MonoBehaviour, IFish
 {
     public NetScoreCalculator scoreCalculator { get; set; } // スコア管理用
     public GameObject player;  // 移動対象
@@ -65,6 +65,12 @@ public class Tray : MonoBehaviour, IFish
             if (scoreCalculator != null)
             {
                 scoreCalculator.AddCapturedFish(fishName, addRate, baseScore);
+            }
+            // ★ BigNetからPlayerControllerを探す（ヒットしたNetの親などにいる想定）
+            PlayerController player = other.GetComponentInParent<PlayerController>();
+            if (player != null)
+            {
+                player.TakeDamage(1);   // ← 1ダメージ与える
             }
 
             Destroy(gameObject); // オブジェクトを削除

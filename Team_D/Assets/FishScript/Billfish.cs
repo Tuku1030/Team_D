@@ -69,6 +69,7 @@ public class BillFish : MonoBehaviour, IFish
                 scoreCalculator.AddCapturedFish(fishName, addRate, baseScore);
             }
 
+
             Destroy(gameObject); // 魚を削除
         }
     }

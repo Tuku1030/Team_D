@@ -64,6 +64,13 @@ public class Can : MonoBehaviour, IFish
                 scoreCalculator.AddCapturedFish(fishName, addRate, baseScore);
             }
 
+            // ★ BigNetからPlayerControllerを探す（ヒットしたNetの親などにいる想定）
+            PlayerController player = other.GetComponentInParent<PlayerController>();
+            if (player != null)
+            {
+                player.TakeDamage(1);   // ← 1ダメージ与える
+            }
+
             Destroy(gameObject); // 魚を削除
         }
         else if (other.CompareTag("Net"))

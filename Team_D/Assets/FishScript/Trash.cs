@@ -58,7 +58,7 @@ public class Trash : MonoBehaviour, IFish
     {
         if (isCaptured) return;
 
-        if (other.CompareTag("BigNet") || other.CompareTag("Net"))
+        if (other.CompareTag("BigNet") )
         {
             isCaptured = true;
 
@@ -66,8 +66,18 @@ public class Trash : MonoBehaviour, IFish
             {
                 scoreCalculator.AddCapturedFish(fishName, addRate, baseScore);
             }
-
+            // ★ BigNetからPlayerControllerを探す（ヒットしたNetの親などにいる想定）
+            PlayerController player = other.GetComponentInParent<PlayerController>();
+            if (player != null)
+            {
+                player.TakeDamage(1);   // ← 1ダメージ与える
+            }
             Destroy(gameObject); // オブジェクトを削除
+        }
+        else
+        {
+            isCaptured = true;
+            Destroy(gameObject);
         }
     }
 

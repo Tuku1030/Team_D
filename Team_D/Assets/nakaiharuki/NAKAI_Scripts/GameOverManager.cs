@@ -1,27 +1,58 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameOverManager : MonoBehaviour
 {
-    public static string lastStage;  // 死んだステージ名
-
-
+    public static string lastStage;
+    public static GameOverManager Instance;
 
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);  // シーンをまたいでも残す
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
+
     public static void GameOver()
-    {
-        // 今のステージ名を保存
+    {//今のステージ名保存
         lastStage = SceneManager.GetActiveScene().name;
-        // ゲームオーバーシーンへ移動
+
+        Instance.StartCoroutine(Instance.GameOverSequence());
+    }
+
+    private IEnumerator GameOverSequence()
+    {
+        // プレイヤーをタグ "Player" で取得
+        GameObject player = GameObject.FindWithTag("Player");
+
+        if (player != null)
+        {
+            var pc = player.GetComponent<PlayerController>();
+            if (pc != null) pc.enabled = false;
+
+            // 演出スクリプト追加（ここで初めて動く）
+            player.AddComponent<PlayerExitFadeMover>();
+        }
+    
+
+        // ① 画面を黒くフェード（1秒）
+        yield return ScreenFade.Instance.StartCoroutine(ScreenFade.Instance.FadeOut(2f));
+
+        // ② 完全に黒くなったらゲームオーバー画面へ
         SceneManager.LoadScene("GameOver");
     }
-    // ゲームオーバーシーンのボタンから呼ぶ用
+   
+    
+
     public void RestartGame()
     {
-        // 保存していたステージへ戻る
         SceneManager.LoadScene(lastStage);
     }
 }

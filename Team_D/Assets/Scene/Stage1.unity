@@ -945,6 +945,10 @@ PrefabInstance:
       propertyPath: trash3
       value: 
       objectReference: {fileID: 337184145366031127, guid: ff1f230df03f29a4b8c9dd426ff9facd, type: 3}
+    - target: {fileID: -4817877618188080646, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
+      propertyPath: trash4
+      value: 
+      objectReference: {fileID: 8009428433405988639, guid: c2530d7e5a93bc14aa718a8c268bee78, type: 3}
     - target: {fileID: 1093287570395796906, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.24409

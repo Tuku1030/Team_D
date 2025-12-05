@@ -178,5 +178,5 @@ MonoBehaviour:
   player: {fileID: 8009428433405988639}
   speed: 2
   fishName: Bottle
-  addRate: -0.3
+  addRate: -1
   baseScore: 0

@@ -4,17 +4,17 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 using FishGame;
 
-public class AtlanticFootballfish: MonoBehaviour, IFish
+public class PencillEll: MonoBehaviour, IFish
 {
     public NetScoreCalculator scoreCalculator { get; set; } // スコア管理用
     public GameObject player;  // 移動対象
-    public int speed = 6;      // 移動スピード
+    public int speed = 5;      // 移動スピード
     private Vector3 movePosition; // 移動目標位置
 
     [Header("魚データ設定")]
-    public string fishName = "AtlanticFootballfish";  // 魚の種類名
-    public float addRate = 0.3f;          // この魚1匹あたりの倍率加算値
-    public int baseScore = 30;           // 基礎スコア
+    public string fishName = "PencilEll";  // 魚の種類名
+    public float addRate = 0.8f;          // この魚1匹あたりの倍率加算値
+    public int baseScore = 100;           // 基礎スコア
 
     private bool isCaptured = false; // 捕獲済み判定
 

@@ -4,7 +4,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 using FishGame;
 
-public class SpripedBeakfish: MonoBehaviour, IFish
+public class SpritedBeakfish: MonoBehaviour, IFish
 {
     public NetScoreCalculator scoreCalculator { get; set; } // スコア管理用
     public GameObject player;  // 移動対象
@@ -12,7 +12,7 @@ public class SpripedBeakfish: MonoBehaviour, IFish
     private Vector3 movePosition; // 移動目標位置
 
     [Header("魚データ設定")]
-    public string fishName = "SpripedBeakfish";  // 魚の種類名
+    public string fishName = "SpritedBeakfish";  // 魚の種類名
     public float addRate = 0.4f;         // この魚1匹あたりの倍率加算値
     public int baseScore = 40;           // 基礎スコア
 

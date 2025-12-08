@@ -667,6 +667,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3134077310639669648, guid: 7bd97ddc389ddce489ea01e249cc8d26, type: 3}
   m_PrefabInstance: {fileID: 452710223}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1001 &646328713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -724,6 +725,19 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a79ab3290c9c949458a170c7de6770b4, type: 3}
+=======
+--- !u!114 &452710225 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 990353022367726824, guid: 7bd97ddc389ddce489ea01e249cc8d26, type: 3}
+  m_PrefabInstance: {fileID: 452710223}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2af4dea0d11aa0143b333d2db18884f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> dfba6ba8bfa3a3553a0de09cf8f5a0ea31fe5abd
 --- !u!1 &841871133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1228,7 +1242,7 @@ PrefabInstance:
     - target: {fileID: 7335481038751045291, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: heartUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 452710225}
     - target: {fileID: 7621561756415070793, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: m_LocalScale.x
       value: 16.864712

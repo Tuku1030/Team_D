@@ -109,12 +109,12 @@ TextureImporter:
       name: Spriped Beakfish 1_0
       rect:
         serializedVersion: 2
-        x: 1063
-        y: 1229
-        width: 32
-        height: 16
+        x: 745
+        y: 222
+        width: 1077
+        height: 683
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -131,12 +131,12 @@ TextureImporter:
       name: Spriped Beakfish 1_1
       rect:
         serializedVersion: 2
-        x: 1007
-        y: 910
-        width: 6
-        height: 6
+        x: 745
+        y: 222
+        width: 1079
+        height: 686
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -158,7 +158,7 @@ TextureImporter:
         width: 1076
         height: 682
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1bf76ab34485a00418edcf50e9c5b867
     internalID: 0
     vertices: []
     indices: 
@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Spriped Beakfish 1_0: 1041004167432794491
+      Spriped Beakfish 1_1: -7494790331465407972
+      Spriped Beakfish 1_2: 7942436223997404297
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

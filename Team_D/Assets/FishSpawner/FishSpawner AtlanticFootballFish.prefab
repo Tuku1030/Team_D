@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7358286375950334426}
   - component: {fileID: 6987035542692238378}
   m_Layer: 0
-  m_Name: 'FishSpawner AtlanticFootballFish '
+  m_Name: FishSpawner AtlanticFootballFish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -6,6 +6,7 @@ public class GameOverManager : MonoBehaviour
 {
     public static string lastStage;
     public static GameOverManager Instance;
+    public static bool isGameOver = false;
 
     void Awake()
     {
@@ -21,7 +22,12 @@ public class GameOverManager : MonoBehaviour
     }
 
     public static void GameOver()
-    {//今のステージ名保存
+    {
+        //二重実行防止（超重要）
+        if (isGameOver) return;
+        isGameOver = true;
+
+        //「今いるステージ名」を正しく保存
         lastStage = SceneManager.GetActiveScene().name;
 
         Instance.StartCoroutine(Instance.GameOverSequence());
@@ -29,7 +35,7 @@ public class GameOverManager : MonoBehaviour
 
     private IEnumerator GameOverSequence()
     {
-        // プレイヤーをタグ "Player" で取得
+        //プレイヤー停止 + 演出
         GameObject player = GameObject.FindWithTag("Player");
 
         if (player != null)
@@ -37,22 +43,23 @@ public class GameOverManager : MonoBehaviour
             var pc = player.GetComponent<PlayerController>();
             if (pc != null) pc.enabled = false;
 
-            // 演出スクリプト追加（ここで初めて動く）
             player.AddComponent<PlayerExitFadeMover>();
         }
-    
 
-        // ① 画面を黒くフェード（1秒）
-        yield return ScreenFade.Instance.StartCoroutine(ScreenFade.Instance.FadeOut(2f));
+        //画面フェード
+        yield return ScreenFade.Instance.StartCoroutine(
+            ScreenFade.Instance.FadeOut(2f)
+        );
 
-        // ② 完全に黒くなったらゲームオーバー画面へ
+        //GameOver シーンへ
         SceneManager.LoadScene("GameOver");
     }
-   
-    
 
     public void RestartGame()
     {
+        isGameOver = false;          //次のゲーム用にリセット
+        Time.timeScale = 1f;
+
         SceneManager.LoadScene(lastStage);
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerExitFadeMover : MonoBehaviour
 {
-    public float moveSpeed = 0.1f;           // 進む速さ
+    public float moveSpeed = 5f;           // 進む速さ
     public float fadeDuration = 1.5f;      // 完全に消えるまでの時間
     public Vector2 direction = Vector2.right; // 右へ進む方向（左にしたいなら Vector2.left）
 

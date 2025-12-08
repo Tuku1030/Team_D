@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class STAGEclearManager : MonoBehaviour
+public class STAGEOverManager : MonoBehaviour
 {
     public float clearTime = 30f;        // 何秒後に判定するか
     public int needScore = 2000;         // クリアに必要なスコア

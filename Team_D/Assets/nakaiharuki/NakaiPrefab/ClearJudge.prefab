@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3958586926125175595
+--- !u!1 &4350366546269364768
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5256610014582762670}
-  - component: {fileID: 7646364862307427639}
+  - component: {fileID: 2844890425798089523}
+  - component: {fileID: 3953953421734745769}
   m_Layer: 0
-  m_Name: GameClear
+  m_Name: ClearJudge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5256610014582762670
+--- !u!4 &2844890425798089523
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3958586926125175595}
+  m_GameObject: {fileID: 4350366546269364768}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1035038, y: 1.1198639, z: 0.046814576}
+  m_LocalPosition: {x: -11.275115, y: 16.169176, z: -0.48163703}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7646364862307427639
+--- !u!114 &3953953421734745769
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3958586926125175595}
+  m_GameObject: {fileID: 4350366546269364768}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77fd8df262e068d44b15b6aefebc6a76, type: 3}
+  m_Script: {fileID: 11500000, guid: 149e6eae2895310449fa51abc3046883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limitTime: 90
-  clearScore: 2400
+  clearScore: 2000
+  clearTime: 60
+  clearManager: {fileID: 0}

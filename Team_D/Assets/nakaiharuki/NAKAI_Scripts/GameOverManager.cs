@@ -43,7 +43,7 @@ public class GameOverManager : MonoBehaviour
             var pc = player.GetComponent<PlayerController>();
             if (pc != null) pc.enabled = false;
 
-            player.AddComponent<PlayerExitFadeMover>();
+           
         }
 
         //画面フェード

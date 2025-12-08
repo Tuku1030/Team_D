@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pelicaneel_0: -2236656691728628164
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

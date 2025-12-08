@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FrilledShark 3_0: 1634913757078760066
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

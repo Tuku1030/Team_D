@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Spriped Beakfish 1_0: 1041004167432794491
+      Spriped Beakfish 1_1: -7494790331465407972
+      Spriped Beakfish 1_2: 7942436223997404297
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

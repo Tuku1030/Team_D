@@ -13,23 +13,13 @@ public class Sardine : MonoBehaviour, IFish
 
     [Header("魚データ設定")]
     public string fishName = "Sardine";  // 魚の種類名
-    public float addRate = 0.1f;         // この魚1匹あたりの倍率加算値
-    public int baseScore = 10;           // 基礎スコア
+    public float addRate = 0.1f;               // この魚1匹あたりの倍率加算値
+    public int baseScore = 10;                 // 基礎スコア
 
     private bool isCaptured = false; // 捕獲済み判定
 
     void Start()
     {
-        // もし player がセットされていなければ自動で取得
-        if (player == null)
-        {
-            player = GameObject.FindWithTag("Player");
-            if (player == null)
-            {
-                Debug.LogError("Player がシーンに存在しません！Tagを確認してください。");
-            }
-        }
-
         movePosition = moveRandomPosition();
 
         // スコア管理コンポーネントを取得（警告なし）
@@ -72,27 +62,14 @@ public class Sardine : MonoBehaviour, IFish
         {
             isCaptured = true;
 
-            // スコア加算
+            // ★ スコア加算
             if (scoreCalculator != null)
             {
                 scoreCalculator.AddCapturedFish(fishName, addRate, baseScore);
             }
 
-            // ★★★ 演出の追加ポイント ★★★
-
-            // CollectEffectController(吸い込まれる演出のスクリプト)を取得
-            CollectEffectController effect = GetComponent<CollectEffectController>();
-            if (effect != null)
-            {
-                // プレイヤー(= BigNet の親 or プレイヤー本体) に向かって飛ばす
-                effect.player = other.transform;
-
-                // 演出を有効化
-                effect.enabled = true;
-            }
-
-            // ★ Destroy(gameObject) はしない！！
-            // → 演出が終わったら CollectEffectController 側で Destroy される
+            Debug.Log("a");
+           Destroy(gameObject); // オブジェクトを削除
         }
     }
 

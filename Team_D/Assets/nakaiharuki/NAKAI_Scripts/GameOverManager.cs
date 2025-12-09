@@ -23,15 +23,21 @@ public class GameOverManager : MonoBehaviour
 
     public static void GameOver()
     {
-        //二重実行防止（超重要）
         if (isGameOver) return;
         isGameOver = true;
 
-        //「今いるステージ名」を正しく保存
         lastStage = SceneManager.GetActiveScene().name;
 
-        Instance.StartCoroutine(Instance.GameOverSequence());
+        if (Instance != null)  // ←ここでチェック
+        {
+            Instance.StartCoroutine(Instance.GameOverSequence());
+        }
+        else
+        {
+            Debug.LogError("GameOverManager の Instance が存在しません！");
+        }
     }
+
 
     private IEnumerator GameOverSequence()
     {

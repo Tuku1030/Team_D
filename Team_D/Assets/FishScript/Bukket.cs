@@ -6,10 +6,12 @@ using FishGame;
 
 public class Bukket : MonoBehaviour, IFish
 {
+    public HeartUIController heartUI;
     public NetScoreCalculator scoreCalculator { get; set; } // スコア管理用
     public GameObject player;  // 移動対象
     public int speed = 3;      // 移動スピード
     private Vector3 movePosition; // 移動目標位置
+    private bool damaged = false; // 一度だけダメージを入れるフラグ
 
     [Header("魚データ設定")]
     public string fishName = "Bukket";  // 魚の種類名
@@ -56,22 +58,22 @@ public class Bukket : MonoBehaviour, IFish
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (isCaptured) return;
+        if (isCaptured || damaged) return;
 
         if (other.CompareTag("BigNet"))
         {
+            damaged = true;
             isCaptured = true;
 
             if (scoreCalculator != null)
             {
                 scoreCalculator.AddCapturedFish(fishName, addRate, baseScore);
             }
-
-            // ★ BigNetからPlayerControllerを探す（ヒットしたNetの親などにいる想定）
-            PlayerController player = other.GetComponentInParent<PlayerController>();
-            if (player != null)
+            // PlayerController を取得してダメージ
+            PlayerController playerHP = Object.FindFirstObjectByType<PlayerController>();
+            if (playerHP != null)
             {
-                player.TakeDamage(1);   // ← 1ダメージ与える
+                playerHP.TakeDamage(1);
             }
 
             Destroy(gameObject); // オブジェクトを削除

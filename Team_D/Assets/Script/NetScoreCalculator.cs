@@ -40,6 +40,12 @@ public class NetScoreCalculator : MonoBehaviour
         {
             Debug.LogWarning(" TotalScoreManager.Instance が NULL です！");
         }
+        // ★ 網に「音鳴らして〜」をお願い！
+        PlayerSoundController playerSound = GetComponent<PlayerSoundController>();
+        if (playerSound != null)
+        {
+            playerSound.TryPlayCaptureSound();  // 1フレーム1回だけ鳴る！
+        }
         Debug.Log($"魚: {fishName}, 網スコア: {_Score}, 加算スコア: {addedScore}");
     }
     private float CalculateAddedScore(string fishName)

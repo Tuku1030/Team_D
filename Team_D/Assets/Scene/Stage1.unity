@@ -455,9 +455,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 293991184893379831, guid: e854b421b28b53841b2f631be7f96a3d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 293991184893379831, guid: e854b421b28b53841b2f631be7f96a3d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 293991184893379831, guid: e854b421b28b53841b2f631be7f96a3d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 293991184893379831, guid: e854b421b28b53841b2f631be7f96a3d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 4305299718542910280, guid: e854b421b28b53841b2f631be7f96a3d, type: 3}
       propertyPath: m_Name
       value: FadeCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5330562595310456618, guid: e854b421b28b53841b2f631be7f96a3d, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5986044387519960576, guid: e854b421b28b53841b2f631be7f96a3d, type: 3}
       propertyPath: m_Pivot.x

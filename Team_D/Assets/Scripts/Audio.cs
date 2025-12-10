@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -6,17 +6,17 @@ using UnityEngine.UI;
 
 public class Audio : MonoBehaviour
 {
-    //Audioƒ~ƒLƒT[‚ğ“ü‚ê‚é‚Æ‚±‚Å‚·
+    //AudioãƒŸã‚­ã‚µãƒ¼ã‚’å…¥ã‚Œã‚‹ã¨ã“ã§ã™
     [SerializeField] AudioMixer audioMixer;
 
-    //‚»‚ê‚¼‚ê‚ÌƒXƒ‰ƒCƒ_[‚ğ“ü‚ê‚é‚Æ‚±‚Å‚·B
-    //‘½‚¢ê‡‚Í”z—ñ‚É‚µ‚Ä‚à‚¢‚¢‚Å‚·‚ËB
+    //ãã‚Œãã‚Œã®ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã‚’å…¥ã‚Œã‚‹ã¨ã“ã§ã™ã€‚
+    //å¤šã„å ´åˆã¯é…åˆ—ã«ã—ã¦ã‚‚ã„ã„ã§ã™ã­ã€‚
     [SerializeField] Slider BGMSlider;
     [SerializeField] Slider SESlider;
 
     private void Start()
     {
-        //ƒ~ƒLƒT[‚Ìvolume‚ÉƒXƒ‰ƒCƒ_[‚Ìvolume‚ğ“ü‚ê‚Ä‚Ü‚·B
+        //ãƒŸã‚­ã‚µãƒ¼ã®volumeã«ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®volumeã‚’å…¥ã‚Œã¦ã¾ã™ã€‚
 
         //BGM
         audioMixer.GetFloat("BGM", out float bgmVolume);
@@ -26,7 +26,7 @@ public class Audio : MonoBehaviour
         SESlider.value = seVolume;
     }
 
-    //ƒXƒ‰ƒCƒ_[‚Åg‚¤•”•ª‚Å‚·B
+    //ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã§ä½¿ã†éƒ¨åˆ†ã§ã™ã€‚
     public void SetBGM(float volume)
     {
         audioMixer.SetFloat("BGM", volume);
@@ -35,6 +35,6 @@ public class Audio : MonoBehaviour
     public void SetSE(float volume)
     {
         audioMixer.SetFloat("SE", volume);
-        //‚±‚±‚ÅŠm”F—p‚Ì‰¹‚ğ–Â‚ç‚µ‚Ä‚à—Ç‚³‚»‚¤B
+        //ã“ã“ã§ç¢ºèªç”¨ã®éŸ³ã‚’é³´ã‚‰ã—ã¦ã‚‚è‰¯ã•ãã†ã€‚
     }
 }

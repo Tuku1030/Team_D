@@ -1,2 +1,17 @@
 fileFormatVersion: 2
 guid: 25ffc79ec2f6a5645900ce26addaedab
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - bgm: {instanceID: 0}
+  - titleBGM: {instanceID: 0}
+  - stage1BGM: {fileID: 8300000, guid: 1c9601e2abe42b945957bdc986701ae8, type: 3}
+  - stage2BGM: {fileID: 8300000, guid: 1291408e066e8a245a720a485f360b24, type: 3}
+  - stage3BGM: {fileID: 8300000, guid: 68fb721d743393440bcd1b3f34a00f5b, type: 3}
+  - resultBGM: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

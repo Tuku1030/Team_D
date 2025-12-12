@@ -963,6 +963,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 337184145366031127, guid: ff1f230df03f29a4b8c9dd426ff9facd, type: 3}
     - target: {fileID: -4817877618188080646, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
+      propertyPath: trash4
+      value: 
+      objectReference: {fileID: 3253976130749976106, guid: 79955c0bb1753c84a8c0edbb8e87ed85, type: 3}
+    - target: {fileID: -4817877618188080646, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: spawnInterval
       value: 3.5
       objectReference: {fileID: 0}

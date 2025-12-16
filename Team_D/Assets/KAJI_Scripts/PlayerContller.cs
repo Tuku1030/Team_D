@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D Rbody;
 
     [Header("HP設定")]
-    public int maxHP = 3;
+    public int maxHP = 5;
     public int currentHP;
     public HeartUIController heartUI;  // InspectorでHeartUIをアタッチ
 
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
         UpdateUI();
 
-        if (currentHP == 0)
+        if (currentHP <= 0)
             GameOver();
     }
 

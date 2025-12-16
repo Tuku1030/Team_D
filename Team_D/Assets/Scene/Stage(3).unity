@@ -576,13 +576,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6090931229730043352, guid: 1632a4f16e0668440a147c36bf9fe787, type: 3}
+      propertyPath: maxFishCount
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6090931229730043352, guid: 1632a4f16e0668440a147c36bf9fe787, type: 3}
       propertyPath: spawnInterval
-      value: 0.5
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 6090931229730043352, guid: 1632a4f16e0668440a147c36bf9fe787, type: 3}
       propertyPath: scoreCalculator
       value: 
       objectReference: {fileID: 888953175}
+    - target: {fileID: 6090931229730043352, guid: 1632a4f16e0668440a147c36bf9fe787, type: 3}
+      propertyPath: fishPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6090931229730043352, guid: 1632a4f16e0668440a147c36bf9fe787, type: 3}
+      propertyPath: 'fishPrefabs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 7756818426963306619, guid: ad44444ec8a8a3e4f9fcd5d6c155ba16, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

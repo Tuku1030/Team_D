@@ -79,11 +79,12 @@ public class Trash : MonoBehaviour, IFish
             }
             Destroy(gameObject); // オブジェクトを削除
         }
-        else
+        else if (other.CompareTag("Net"))
         {
             isCaptured = true;
             Destroy(gameObject);
         }
+
     }
 
     // ランダムな目的地を生成

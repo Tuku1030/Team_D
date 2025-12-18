@@ -15,8 +15,10 @@ public class PlayerUnit : MonoBehaviour
                                       // 内部変数
     private AudioSource audioSource;  // 効果音再生用
     private float bulletTimer;        // 小網用タイマー
-    private float bigBulletTimer;     // 巨大網用タイマー
-                                      // 発射位置オフセット（必要ならInspectorで調整可能）
+    public float bigBulletTimer;
+    // 追加！
+    public bigBullettimer bigBulletCooldown;// 巨大網用タイマー
+                                            // 発射位置オフセット（必要ならInspectorで調整可能）
     public Vector3 BulletPoint = Vector3.zero;
     public Vector3 BigBulletPoint = Vector3.zero;
     void Start()
@@ -41,11 +43,13 @@ public class PlayerUnit : MonoBehaviour
             bulletTimer = 0f;
         }
         // --- 巨大網発射（スペースキー） ---
-        if (Input.GetKeyDown(KeyCode.Space) && bigBulletTimer > 5.0f)
+        // --- 巨大網発射（スペースキー） ---
+        if (Input.GetKeyDown(KeyCode.Space) && bigBulletCooldown.CanUse)
         {
             FireBigBullet(BigBullet, mousePos, bigBulletSound);
-            bigBulletTimer = 0f;
+            bigBulletCooldown.UseNet();
         }
+
     }
     /// <summary>
     /// 小網を発射する処理
@@ -73,6 +77,7 @@ public class PlayerUnit : MonoBehaviour
     {
         GameObject bigBullet = Instantiate(bigBulletPrefab, transform.position + BigBulletPoint, Quaternion.identity);
         PlaySound(sound);
+        
         // すぐ消す設定（必要なら残してOK）
          Destroy(bigBullet, 0.2f);
     }
@@ -85,5 +90,38 @@ public class PlayerUnit : MonoBehaviour
         {
             audioSource.PlayOneShot(clip);
         }
+    }
+
+
+
+}
+public class bigBullettimer : MonoBehaviour
+{
+    public float cooldownTime = 5f;   // CT秒数
+    private float currentCooldown = 0f;
+
+    public bool CanUse => currentCooldown <= 0f;
+
+    void Update()
+    {
+        if (currentCooldown > 0f)
+        {
+            currentCooldown -= Time.deltaTime;
+        }
+    }
+
+    public void UseNet()
+    {
+        if (!CanUse) return;
+
+        // 🕸️ 網を出す処理
+        Debug.Log("Net Used!");
+
+        currentCooldown = cooldownTime;
+    }
+
+    public float GetCooldownRate()
+    {
+        return Mathf.Clamp01(currentCooldown / cooldownTime);
     }
 }

@@ -10,6 +10,6 @@ public class ScoreTMPUI : MonoBehaviour
     {
         if (TotalScoreManager.Instance == null) return;
 
-        scoreText.text = "Score : " + TotalScoreManager.Instance.totalScore.ToString();
+        scoreText.text = "Score: " + TotalScoreManager.Instance.totalScore.ToString();
     }
 }

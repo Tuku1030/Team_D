@@ -2431,7 +2431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7646364862307427639, guid: 535701f1748d79546a3e9fefcb9e2e0b, type: 3}
       propertyPath: needScore
-      value: 2199
+      value: 3499
       objectReference: {fileID: 0}
     - target: {fileID: 7646364862307427639, guid: 535701f1748d79546a3e9fefcb9e2e0b, type: 3}
       propertyPath: clearScore

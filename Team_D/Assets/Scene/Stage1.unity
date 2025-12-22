@@ -1760,7 +1760,7 @@ PrefabInstance:
       objectReference: {fileID: 1837411269}
     - target: {fileID: 5619216163436251164, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: bulletCooldownTime
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7335481038751045291, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: Speed

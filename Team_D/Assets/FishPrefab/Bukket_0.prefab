@@ -162,7 +162,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &8439711147082219331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fc228e2e35d54e428b1847ae1bc06f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heartUI: {fileID: 0}
   player: {fileID: 6429062049959870143}
   speed: 3
   fishName: Bukket

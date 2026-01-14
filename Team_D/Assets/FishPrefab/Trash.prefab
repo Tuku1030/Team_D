@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d760a821c1fa39449d15bfa8df60626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2945283598808273586}
+  heartUI: {fileID: 0}
   speed: 3
   fishName: Trash
   addRate: -0.2
@@ -179,4 +179,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4

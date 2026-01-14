@@ -1,30 +1,49 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 using FishGame;
 
 public class Bottole : MonoBehaviour, IFish
 {
     public HeartUIController heartUI;
-    public NetScoreCalculator scoreCalculator { get; set; } // スコア管理用
-    public GameObject player;  // 移動対象
-    public int speed = 2;      // 移動スピード
-    private Vector3 movePosition; // 移動目標位置
-    private bool damaged = false; // 一度だけダメージを入れるフラグ
+    public NetScoreCalculator scoreCalculator { get; set; }
+
+    public float speed = 2f;
+
+    private Rigidbody2D rb;
+    private bool damaged = false;
+    private bool isCaptured = false;
 
     [Header("魚データ設定")]
-    public string fishName = "Bottle";  // 魚の種類名
-    public float addRate = -1.0f;       // この魚1匹あたりの倍率加算値
-    public int baseScore = 0;           // 基礎スコア
+    public string fishName = "Bottle";
+    public float addRate = -1.0f;
+    public int baseScore = 0;
 
-    private bool isCaptured = false; // 捕獲済み判定
+    // 画面制限（右2/3）
+    private float leftLimit;
+    private float rightLimit;
+    private float topLimit;
+    private float bottomLimit;
 
     void Start()
     {
-        movePosition = moveRandomPosition();  // 目的地を設定
+        rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = 0;
+        rb.freezeRotation = true;
 
-        // スコア管理コンポーネントを取得（警告なし）
+        // ランダムな初期方向
+        Vector2 dir = Random.insideUnitCircle.normalized;
+        rb.linearVelocity = dir * speed;
+
+        // カメラサイズ取得
+        Camera cam = Camera.main;
+        float height = cam.orthographicSize;
+        float width = height * cam.aspect;
+
+        leftLimit = -width / 3f;
+        rightLimit = width;
+        topLimit = height;
+        bottomLimit = -height;
+
         if (scoreCalculator == null)
         {
             scoreCalculator = Object.FindFirstObjectByType<NetScoreCalculator>();
@@ -33,26 +52,30 @@ public class Bottole : MonoBehaviour, IFish
 
     void Update()
     {
-        if (isCaptured) return; // 捕獲済みなら動かさない
+        if (isCaptured) return;
 
-        // 目的地に到達したら新しい目的地を設定
-        if (movePosition == player.transform.position)
+        Vector2 pos = transform.position;
+        Vector2 vel = rb.linearVelocity;
+
+        // 左右反射
+        if (pos.x <= leftLimit || pos.x >= rightLimit)
         {
-            movePosition = moveRandomPosition();
+            vel.x *= -1;
         }
 
-        // プレイヤーオブジェクトを目的地に向かって移動
-        player.transform.position = Vector3.MoveTowards(player.transform.position, movePosition, speed * Time.deltaTime);
-
-        // Sprite の反転処理
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        if (player.transform.position.x < movePosition.x && !spriteRenderer.flipX)
+        // 上下反射
+        if (pos.y >= topLimit || pos.y <= bottomLimit)
         {
-            spriteRenderer.flipX = true;
+            vel.y *= -1;
         }
-        else if (player.transform.position.x > movePosition.x && spriteRenderer.flipX)
+
+        rb.linearVelocity = vel;
+
+        // 見た目の向き
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null)
         {
-            spriteRenderer.flipX = false;
+            sr.flipX = rb.linearVelocity.x > 0;
         }
     }
 
@@ -69,25 +92,19 @@ public class Bottole : MonoBehaviour, IFish
             {
                 scoreCalculator.AddCapturedFish(fishName, addRate, baseScore);
             }
-            // PlayerController を取得してダメージ
+
             PlayerController playerHP = Object.FindFirstObjectByType<PlayerController>();
             if (playerHP != null)
             {
                 playerHP.TakeDamage(1);
             }
 
-            Destroy(gameObject); // オブジェクトを削除
+            Destroy(gameObject);
         }
         else if (other.CompareTag("Net"))
         {
             isCaptured = true;
             Destroy(gameObject);
         }
-    }
-
-    // ランダムな目的地を生成
-    private Vector3 moveRandomPosition()
-    {
-        return new Vector3(Random.Range(-4f, 10f), Random.Range(-5f, 5f), 1f);
     }
 }

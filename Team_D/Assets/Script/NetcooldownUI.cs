@@ -8,7 +8,6 @@ public class NetCooldownUI : MonoBehaviour
 
     void Update()
     {
-        cooldownImage.fillAmount =
-            netCooldown.GetCooldownRate();
+        cooldownImage.fillAmount = netCooldown.GetCooldownRate();
     }
 }

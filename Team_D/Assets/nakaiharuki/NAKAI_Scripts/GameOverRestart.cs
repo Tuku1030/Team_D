@@ -7,6 +7,13 @@ public class RestartButton : MonoBehaviour
     {
         Time.timeScale = 1f;
 
+        // ★ スコアをリセット
+        if (TotalScoreManager.Instance != null)
+        {
+            TotalScoreManager.Instance.ResetScore();
+        }
+
+        // ステージ再読み込み
         SceneManager.LoadScene(GameOverManager.lastStage);
     }
 }

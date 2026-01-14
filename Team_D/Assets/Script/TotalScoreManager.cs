@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TotalScoreManager : MonoBehaviour
 {
@@ -12,11 +13,28 @@ public class TotalScoreManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);  // これだけでOK
+
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
             Destroy(gameObject);
         }
+
+        void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            //  ステージシーンなら必ずスコア初期化
+            if (scene.name.StartsWith("Stage"))
+            {
+                totalScore = 0;
+            }
+        }
+
+
+    }
+    void OnEnable()
+    {
+        totalScore = 0;
     }
 
     // HP情報も受け取るAddScore

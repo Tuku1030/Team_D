@@ -9,6 +9,13 @@ public class STAGEOverManager : MonoBehaviour
     private float timer = 0f;
     private bool judged = false;         //  多重判定防止
 
+    void Start()
+    {
+        timer = 0f;
+        judged = false;
+    }
+
+
     void Update()
     {
         //  ゲームオーバー中なら何もしない
@@ -28,7 +35,7 @@ public class STAGEOverManager : MonoBehaviour
             if (score >= needScore)
             {
                 Debug.Log("クリア！");
-                SceneManager.LoadScene("Result");
+                FindFirstObjectByType<StageClearManager>().StageClear();
             }
             else
             {

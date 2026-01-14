@@ -7,6 +7,10 @@ public class RestartButton : MonoBehaviour
     {
         Time.timeScale = 1f;
 
+        StageClearManager.isClear = false;
+        GameOverManager.isGameOver = false;
+
+
         SceneManager.LoadScene(GameOverManager.lastStage);
     }
 }

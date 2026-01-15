@@ -583,7 +583,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 621495819229303722, guid: a964d7d89e3b13f468c4aa0b64d602c4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4067635794965291347, guid: a964d7d89e3b13f468c4aa0b64d602c4, type: 3}
       propertyPath: scoreCalculator
@@ -962,7 +962,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2282383852108416003, guid: 05ba10f564bd40746a84ba7a2e21107c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6089810822810304162, guid: 05ba10f564bd40746a84ba7a2e21107c, type: 3}
       propertyPath: maxFishCount
@@ -1701,7 +1701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7038927703259034716, guid: 44ab0a682515afa4d99dd7d6b1aae9a4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1860,7 +1860,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4482806741425767702, guid: 4801a9e70bd58ac4ea1b0b66e1e9c052, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6253889293942659514, guid: 4801a9e70bd58ac4ea1b0b66e1e9c052, type: 3}
       propertyPath: m_LocalPosition.x

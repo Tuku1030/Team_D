@@ -27,6 +27,12 @@ public class TotalScoreManager : MonoBehaviour
             if (scene.name.StartsWith("Stage"))
             {
                 totalScore = 0;
+
+                // ステージ開始時初期化
+                StageClearManager.isClear = false;
+
+                GameOverManager.isGameOver = false;
+
             }
         }
 

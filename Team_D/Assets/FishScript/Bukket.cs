@@ -7,9 +7,6 @@ public class Bukket : MonoBehaviour, IFish
     public HeartUIController heartUI;
     public NetScoreCalculator scoreCalculator { get; set; }
 
-    public float speed = 3f;
-
-    private Rigidbody2D rb;
     private bool damaged = false;
     private bool isCaptured = false;
 
@@ -18,64 +15,12 @@ public class Bukket : MonoBehaviour, IFish
     public float addRate = -0.3f;
     public int baseScore = 0;
 
-    // 画面制限（右2/3）
-    private float leftLimit;
-    private float rightLimit;
-    private float topLimit;
-    private float bottomLimit;
-
+    
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        rb.gravityScale = 0;
-        rb.freezeRotation = true;
-
-        // ランダムな初期方向
-        Vector2 dir = Random.insideUnitCircle.normalized;
-        rb.linearVelocity = dir * speed;
-
-        // カメラサイズ取得
-        Camera cam = Camera.main;
-        float height = cam.orthographicSize;
-        float width = height * cam.aspect;
-
-        leftLimit = -width / 3f;
-        rightLimit = width;
-        topLimit = height;
-        bottomLimit = -height;
-
         if (scoreCalculator == null)
         {
             scoreCalculator = Object.FindFirstObjectByType<NetScoreCalculator>();
-        }
-    }
-
-    void Update()
-    {
-        if (isCaptured) return;
-
-        Vector2 pos = transform.position;
-        Vector2 vel = rb.linearVelocity;
-
-        // 左右反射
-        if (pos.x <= leftLimit)
-        {
-            pos.x = leftLimit;
-            vel.x = Mathf.Abs(vel.x);
-        }
-        else if (pos.x >= rightLimit)//左右反転
-        {
-            pos.x = rightLimit;
-            vel.x = -Mathf.Abs(vel.x);
-        }
-
-        rb.linearVelocity = vel;
-
-        // 見た目の向き
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        if (sr != null)
-        {
-            sr.flipX = rb.linearVelocity.x > 0;
         }
     }
 

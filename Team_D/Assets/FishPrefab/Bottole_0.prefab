@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1050337401211192565}
   - component: {fileID: 5540533351661888982}
   - component: {fileID: -4727683098155217082}
+  - component: {fileID: 4089354507835852034}
   m_Layer: 0
   m_Name: Bottole_0
   m_TagString: Trash
@@ -176,8 +177,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heartUI: {fileID: 0}
-  player: {fileID: 3253976130749976106}
-  speed: 2
   fishName: Bottle
   addRate: -1
   baseScore: 0
+--- !u!114 &4089354507835852034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3253976130749976106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e93277f1dc85e3449aab3155fbbdf310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3

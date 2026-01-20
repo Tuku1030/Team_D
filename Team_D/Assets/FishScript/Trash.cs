@@ -7,9 +7,7 @@ public class Trash : MonoBehaviour, IFish
     public HeartUIController heartUI;
 
     public NetScoreCalculator scoreCalculator { get; set; }
-    public float speed = 3f;
 
-    private Rigidbody2D rb;
     private bool damaged = false;
     private bool isCaptured = false;
 
@@ -18,67 +16,12 @@ public class Trash : MonoBehaviour, IFish
     public float addRate = -0.2f;
     public int baseScore = 0;
 
-    // 右2/3制限用
-    private float leftLimit;
-    private float rightLimit;
-    private float topLimit;
-    private float bottomLimit;
-
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-
-        // 重力なし
-        rb.gravityScale = 0;
-        rb.freezeRotation = true;
-
-        // ランダムな初期方向
-        Vector2 dir = Random.insideUnitCircle.normalized;
-        rb.linearVelocity = dir * speed;
-
-        // カメラから画面範囲を取得
-        Camera cam = Camera.main;
-        float height = cam.orthographicSize;
-        float width = height * cam.aspect;
-
-        // 右2/3エリア
-        leftLimit = -width / 3f;
-        rightLimit = width;
-        topLimit = height;
-        bottomLimit = -height;
 
         if (scoreCalculator == null)
         {
             scoreCalculator = Object.FindFirstObjectByType<NetScoreCalculator>();
-        }
-    }
-
-    void Update()
-    {
-        if (isCaptured) return;
-
-        Vector2 pos = transform.position;
-        Vector2 vel = rb.linearVelocity;
-
-        // 左右反射
-        if (pos.x <= leftLimit)
-        {
-            pos.x = leftLimit;
-            vel.x = Mathf.Abs(vel.x);
-        }
-        else if (pos.x >= rightLimit)//左右反転
-        {
-            pos.x = rightLimit;
-            vel.x = -Mathf.Abs(vel.x);
-        }
-
-        rb.linearVelocity = vel;
-
-        // 向き反転（見た目用）
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        if (sr != null)
-        {
-            sr.flipX = rb.linearVelocity.x > 0;
         }
     }
 

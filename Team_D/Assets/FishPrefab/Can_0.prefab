@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4939892994163462290}
   - component: {fileID: -311486077116923134}
   - component: {fileID: 7819325837505728333}
+  - component: {fileID: 276408080906420314}
   m_Layer: 0
   m_Name: Can_0
   m_TagString: Trash
@@ -103,8 +104,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heartUI: {fileID: 0}
-  player: {fileID: 337184145366031127}
-  speed: 3
   fishName: Can
   addRate: -0.5
   baseScore: 0
@@ -181,3 +180,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &276408080906420314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337184145366031127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e93277f1dc85e3449aab3155fbbdf310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3

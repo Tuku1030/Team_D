@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8426758352323393947
+--- !u!1 &5508472353417858540
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,43 +8,61 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7358286375950334426}
-  - component: {fileID: 6987035542692238378}
+  - component: {fileID: 5719608410727724043}
+  - component: {fileID: 7772717928371300924}
   m_Layer: 0
-  m_Name: FishSpawner AtlanticFootballFish
+  m_Name: FishSpowner UpperLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7358286375950334426
+--- !u!4 &5719608410727724043
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8426758352323393947}
+  m_GameObject: {fileID: 5508472353417858540}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.55187, y: 0.18182, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6987035542692238378
+--- !u!114 &7772717928371300924
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8426758352323393947}
+  m_GameObject: {fileID: 5508472353417858540}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68b7a8027940f504fb5ba7a6f391f533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefabs: []
+  fishSettings:
+  - prefab: {fileID: 7192567869873593850, guid: 09e52eb39e4c4624aa2963ae6be03045, type: 3}
+    maxCount: 20
+    spawnInterval: 2
+    currentCount: 0
+    timer: 0
+  - prefab: {fileID: 2640066592046938304, guid: a4ef605e703cdb345bab6af21aef7829, type: 3}
+    maxCount: 10
+    spawnInterval: 3
+    currentCount: 0
+    timer: 0
+  - prefab: {fileID: 698220048326995894, guid: 5a799e3a73f7f214695cc6bcf06ff138, type: 3}
+    maxCount: 7
+    spawnInterval: 3.5
+    currentCount: 0
+    timer: 0
+  - prefab: {fileID: 4104343556907141528, guid: cc2d779b639320e49b7971b153e0b5a1, type: 3}
+    maxCount: 5
+    spawnInterval: 4
+    currentCount: 0
+    timer: 0
   scoreCalculator: {fileID: 0}
-  spawnInterval: 5
-  maxFishCount: 7

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -178546845945323004}
   - component: {fileID: -2868495143914289357}
   m_Layer: 0
-  m_Name: dolphinfish_0
+  m_Name: Dolphinfish_0
   m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

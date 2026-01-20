@@ -61,15 +61,15 @@ public class Trash : MonoBehaviour, IFish
         Vector2 vel = rb.linearVelocity;
 
         // 左右反射
-        if (pos.x <= leftLimit || pos.x >= rightLimit)
+        if (pos.x <= leftLimit)
         {
-            vel.x *= -1;
+            pos.x = leftLimit;
+            vel.x = Mathf.Abs(vel.x);
         }
-
-        // 上下反射
-        if (pos.y >= topLimit || pos.y <= bottomLimit)
+        else if (pos.x >= rightLimit)//左右反転
         {
-            vel.y *= -1;
+            pos.x = rightLimit;
+            vel.x = -Mathf.Abs(vel.x);
         }
 
         rb.linearVelocity = vel;

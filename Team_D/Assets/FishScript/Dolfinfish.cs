@@ -1,28 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 using FishGame;
 
 public class Dolfinfish : MonoBehaviour, IFish
 {
+    // ===== IFish =====
     public NetScoreCalculator scoreCalculator { get; set; }
-    public GameObject player;  // 移動対象
-    public int speed = 6;      // 移動スピード
-    private Vector3 movePosition; // 移動目標位置
+
+    [Header("移動設定")]
+    public float speed = 6f;
+
+    private Vector3 movePosition;
+    private bool isCaptured = false;
 
     [Header("魚データ設定")]
-    public string fishName = "Dolfinfish";  // 魚の種類名
-    public float addRate = 0.8f;            // この魚1匹あたりの倍率加算値
-    public int baseScore = 100;             // 基礎スコア
-
-    private bool isCaptured = false; // 捕獲済み判定
+    public string fishName = "Dolfinfish";
+    public float addRate = 0.8f;
+    public int baseScore = 100;
 
     void Start()
     {
-        movePosition = moveRandomPosition();
+        // 最初の目的地を決める
+        movePosition = GetRandomPosition();
 
-        // スコア管理コンポーネントを取得（警告なし）
+        // ScoreCalculator を自動取得
         if (scoreCalculator == null)
         {
             scoreCalculator = Object.FindFirstObjectByType<NetScoreCalculator>();
@@ -31,29 +32,30 @@ public class Dolfinfish : MonoBehaviour, IFish
 
     void Update()
     {
-        if (isCaptured) return; // 捕獲済みなら動かさない
+        if (isCaptured) return;
 
-        // ランダム移動
-        if (movePosition == player.transform.position)
+        // 目的地に近づいたら次の目的地へ
+        if (Vector3.Distance(transform.position, movePosition) < 0.1f)
         {
-            movePosition = moveRandomPosition();
+            movePosition = GetRandomPosition();
         }
 
-        player.transform.position = Vector3.MoveTowards(player.transform.position, movePosition, speed * Time.deltaTime);
+        // 自分自身を移動（← ここ重要！）
+        transform.position = Vector3.MoveTowards(
+            transform.position,
+            movePosition,
+            speed * Time.deltaTime
+        );
 
-        // 向き反転
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        if (player.transform.position.x < movePosition.x && !spriteRenderer.flipX)
+        // 向き調整
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null)
         {
-            spriteRenderer.flipX = true;
-        }
-        else if (player.transform.position.x > movePosition.x && spriteRenderer.flipX)
-        {
-            spriteRenderer.flipX = false;
+            sr.flipX = movePosition.x > transform.position.x;
         }
     }
 
-    // 網に当たったときの処理
+    // 網に当たったとき
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (isCaptured) return;
@@ -67,12 +69,28 @@ public class Dolfinfish : MonoBehaviour, IFish
                 scoreCalculator.AddCapturedFish(fishName, addRate, baseScore);
             }
 
-            Destroy(gameObject); // 魚を削除
+            Destroy(gameObject);
         }
     }
 
-    private Vector3 moveRandomPosition()
+    // ランダムな移動先（画面内）
+    private Vector3 GetRandomPosition()
     {
-        return new Vector3(Random.Range(-4f, 10f), Random.Range(-5f, 5f), speed);
+        Camera cam = Camera.main;
+        if (cam == null)
+        {
+            return new Vector3(
+                Random.Range(-4f, 10f),
+                Random.Range(-5f, 5f),
+                0f
+            );
+        }
+
+        float x = Random.Range(0.4f, 1.0f); // 右寄り
+        float y = Random.Range(0.1f, 0.9f);
+
+        Vector3 worldPos = cam.ViewportToWorldPoint(new Vector3(x, y, 10f));
+        worldPos.z = 0f;
+        return worldPos;
     }
 }

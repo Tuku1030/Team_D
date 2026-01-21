@@ -3,39 +3,32 @@ using TMPro;
 
 public class TargetScoreUI : MonoBehaviour
 {
-    public TextMeshProUGUI targetText;
-    public TextMeshProUGUI achievedText;
+    public TMP_Text targetScoreText;
+    public int targetScore = 2000;
 
-    private int needScore;
+    public Color normalColor = Color.white;
+    public Color achievedColor = Color.yellow;
+
     private bool achieved = false;
 
     void Start()
     {
-        var stageOver = FindFirstObjectByType<STAGEOverManager>();
-
-        if (stageOver == null)
-        {
-            Debug.LogError("STAGEOverManager が見つかりません");
-            return;
-        }
-
-        needScore = stageOver.needScore;
-
-        targetText.text = $"目標スコア：{needScore}";
-        achievedText.text = ""; // 最初は非表示
+        targetScoreText.text = $"Target Score : {targetScore}";
+        targetScoreText.color = normalColor;
     }
 
     void Update()
     {
         if (achieved) return;
 
-        int score = TotalScoreManager.Instance.GetTotalScore();
+        if (TotalScoreManager.Instance == null) return;
 
-        if (score >= needScore)
+        int currentScore = TotalScoreManager.Instance.GetTotalScore();
+
+        if (currentScore >= targetScore)
         {
             achieved = true;
-            achievedText.text = "目標達成！";
-            achievedText.color = Color.yellow;
+            targetScoreText.color = achievedColor;
         }
     }
 }

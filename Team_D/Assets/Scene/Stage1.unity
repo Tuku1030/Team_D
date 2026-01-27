@@ -267,7 +267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7646364862307427639, guid: 535701f1748d79546a3e9fefcb9e2e0b, type: 3}
       propertyPath: needScore
-      value: 2999
+      value: 4999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1164,7 +1164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3953953421734745769, guid: ace8e2db5f0e10640a7a6e3bf43ed10a, type: 3}
       propertyPath: clearScore
-      value: 3000
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 3953953421734745769, guid: ace8e2db5f0e10640a7a6e3bf43ed10a, type: 3}
       propertyPath: clearManager
@@ -2174,6 +2174,34 @@ PrefabInstance:
       propertyPath: scoreCalculator
       value: 
       objectReference: {fileID: 130012847}
+    - target: {fileID: 7772717928371300924, guid: 033e8df083796864b9c6caebb2cb904c, type: 3}
+      propertyPath: fishSettings.Array.data[0].maxCount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772717928371300924, guid: 033e8df083796864b9c6caebb2cb904c, type: 3}
+      propertyPath: fishSettings.Array.data[1].maxCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772717928371300924, guid: 033e8df083796864b9c6caebb2cb904c, type: 3}
+      propertyPath: fishSettings.Array.data[2].maxCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772717928371300924, guid: 033e8df083796864b9c6caebb2cb904c, type: 3}
+      propertyPath: fishSettings.Array.data[0].spawnInterval
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772717928371300924, guid: 033e8df083796864b9c6caebb2cb904c, type: 3}
+      propertyPath: fishSettings.Array.data[1].spawnInterval
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772717928371300924, guid: 033e8df083796864b9c6caebb2cb904c, type: 3}
+      propertyPath: fishSettings.Array.data[2].spawnInterval
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772717928371300924, guid: 033e8df083796864b9c6caebb2cb904c, type: 3}
+      propertyPath: fishSettings.Array.data[3].spawnInterval
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -6,8 +6,8 @@ public class NetScoreCalculator : MonoBehaviour
 {
     private Dictionary<string, (int count, float rate, int baseScore)> fishData
     = new Dictionary<string, (int, float, int)>();
-
-
+    public float Netrate;
+    
 
     private float _Score = 0; // 網専用（内部計算）
     private void OnTriggerEnter(Collider other)
@@ -51,6 +51,7 @@ public class NetScoreCalculator : MonoBehaviour
     private float CalculateAddedScore(string fishName)
     {
         var (count, rate, baseScore) = fishData[fishName];
-        return baseScore * (1 + rate * (count - 1));
+        Netrate = (1 + rate * (count - 1));
+        return baseScore * Netrate;
     }
 }

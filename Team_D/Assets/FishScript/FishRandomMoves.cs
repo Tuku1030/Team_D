@@ -41,7 +41,7 @@ public class FishRandomMove : MonoBehaviour
     {
         return new Vector3(
             Random.Range(-4f, 10f),
-            Random.Range(-5f, 5f),
+            Random.Range(-5f, 4f),
             0
         );
     }

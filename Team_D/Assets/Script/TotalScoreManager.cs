@@ -1,3 +1,4 @@
+using UnityEditor.Build.Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -48,12 +49,12 @@ public class TotalScoreManager : MonoBehaviour
 
     public void AddScore(int score)
     {
-        int finalScore = score;
-        if (player.currentHP >= player.maxHP)
+        if (player.currentHP == player.maxHP)
         {
-            finalScore *= 2;
+            score *= 2;
         }
-        totalScore += finalScore;
+        totalScore += score;
+        score = 0;
         Debug.Log("TOTAL SCORE = " + totalScore);
     }
 

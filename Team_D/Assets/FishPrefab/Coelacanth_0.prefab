@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4534693431797237161}
   - component: {fileID: -6737026658688408227}
   - component: {fileID: 2832910086504800882}
+  - component: {fileID: -8498288466410712432}
   m_Layer: 0
   m_Name: Coelacanth_0
   m_TagString: Fish
@@ -102,8 +103,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4fc03620dc645f499ee4485438490ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 7262563505219901183}
-  speed: 7
   fishName: Coelacanth
   addRate: 1
   baseScore: 100
@@ -180,3 +179,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-8498288466410712432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7262563505219901183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8bc3ccb86cb4f4f90dffc1e6087420, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  target: {fileID: 0}

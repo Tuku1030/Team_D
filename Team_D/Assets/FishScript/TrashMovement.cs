@@ -99,7 +99,7 @@ public class TrashMovement : MonoBehaviour
         // =============================
         // ‡D Y•ûŒü‚Ì”½Ëˆ—
         // =============================
-        if (pos.y < min.y || pos.y > max.y)
+        if (pos.y < -5 || pos.y > max.y)
         {
             // ã‰º•ûŒü‚ğ”½“]
             velocity.y *= -1;

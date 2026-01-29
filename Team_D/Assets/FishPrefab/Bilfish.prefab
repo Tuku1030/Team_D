@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3730028818373881871}
   - component: {fileID: -6915349393848536652}
   - component: {fileID: 3109373062235238455}
+  - component: {fileID: -1800048550448357987}
   m_Layer: 0
   m_Name: Bilfish
   m_TagString: Fish
@@ -102,8 +103,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d36c519a85c9ac428eda7e931b0803e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 698220048326995894}
-  speed: 5
   fishName: BillFish
   addRate: 0.8
   baseScore: 100
@@ -180,3 +179,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-1800048550448357987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698220048326995894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8bc3ccb86cb4f4f90dffc1e6087420, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  target: {fileID: 0}

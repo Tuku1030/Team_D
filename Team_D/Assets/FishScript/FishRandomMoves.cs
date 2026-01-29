@@ -1,0 +1,59 @@
+using UnityEngine;
+using Random = UnityEngine.Random;
+
+public class FishRandomMove : MonoBehaviour
+{
+    public float speed = 3f;          // Åö ãõÇ≤Ç∆Ç…InspectorÇ≈í≤êÆ
+    public GameObject target;         // à⁄ìÆëŒè€ÅiäÓñ{ÇÕé©ï™Åj
+
+    private Vector3 movePosition;
+    private bool isStopped = false;
+
+    void Start()
+    {
+        if (target == null)
+            target = gameObject;
+
+        movePosition = GetRandomPosition();
+    }
+
+    void Update()
+    {
+        if (isStopped) return;
+
+        if (target.transform.position == movePosition)
+        {
+            movePosition = GetRandomPosition();
+        }
+
+        target.transform.position =
+            Vector3.MoveTowards(target.transform.position, movePosition, speed * Time.deltaTime);
+
+        FlipSprite();
+    }
+
+    public void StopMove()
+    {
+        isStopped = true;
+    }
+
+    Vector3 GetRandomPosition()
+    {
+        return new Vector3(
+            Random.Range(-4f, 10f),
+            Random.Range(-5f, 5f),
+            0
+        );
+    }
+
+    void FlipSprite()
+    {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (!sr) return;
+
+        if (target.transform.position.x < movePosition.x)
+            sr.flipX = true;
+        else
+            sr.flipX = false;
+    }
+}

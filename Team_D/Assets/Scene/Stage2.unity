@@ -886,7 +886,7 @@ PrefabInstance:
       objectReference: {fileID: 3253976130749976106, guid: 79955c0bb1753c84a8c0edbb8e87ed85, type: 3}
     - target: {fileID: -4817877618188080646, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: spawnInterval
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 1093287570395796906, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: m_LocalPosition.x

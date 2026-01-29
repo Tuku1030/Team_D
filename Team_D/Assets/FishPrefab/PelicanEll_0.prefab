@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4764612904683111478}
   - component: {fileID: -8488920062714460640}
   - component: {fileID: -2433981041433065543}
+  - component: {fileID: -7411055478730794496}
   m_Layer: 0
   m_Name: PelicanEll_0
   m_TagString: Untagged
@@ -102,8 +103,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a804b9f563e1f654e8b4c289745ea01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 7756818426963306619}
-  speed: 5
   fishName: PencilEll
   addRate: 0.8
   baseScore: 100
@@ -180,3 +179,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-7411055478730794496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7756818426963306619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8bc3ccb86cb4f4f90dffc1e6087420, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  target: {fileID: 0}

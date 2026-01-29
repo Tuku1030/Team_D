@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -8037993655281711666}
   - component: {fileID: -2450053507668938999}
   - component: {fileID: -2037919089713411673}
+  - component: {fileID: 9020383055807967678}
   m_Layer: 0
   m_Name: FrilledShark 3_0
   m_TagString: Untagged
@@ -175,8 +176,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eed1e8abc9ad2a6459586db44da71ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 4409512988348887249}
-  speed: 6
   fishName: FrilledShark
   addRate: 0.6
   baseScore: 50
+--- !u!114 &9020383055807967678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4409512988348887249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8bc3ccb86cb4f4f90dffc1e6087420, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4.5
+  target: {fileID: 0}

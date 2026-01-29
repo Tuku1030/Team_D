@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7674895011359980386}
   - component: {fileID: 3055676780650654220}
   - component: {fileID: 2405720310389767498}
+  - component: {fileID: -4251557942908678080}
   m_Layer: 0
   m_Name: Tuna_0
   m_TagString: Fish
@@ -175,8 +176,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a6a5ea492e2a0458fffdf8f11b9b21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 4775155365651784966}
-  speed: 5
   fishName: Tuna
   addRate: 0.5
   baseScore: 50
+--- !u!114 &-4251557942908678080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4775155365651784966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8bc3ccb86cb4f4f90dffc1e6087420, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4.5
+  target: {fileID: 0}

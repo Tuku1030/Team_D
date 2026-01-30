@@ -1165,11 +1165,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3953953421734745769, guid: ace8e2db5f0e10640a7a6e3bf43ed10a, type: 3}
       propertyPath: clearTime
-      value: 90
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3953953421734745769, guid: ace8e2db5f0e10640a7a6e3bf43ed10a, type: 3}
       propertyPath: clearScore
-      value: 5000
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3953953421734745769, guid: ace8e2db5f0e10640a7a6e3bf43ed10a, type: 3}
       propertyPath: clearManager
@@ -2524,6 +2524,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 903860928}
+  - {fileID: 689518348}
   - {fileID: 1712495508}
   - {fileID: 2110662748}
   - {fileID: 3655991022273568555}
@@ -2534,7 +2535,6 @@ SceneRoots:
   - {fileID: 382232040}
   - {fileID: 7465670174827780883}
   - {fileID: 1479041671}
-  - {fileID: 689518348}
   - {fileID: 252153845}
   - {fileID: 1872496403}
   - {fileID: 1531265192}

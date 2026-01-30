@@ -13,7 +13,7 @@ public class TargetScoreUI : MonoBehaviour
 
     void Start()
     {
-        targetScoreText.text = $"Target Score : {targetScore}";
+        targetScoreText.text = $"Goal Score : {targetScore}";
         targetScoreText.color = normalColor;
     }
 

@@ -99,13 +99,13 @@ public class TrashMovement : MonoBehaviour
         // =============================
         // ‡D Y•ûŒü‚Ì”½Ëˆ—
         // =============================
-        if (pos.y < -5 || pos.y > max.y)
+        if (pos.y < -5 || pos.y > 4)
         {
             // ã‰º•ûŒü‚ğ”½“]
             velocity.y *= -1;
 
             // ”ÍˆÍ“à‚É–ß‚·
-            pos.y = Mathf.Clamp(pos.y, min.y=-5, max.y);
+            pos.y = Mathf.Clamp(pos.y, min.y=-5, max.y =4);
         }
 
         // =============================

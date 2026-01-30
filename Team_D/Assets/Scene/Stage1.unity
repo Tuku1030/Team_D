@@ -1165,11 +1165,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3953953421734745769, guid: ace8e2db5f0e10640a7a6e3bf43ed10a, type: 3}
       propertyPath: clearTime
-      value: 90
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3953953421734745769, guid: ace8e2db5f0e10640a7a6e3bf43ed10a, type: 3}
       propertyPath: clearScore
-      value: 5000
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3953953421734745769, guid: ace8e2db5f0e10640a7a6e3bf43ed10a, type: 3}
       propertyPath: clearManager
@@ -1366,7 +1366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4817877618188080646, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: spawnInterval
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1093287570395796906, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: m_LocalPosition.x

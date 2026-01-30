@@ -388,7 +388,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5230935515341170186, guid: e4979f839a9602e43b2bd2ced0425da8, type: 3}
       propertyPath: targetScore
-      value: 6000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 5627165618782134113, guid: e4979f839a9602e43b2bd2ced0425da8, type: 3}
       propertyPath: m_Name
@@ -2007,7 +2007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3953953421734745769, guid: ace8e2db5f0e10640a7a6e3bf43ed10a, type: 3}
       propertyPath: clearScore
-      value: 7000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 3953953421734745769, guid: ace8e2db5f0e10640a7a6e3bf43ed10a, type: 3}
       propertyPath: clearManager
@@ -2177,7 +2177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7646364862307427639, guid: 535701f1748d79546a3e9fefcb9e2e0b, type: 3}
       propertyPath: needScore
-      value: 6999
+      value: 9999
       objectReference: {fileID: 0}
     - target: {fileID: 7646364862307427639, guid: 535701f1748d79546a3e9fefcb9e2e0b, type: 3}
       propertyPath: clearScore

@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: -8077871933600109818}
-  captureSE: {fileID: 8300000, guid: 7ece2c092d2ca07418da9086784b43ab, type: 3}
+  captureSE: {fileID: 0}
 --- !u!82 &-8077871933600109818
 AudioSource:
   m_ObjectHideFlags: 0

@@ -11,6 +11,11 @@ public class PlayerController : MonoBehaviour
     public int currentHP;
     public HeartUIController heartUI;  // InspectorでHeartUIをアタッチ
 
+    [Header("サウンド")]
+    public AudioSource audioSource;
+    public AudioClip damageSE;
+
+
     void Start()
     {
         Rbody = GetComponent<Rigidbody2D>();
@@ -38,7 +43,7 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = new Vector2(
             Mathf.Clamp(transform.position.x, -9.5f, 3.0f),
-            Mathf.Clamp(transform.position.y, -3.8f, 4.5f)
+            Mathf.Clamp(transform.position.y, -3.8f, 3.5f)
         );
     }
 
@@ -48,11 +53,18 @@ public class PlayerController : MonoBehaviour
         currentHP -= amount;
         if (currentHP < 0) currentHP = 0;
 
+        // ★ ダメージSEを鳴らす
+        if (audioSource != null && damageSE != null)
+        {
+            audioSource.PlayOneShot(damageSE);
+        }
+
         UpdateUI();
 
         if (currentHP <= 0)
             GameOver();
     }
+
 
     public void Heal(int amount)
     {

@@ -11,7 +11,7 @@ public class TrashMovement : MonoBehaviour
     // =============================
     // 移動スピード
     // =============================
-    public float speed = 3f;
+    public float speed = 2f;
 
     // =============================
     // 移動方向（速度ベクトル）
@@ -105,7 +105,7 @@ public class TrashMovement : MonoBehaviour
             velocity.y *= -1;
 
             // 範囲内に戻す
-            pos.y = Mathf.Clamp(pos.y, min.y, max.y);
+            pos.y = Mathf.Clamp(pos.y, min.y=-5, max.y);
         }
 
         // =============================

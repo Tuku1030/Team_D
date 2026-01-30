@@ -46,7 +46,7 @@ public class TrashSpawner : MonoBehaviour
         // カメラの右側3分の2のランダム位置
         Camera cam = Camera.main;
         float randomX = Random.Range(0.33f, 1f); // 右側3分の2
-        float randomY = Random.Range(0f, 1f);    // 上下全体
+        float randomY = Random.Range(0.15f, 1f);    // 上下全体
         Vector3 viewportPos = new Vector3(randomX, randomY, cam.nearClipPlane + 1f); // zはカメラから少し前
         Vector3 worldPos = cam.ViewportToWorldPoint(viewportPos);
 

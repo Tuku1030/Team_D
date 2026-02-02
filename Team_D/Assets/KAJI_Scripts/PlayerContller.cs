@@ -15,19 +15,34 @@ public class PlayerController : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip damageSE;
 
+    [Header("ダメージ演出")]
+    public float invincibleTime = 1.0f;   // 無敵時間
+    public float blinkInterval = 0.1f;    // 点滅間隔
+
+    private bool isInvincible = false;
+    private float invincibleTimer = 0f;
+    private float blinkTimer = 0f;
+
+    private SpriteRenderer spriteRenderer;
+
 
     void Start()
     {
         Rbody = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>(); // ★
         currentHP = maxHP;
         UpdateUI();
     }
+
 
     void Update()
     {
         MovePlayer();
         ClampPosition();
+
+        HandleInvincible(); // ★追加
     }
+
 
     private void MovePlayer()
     {
@@ -50,16 +65,23 @@ public class PlayerController : MonoBehaviour
     // HP操作
     public void TakeDamage(int amount)
     {
+        if (isInvincible) return; // ★ 無敵中は無視
+
         currentHP -= amount;
         if (currentHP < 0) currentHP = 0;
 
-        // ★ ダメージSEを鳴らす
+        // ダメージSE
         if (audioSource != null && damageSE != null)
         {
             audioSource.PlayOneShot(damageSE);
         }
 
         UpdateUI();
+
+        // ★ 無敵＆点滅スタート
+        isInvincible = true;
+        invincibleTimer = invincibleTime;
+        blinkTimer = 0f;
 
         if (currentHP <= 0)
             GameOver();
@@ -87,6 +109,29 @@ public class PlayerController : MonoBehaviour
         GameOverManager.GameOver();
         // SceneManager.LoadScene("GameOverScene");
     }
+
+    private void HandleInvincible()
+    {
+        if (!isInvincible) return;
+
+        invincibleTimer -= Time.deltaTime;
+        blinkTimer -= Time.deltaTime;
+
+        // 点滅
+        if (blinkTimer <= 0f)
+        {
+            spriteRenderer.enabled = !spriteRenderer.enabled;
+            blinkTimer = blinkInterval;
+        }
+
+        // 無敵終了
+        if (invincibleTimer <= 0f)
+        {
+            isInvincible = false;
+            spriteRenderer.enabled = true; // 必ず表示状態に戻す
+        }
+    }
+
 
     public int GetPlayerHP()
     {

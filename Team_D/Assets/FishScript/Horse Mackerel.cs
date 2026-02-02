@@ -11,14 +11,26 @@ public class HorseMackerel : MonoBehaviour, IFish
     public float addRate = 0.2f;               // この魚1匹あたりの倍率加算値
     public int baseScore = 20;                 // 基礎スコア
 
-    private bool isCaptured = false; // 捕獲済み判定
+    private bool isCaptured = false;
+    private CaptureMoveEffect captureEffect;
+    private Transform playerTransform;
+
+    void Awake()
+    {
+        captureEffect = GetComponent<CaptureMoveEffect>();
+    }
 
     void Start()
     {
-        // スコア管理コンポーネントを取得（警告なし）
         if (scoreCalculator == null)
         {
             scoreCalculator = Object.FindFirstObjectByType<NetScoreCalculator>();
+        }
+
+        GameObject playerObj = GameObject.FindWithTag("Player");
+        if (playerObj != null)
+        {
+            playerTransform = playerObj.transform;
         }
     }
 
@@ -35,7 +47,15 @@ public class HorseMackerel : MonoBehaviour, IFish
                 scoreCalculator.AddCapturedFish(fishName, addRate, baseScore);
             }
 
-            Destroy(gameObject); // オブジェクトを削除
+            if (captureEffect != null && playerTransform != null)
+            {
+                captureEffect.Play(playerTransform);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
+
 }

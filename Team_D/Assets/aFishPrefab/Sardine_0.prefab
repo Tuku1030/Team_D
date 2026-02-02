@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8498245085341578806}
   - component: {fileID: 5005458120640265016}
   - component: {fileID: 8467890019476500017}
+  - component: {fileID: 6759732889870726311}
   m_Layer: 0
   m_Name: Sardine_0
   m_TagString: Fish
@@ -193,3 +194,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   target: {fileID: 0}
+--- !u!114 &6759732889870726311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7192567869873593850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f00f7011cc3c447b620144eca0c7e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  shrinkSpeed: 4

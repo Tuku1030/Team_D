@@ -1,33 +1,40 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using FishGame;
 
 public class BillFish : MonoBehaviour, IFish
 {
-    public NetScoreCalculator scoreCalculator { get; set; } // スコア管理用
-  
+    public NetScoreCalculator scoreCalculator { get; set; }
 
     [Header("魚データ設定")]
-    public string fishName = "BillFish";  // 魚の種類名
-    public float addRate = 0.8f;          // この魚1匹あたりの倍率加算値
-    public int baseScore = 100;           // 基礎スコア
+    public string fishName = "BillFish";
+    public float addRate = 0.8f;
+    public int baseScore = 100;
 
-    private bool isCaptured = false; // 捕獲済み判定
+    private bool isCaptured = false;
+    private CaptureMoveEffect captureEffect;
+    private Transform playerTransform;
+
+    void Awake()
+    {
+        captureEffect = GetComponent<CaptureMoveEffect>();
+    }
 
     void Start()
     {
-        // スコア管理コンポーネントを取得（警告なし）
         if (scoreCalculator == null)
         {
             scoreCalculator = Object.FindFirstObjectByType<NetScoreCalculator>();
+        }
+
+        GameObject playerObj = GameObject.FindWithTag("Player");
+        if (playerObj != null)
+        {
+            playerTransform = playerObj.transform;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-            Debug.Log("魚に触れたよ〜: " + other.gameObject.name);
-
         if (isCaptured) return;
 
         if (other.CompareTag("BigNet"))
@@ -39,8 +46,14 @@ public class BillFish : MonoBehaviour, IFish
                 scoreCalculator.AddCapturedFish(fishName, addRate, baseScore);
             }
 
-
-            Destroy(gameObject); // 魚を削除
+            if (captureEffect != null && playerTransform != null)
+            {
+                captureEffect.Play(playerTransform);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

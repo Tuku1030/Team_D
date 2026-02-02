@@ -6,24 +6,34 @@ public class Dolfinfish : MonoBehaviour, IFish
     // ===== IFish =====
     public NetScoreCalculator scoreCalculator { get; set; }
 
-    private Vector3 movePosition;
-    private bool isCaptured = false;
-
     [Header("魚データ設定")]
     public string fishName = "Dolfinfish";
     public float addRate = 0.8f;
     public int baseScore = 100;
 
+    private bool isCaptured = false;
+    private CaptureMoveEffect captureEffect;
+    private Transform playerTransform;
+
+    void Awake()
+    {
+        captureEffect = GetComponent<CaptureMoveEffect>();
+    }
+
     void Start()
     {
-        // ScoreCalculator を自動取得
         if (scoreCalculator == null)
         {
             scoreCalculator = Object.FindFirstObjectByType<NetScoreCalculator>();
         }
+
+        GameObject playerObj = GameObject.FindWithTag("Player");
+        if (playerObj != null)
+        {
+            playerTransform = playerObj.transform;
+        }
     }
 
-    // 網に当たったとき
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (isCaptured) return;
@@ -37,7 +47,14 @@ public class Dolfinfish : MonoBehaviour, IFish
                 scoreCalculator.AddCapturedFish(fishName, addRate, baseScore);
             }
 
-            Destroy(gameObject);
+            if (captureEffect != null && playerTransform != null)
+            {
+                captureEffect.Play(playerTransform);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

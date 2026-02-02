@@ -197,6 +197,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4399096843779939642, guid: 86756094503d8a44a92b49e773c98245, type: 3}
     - target: {fileID: 5619216163436251164, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
+      propertyPath: bigBulletSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9de5fd31744151b42848314b60f573aa, type: 3}
+    - target: {fileID: 5619216163436251164, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: bigBulletCooldown
       value: 
       objectReference: {fileID: 1953213164}
@@ -216,6 +220,14 @@ PrefabInstance:
       propertyPath: heartUI
       value: 
       objectReference: {fileID: 1958283369}
+    - target: {fileID: 7335481038751045291, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
+      propertyPath: damageSE
+      value: 
+      objectReference: {fileID: 8300000, guid: 42b2e737feb47d643b44cd1438dc57d0, type: 3}
+    - target: {fileID: 7335481038751045291, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 382232041}
     - target: {fileID: 7621561756415070793, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: m_LocalScale.x
       value: 17.180761
@@ -380,6 +392,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65261aff73708a94f95b47cab301712c, type: 3}
+--- !u!82 &382232041 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6897420735449950147, guid: 65261aff73708a94f95b47cab301712c, type: 3}
+  m_PrefabInstance: {fileID: 382232040}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &442740749 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4201189869033909495, guid: e9a27f1826a446140a7fd45c6a892de5, type: 3}

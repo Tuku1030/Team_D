@@ -11,28 +11,31 @@ public class PlayerUnit : MonoBehaviour
     public Vector3 BulletPoint = Vector3.zero;
     public Vector3 BigBulletPoint = Vector3.zero;
 
-    [Header("効果音")]
+    [Header("効果音（発射）")]
     public AudioClip bulletSound;     // 小網の発射音
-    public AudioClip bigBulletSound;  // 巨大網の発射音
 
     [Header("クールダウン")]
     public float bulletCooldownTime = 1.0f;   // 小網CT
     public bigBullettimer bigBulletCooldown;  // 巨大網CT（別スクリプト）
 
-    // 内部変数
-    private AudioSource audioSource;
+    [Header("SE再生用（別オブジェクト）")]
+    public AudioSource seAudioSource; // ★ここに別オブジェクトのAudioSourceをドラッグ
+
+    [Header("網SE（結果音）")]
+    public AudioClip fishSE;   // 魚だけ入った
+    public AudioClip trashSE;  // ゴミが入った
+    public AudioClip emptySE;  // 何も入らなかった
+
+    // 内部
     private float bulletTimer = 0f;
 
     void Start()
     {
-        // AudioSource がなければ追加
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
+        if (seAudioSource == null)
         {
-            audioSource = gameObject.AddComponent<AudioSource>();
+            Debug.LogError("SE用AudioSourceがInspectorで設定されていません！");
         }
 
-        // 念のためチェック
         if (bigBulletCooldown == null)
         {
             Debug.LogError("bigBulletCooldown が Inspector で設定されていません！");
@@ -51,16 +54,18 @@ public class PlayerUnit : MonoBehaviour
         // ----------------------
         if (Input.GetMouseButtonDown(0) && bulletTimer >= bulletCooldownTime)
         {
-            FireBullet(Bullet, mousePos, bulletSound);
+            FireBullet(Bullet, mousePos);
             bulletTimer = 0f;
         }
 
         // ----------------------
         // 巨大網（スペースキー）
         // ----------------------
-        if (Input.GetKeyDown(KeyCode.Space) && bigBulletCooldown != null && bigBulletCooldown.CanUse)
+        if (Input.GetKeyDown(KeyCode.Space) &&
+            bigBulletCooldown != null &&
+            bigBulletCooldown.CanUse)
         {
-            FireBigBullet(BigBullet, mousePos, bigBulletSound);
+            FireBigBullet(BigBullet);
             bigBulletCooldown.UseNet();
         }
     }
@@ -68,8 +73,10 @@ public class PlayerUnit : MonoBehaviour
     /// <summary>
     /// 小網を発射
     /// </summary>
-    private void FireBullet(GameObject bulletPrefab, Vector2 targetPos, AudioClip sound)
+    private void FireBullet(GameObject bulletPrefab, Vector2 targetPos)
     {
+        if (bulletPrefab == null) return;
+
         GameObject bullet = Instantiate(
             bulletPrefab,
             transform.position + BulletPoint,
@@ -83,35 +90,54 @@ public class PlayerUnit : MonoBehaviour
             rb.linearVelocity = dir * Speed;
         }
 
-        PlaySound(sound);
+        PlaySound(bulletSound);
         Destroy(bullet, 2.5f);
     }
 
     /// <summary>
-    /// 巨大網を発射
+    /// 巨大網を発射（結果音は別で鳴る）
     /// </summary>
-    private void FireBigBullet(GameObject bigBulletPrefab, Vector2 targetPos, AudioClip sound)
+    private void FireBigBullet(GameObject bigBulletPrefab)
     {
+        if (bigBulletPrefab == null) return;
+
         GameObject bigBullet = Instantiate(
             bigBulletPrefab,
             transform.position + BigBulletPoint,
             Quaternion.identity
         );
 
-        PlaySound(sound);
-
-        // 必要なければ時間調整してね
+        // 網は短時間で消える想定
         Destroy(bigBullet, 0.2f);
     }
 
     /// <summary>
-    /// 効果音再生
+    /// 効果音再生（別オブジェクトのAudioSource）
     /// </summary>
     private void PlaySound(AudioClip clip)
     {
-        if (clip != null)
+        if (clip != null && seAudioSource != null)
         {
-            audioSource.PlayOneShot(clip);
+            seAudioSource.PlayOneShot(clip);
+        }
+    }
+
+    /// <summary>
+    /// 巨大網の結果に応じたSEを鳴らす（NetScoreCalculator から呼ばれる）
+    /// </summary>
+    public void PlayNetResultSE(int fishCount, int trashCount)
+    {
+        if (trashCount > 0)
+        {
+            PlaySound(trashSE);
+        }
+        else if (fishCount > 0)
+        {
+            PlaySound(fishSE);
+        }
+        else
+        {
+            PlaySound(emptySE);
         }
     }
 }

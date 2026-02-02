@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>(); // ★
         currentHP = maxHP;
         UpdateUI();
+        transform.position = new Vector3(-8f, -0f, 0f);
     }
 
 

@@ -197,6 +197,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4399096843779939642, guid: 86756094503d8a44a92b49e773c98245, type: 3}
     - target: {fileID: 5619216163436251164, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
+      propertyPath: fishSE
+      value: 
+      objectReference: {fileID: 8300000, guid: 3e058eef8e7c40f4abf65009275cea0c, type: 3}
+    - target: {fileID: 5619216163436251164, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
+      propertyPath: emptySE
+      value: 
+      objectReference: {fileID: 8300000, guid: 9de5fd31744151b42848314b60f573aa, type: 3}
+    - target: {fileID: 5619216163436251164, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
+      propertyPath: trashSE
+      value: 
+      objectReference: {fileID: 8300000, guid: 42b2e737feb47d643b44cd1438dc57d0, type: 3}
+    - target: {fileID: 5619216163436251164, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
+      propertyPath: seAudioSource
+      value: 
+      objectReference: {fileID: 382232041}
+    - target: {fileID: 5619216163436251164, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: bigBulletSound
       value: 
       objectReference: {fileID: 8300000, guid: 9de5fd31744151b42848314b60f573aa, type: 3}
@@ -230,19 +246,19 @@ PrefabInstance:
       objectReference: {fileID: 382232041}
     - target: {fileID: 7621561756415070793, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 17.180761
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7621561756415070793, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 18.042715
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7621561756415070793, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -642
+      value: -600
       objectReference: {fileID: 0}
     - target: {fileID: 7621561756415070793, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -37
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7621561756415070793, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -749,7 +765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2723953174116219674, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8696051986483828561, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: scoreCalculator
@@ -2050,6 +2066,10 @@ PrefabInstance:
     - target: {fileID: 8674563265281113679, guid: 880b751d9a0b14b43b78b90247bd2332, type: 3}
       propertyPath: m_Name
       value: FishSpawner DeepLayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674563265281113679, guid: 880b751d9a0b14b43b78b90247bd2332, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

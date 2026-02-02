@@ -7,18 +7,43 @@ public class NetScoreCalculator : MonoBehaviour
     private Dictionary<string, (int count, float rate, int baseScore)> fishData
     = new Dictionary<string, (int, float, int)>();
     public float Netrate;
-    
+
+    // 捕獲内容カウント
+    private int fishCount = 0;
+    private int trashCount = 0;
+
+    // 結果SEを鳴らす相手
+    private PlayerUnit player;
+
 
     private float _Score = 0; // 網専用（内部計算）
-    private void OnTriggerEnter(Collider other)
+
+    void Start()
     {
+        player = FindFirstObjectByType<PlayerUnit>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // 魚
         IFish fish = other.GetComponent<IFish>();
         if (fish != null)
         {
+            fishCount++;
+
             AddCapturedFish(other.gameObject.name, 0.1f, 10);
+            Destroy(other.gameObject);
+            return;
+        }
+
+        // ゴミ
+        if (other.CompareTag("Trash"))
+        {
+            trashCount++;
             Destroy(other.gameObject);
         }
     }
+
     public void AddCapturedFish(string fishName, float addRate, int baseScore)
     {
         // 網ごとの累計
@@ -54,4 +79,12 @@ public class NetScoreCalculator : MonoBehaviour
         Netrate = (1 + rate * (count - 1));
         return baseScore * Netrate;
     }
+    private void OnDestroy()
+    {
+        if (player != null)
+        {
+            player.PlayNetResultSE(fishCount, trashCount);
+        }
+    }
+
 }

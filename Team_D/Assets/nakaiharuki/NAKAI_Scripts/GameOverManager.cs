@@ -41,6 +41,7 @@ public class GameOverManager : MonoBehaviour
 
     private IEnumerator GameOverSequence()
     {
+        //プレイヤー停止 + 演出
         GameObject player = GameObject.FindWithTag("Player");
 
         if (player != null)
@@ -48,19 +49,23 @@ public class GameOverManager : MonoBehaviour
             var pc = player.GetComponent<PlayerController>();
             if (pc != null) pc.enabled = false;
 
-            // ここで落下＋火花演出スタート
-            var fall = player.GetComponent<PlayerGameOverFall>();
-            if (fall != null) fall.StartGameOver();
+           
         }
 
-        // 演出を見る時間
-        yield return new WaitForSeconds(2f);
-
-        // フェード
+        //画面フェード
         yield return ScreenFade.Instance.StartCoroutine(
-            ScreenFade.Instance.FadeOut(1f)
+            ScreenFade.Instance.FadeOut(2f)
         );
 
+        //GameOver シーンへ
         SceneManager.LoadScene("GameOver");
+    }
+
+    public void RestartGame()
+    {
+        isGameOver = false;          //次のゲーム用にリセット
+        Time.timeScale = 1f;
+
+        SceneManager.LoadScene(lastStage);
     }
 }

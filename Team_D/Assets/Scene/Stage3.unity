@@ -769,7 +769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2723953174116219674, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8696051986483828561, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: scoreCalculator

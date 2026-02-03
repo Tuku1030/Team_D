@@ -209,13 +209,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 42b2e737feb47d643b44cd1438dc57d0, type: 3}
     - target: {fileID: 5619216163436251164, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
+      propertyPath: seSource
+      value: 
+      objectReference: {fileID: 382232041}
+    - target: {fileID: 5619216163436251164, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: seAudioSource
       value: 
       objectReference: {fileID: 382232041}
     - target: {fileID: 5619216163436251164, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: bigBulletSound
       value: 
-      objectReference: {fileID: 8300000, guid: 9de5fd31744151b42848314b60f573aa, type: 3}
+      objectReference: {fileID: 8300000, guid: 7ece2c092d2ca07418da9086784b43ab, type: 3}
     - target: {fileID: 5619216163436251164, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
       propertyPath: bigBulletCooldown
       value: 
@@ -765,7 +769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2723953174116219674, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8696051986483828561, guid: ea7649888e4dda14f92b4bfdbcb17f5a, type: 3}
       propertyPath: scoreCalculator

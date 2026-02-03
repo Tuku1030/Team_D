@@ -63,4 +63,12 @@ public class GameOverManager : MonoBehaviour
 
         SceneManager.LoadScene("GameOver");
     }
+        public void RestartGame()
+    {
+        isGameOver = false;          //次のゲーム用にリセット
+        Time.timeScale = 1f;
+
+        SceneManager.LoadScene(lastStage);
+    }
 }
+    

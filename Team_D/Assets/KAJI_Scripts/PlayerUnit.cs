@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerUnit : MonoBehaviour
@@ -13,6 +14,7 @@ public class PlayerUnit : MonoBehaviour
 
     [Header("効果音（発射）")]
     public AudioClip bulletSound;     // 小網の発射音
+    public AudioClip bigBulletSound;  // 大網の発射音
 
     [Header("クールダウン")]
     public float bulletCooldownTime = 1.0f;   // 小網CT
@@ -21,10 +23,6 @@ public class PlayerUnit : MonoBehaviour
     [Header("SE再生用（別オブジェクト）")]
     public AudioSource seAudioSource; // ★ここに別オブジェクトのAudioSourceをドラッグ
 
-    [Header("網SE（結果音）")]
-    public AudioClip fishSE;   // 魚だけ入った
-    public AudioClip trashSE;  // ゴミが入った
-    public AudioClip emptySE;  // 何も入らなかった
 
     // 内部
     private float bulletTimer = 0f;
@@ -107,6 +105,7 @@ public class PlayerUnit : MonoBehaviour
             Quaternion.identity
         );
 
+        PlaySound(bigBulletSound);
         // 網は短時間で消える想定
         Destroy(bigBullet, 0.2f);
     }
@@ -119,25 +118,6 @@ public class PlayerUnit : MonoBehaviour
         if (clip != null && seAudioSource != null)
         {
             seAudioSource.PlayOneShot(clip);
-        }
-    }
-
-    /// <summary>
-    /// 巨大網の結果に応じたSEを鳴らす（NetScoreCalculator から呼ばれる）
-    /// </summary>
-    public void PlayNetResultSE(int fishCount, int trashCount)
-    {
-        if (trashCount > 0)
-        {
-            PlaySound(trashSE);
-        }
-        else if (fishCount > 0)
-        {
-            PlaySound(fishSE);
-        }
-        else
-        {
-            PlaySound(emptySE);
         }
     }
 }

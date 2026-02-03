@@ -3,8 +3,8 @@ using UnityEngine;
 public class PlayerGameOverFall : MonoBehaviour
 {
     public float fallSpeed = 1.5f;
+    public float rotateSpeed = 200f;
     public ParticleSystem spark;
-    public AudioSource audioSource;
 
     bool isGameOver = false;
 
@@ -13,16 +13,12 @@ public class PlayerGameOverFall : MonoBehaviour
         if (!isGameOver) return;
 
         transform.position += Vector3.down * fallSpeed * Time.deltaTime;
+       
     }
 
     public void StartGameOver()
     {
         isGameOver = true;
-
-        if (spark != null)
-            spark.Play();
-
-        if (audioSource != null)
-            audioSource.Play();
+        if (spark != null) spark.Play();
     }
 }

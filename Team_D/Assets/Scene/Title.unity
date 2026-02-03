@@ -507,7 +507,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u64CD\u4F5C\u65B9\u6CD5"
+  m_Text: "\u64CD\u4F5C\u30FB\u8AAC\u660E"
 --- !u!222 &985146138
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -855,8 +855,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00002861, y: -299}
-  m_SizeDelta: {x: 363.27, y: 130.301}
+  m_AnchoredPosition: {x: -0.010014, y: -299}
+  m_SizeDelta: {x: 426.72, y: 130.301}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1292826593
 MonoBehaviour:
@@ -1295,6 +1295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd6f718f164d94b4bb63e2af88311762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalScore: 0
   player: {fileID: 7335481038751045291, guid: 0118ce1a1f0f1614194873d49cf6662a, type: 3}
 --- !u!4 &1563472264
 Transform:
